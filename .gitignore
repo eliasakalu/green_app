@@ -1,0 +1,12 @@
+# Ignore node_modules and Expo cache
+node_modules/
+.expo/
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+desktop.ini

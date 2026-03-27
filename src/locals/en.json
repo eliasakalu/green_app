@@ -1,0 +1,12 @@
+{
+    "navig":{
+        "home" : "Home",
+        "search" : "Search",
+        "library":"Library",
+        "profile":"Profile"
+    },
+    "collections":"Collections",
+    "popularsongs":"Popular Songs",
+    "recommededforyou":"Recommended For You"
+
+}

@@ -1,0 +1,11 @@
+{
+    "navig":{
+        "home" : "ዋና ገጽ",
+        "search" : "ፈልግ",
+        "library":"ማከማቻ",
+        "profile":"ማንነት"
+    },
+    "collections":"ስብስቦች",
+    "popularsongs":"ታዋቂ መዝሙራት",
+    "recommededforyou":"የተመረጡ መዝሙራት"
+}
