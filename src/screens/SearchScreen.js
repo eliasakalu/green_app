@@ -3,40 +3,42 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput, Activity
 import { Search, X } from 'lucide-react-native';
 import { useThemeStore } from '../store/useThemeStore';
 import { usePlayerStore } from '../store/usePlayerStore';
-import { searchSongs, getAllSongs } from '../data/musicData';
+import { searchSongs, getTotalSongCount } from '../data/database';
+import { useEffect } from 'react';
 
-const CATEGORIES = ['Pop', 'Rock', 'Electronic', 'Hip Hop', 'Jazz', 'Classical'];
+const GENRES = ['እዝል', 'ግዕዝ', 'Pop', 'Rock', 'Electronic', 'Hip Hop'];
 
 export default function SearchScreen({ navigation }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [totalSongs, setTotalSongs] = useState(0);
   const { isDark, colors } = useThemeStore();
   const theme = isDark ? colors.dark : colors.light;
   const { setCurrentSong, stopPlayback } = usePlayerStore();
 
-  const handleSearch = (text) => {
+  useEffect(() => {
+    getTotalSongCount().then(setTotalSongs).catch(() => {});
+  }, []);
+
+  const handleSearch = async (text) => {
     setSearchQuery(text);
-    if (!text.trim()) {
-      setResults([]);
-      return;
-    }
+    if (!text.trim()) { setResults([]); return; }
     setLoading(true);
-    setTimeout(() => {
-      setResults(searchSongs(text));
+    try {
+      const found = await searchSongs(text);
+      setResults(found);
+    } catch (e) {
+      console.error('Search error:', e);
+    } finally {
       setLoading(false);
-    }, 300);
+    }
   };
 
   const playSong = async (song) => {
     await stopPlayback();
     await setCurrentSong(song);
     navigation.navigate('Player');
-  };
-
-  const clearSearch = () => {
-    setSearchQuery('');
-    setResults([]);
   };
 
   const renderSearchResult = ({ item }) => (
@@ -50,8 +52,6 @@ export default function SearchScreen({ navigation }) {
     </TouchableOpacity>
   );
 
-  const allSongs = getAllSongs();
-
   return (
     <View style={[styles.container, { backgroundColor: theme.background }]}>
       <Text style={[styles.title, { color: theme.text }]}>Search</Text>
@@ -60,7 +60,7 @@ export default function SearchScreen({ navigation }) {
         <Search color={theme.subText} size={20} />
         <TextInput
           style={[styles.input, { color: theme.text }]}
-          placeholder="What do you want to listen to?"
+          placeholder="Search songs, artists..."
           placeholderTextColor={theme.subText}
           value={searchQuery}
           onChangeText={handleSearch}
@@ -68,7 +68,7 @@ export default function SearchScreen({ navigation }) {
           autoCorrect={false}
         />
         {searchQuery.length > 0 && (
-          <TouchableOpacity onPress={clearSearch}>
+          <TouchableOpacity onPress={() => { setSearchQuery(''); setResults([]); }}>
             <X color={theme.subText} size={20} />
           </TouchableOpacity>
         )}
@@ -91,9 +91,9 @@ export default function SearchScreen({ navigation }) {
         />
       ) : (
         <View>
-          <Text style={[styles.sectionTitle, { color: theme.text }]}>Browse Categories</Text>
+          <Text style={[styles.sectionTitle, { color: theme.text }]}>Browse by Genre</Text>
           <View style={styles.categoriesGrid}>
-            {CATEGORIES.map((genre) => (
+            {GENRES.map((genre) => (
               <TouchableOpacity
                 key={genre}
                 style={[styles.categoryCard, { backgroundColor: colors.primary + '33' }]}
@@ -103,7 +103,7 @@ export default function SearchScreen({ navigation }) {
               </TouchableOpacity>
             ))}
           </View>
-          <Text style={[styles.totalSongs, { color: theme.subText }]}>{allSongs.length} songs available</Text>
+          <Text style={[styles.totalSongs, { color: theme.subText }]}>{totalSongs} songs available</Text>
         </View>
       )}
     </View>

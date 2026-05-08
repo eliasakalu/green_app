@@ -1,6 +1,7 @@
-import './i18n'; // must be first — initializes translations before any screen renders
+import './i18n';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer, DefaultTheme, DarkTheme as NavigationDarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -9,6 +10,8 @@ import { Home, Search, Library, User } from 'lucide-react-native';
 
 import { useThemeStore } from './store/useThemeStore';
 import { usePlayerStore } from './store/usePlayerStore';
+import { initDatabase, seedDatabase } from './data/database';
+import { seedData } from './data/seedData';
 
 import HomeScreen from './screens/HomeScreen';
 import SearchScreen from './screens/SearchScreen';
@@ -19,6 +22,9 @@ import LibraryScreen from './screens/LibraryScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import QueueScreen from './screens/QueueScreen';
 import MiniPlayer from './components/MiniPlayer';
+import LikedSongsScreen from './screens/LikedSongsScreen';
+
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -63,10 +69,30 @@ function TabNavigator() {
 export default function App() {
   const { isDark, colors } = useThemeStore();
   const { initStore } = usePlayerStore();
+  const [dbReady, setDbReady] = useState(false);
 
   useEffect(() => {
-    initStore();
+    const setup = async () => {
+      try {
+        await initDatabase();         // creates tables on first launch
+        await seedDatabase(seedData); // inserts songs (skips if already seeded)
+        await initStore();            // loads liked songs / playlists
+      } catch (e) {
+        console.error('DB init error:', e);
+      } finally {
+        setDbReady(true);
+      }
+    };
+    setup();
   }, []);
+
+  if (!dbReady) {
+    return (
+      <View style={styles.loading}>
+        <ActivityIndicator size="large" color="#1DB954" />
+      </View>
+    );
+  }
 
   const CustomLightTheme = {
     ...DefaultTheme,
@@ -91,7 +117,17 @@ export default function App() {
           options={{ presentation: 'modal', gestureEnabled: true }}
         />
         <Stack.Screen name="Queue" component={QueueScreen} />
+        <Stack.Screen name="LikedSongs" component={LikedSongsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  loading: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#121212',
+  },
+});

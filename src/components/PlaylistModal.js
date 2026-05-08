@@ -17,33 +17,43 @@ export default function PlaylistModal({ visible, onClose, song, onSuccess }) {
       Alert.alert('Error', 'Please enter a playlist name');
       return;
     }
-    const newPlaylist = await createPlaylist(newPlaylistName.trim());
-    setNewPlaylistName('');
-    setShowCreate(false);
-    if (song) {
-      await addSongToPlaylist(newPlaylist.id, song);
-      Alert.alert('Success', `"${song.title}" added to ${newPlaylist.name}`);
-      if (onSuccess) onSuccess();
-      onClose();
-    } else {
-      Alert.alert('Success', 'Playlist created!');
-      if (onSuccess) onSuccess();
+    try {
+      const newPlaylist = await createPlaylist(newPlaylistName.trim());
+      setNewPlaylistName('');
+      setShowCreate(false);
+      
+      if (song) {
+        await addSongToPlaylist(newPlaylist.id, song);
+        Alert.alert('Success', `"${song.title}" added to ${newPlaylist.name}`);
+        if (onSuccess) onSuccess();
+        onClose();
+      } else {
+        Alert.alert('Success', 'Playlist created!');
+        if (onSuccess) onSuccess();
+      }
+    } catch (error) {
+      Alert.alert('Error', 'Failed to create playlist');
     }
   };
 
   const handleAddToPlaylist = async (playlist) => {
     if (!song) return;
     setAddingTo(playlist.id);
-    await addSongToPlaylist(playlist.id, song);
-    setAddingTo(null);
-    Alert.alert('Success', `"${song.title}" added to ${playlist.name}`);
-    if (onSuccess) onSuccess();
-    onClose();
+    try {
+      await addSongToPlaylist(playlist.id, song);
+      Alert.alert('Success', `"${song.title}" added to ${playlist.name}`);
+      if (onSuccess) onSuccess();
+      onClose();
+    } catch (error) {
+      Alert.alert('Error', 'Failed to add song to playlist');
+    } finally {
+      setAddingTo(null);
+    }
   };
 
   const renderPlaylist = ({ item }) => (
     <TouchableOpacity
-      style={styles.playlistItem}
+      style={[styles.playlistItem, { borderBottomColor: theme.border }]}
       onPress={() => handleAddToPlaylist(item)}
       disabled={addingTo === item.id}
     >
@@ -51,9 +61,11 @@ export default function PlaylistModal({ visible, onClose, song, onSuccess }) {
         <Text style={[styles.playlistName, { color: theme.text }]}>{item.name}</Text>
         <Text style={[styles.playlistCount, { color: theme.subText }]}>{item.song_count || 0} songs</Text>
       </View>
-      {addingTo === item.id
-        ? <ActivityIndicator size="small" color={colors.primary} />
-        : <Plus color={theme.text} size={20} />}
+      {addingTo === item.id ? (
+        <ActivityIndicator size="small" color={colors.primary} />
+      ) : (
+        <Plus color={theme.text} size={20} />
+      )}
     </TouchableOpacity>
   );
 
@@ -80,7 +92,7 @@ export default function PlaylistModal({ visible, onClose, song, onSuccess }) {
                 <Text style={[styles.createButtonText, { color: colors.primary }]}>Create New Playlist</Text>
               </TouchableOpacity>
 
-              {playlists.length > 0 ? (
+              {playlists && playlists.length > 0 ? (
                 <FlatList
                   data={playlists}
                   keyExtractor={(item) => item.id}
@@ -126,7 +138,7 @@ const styles = StyleSheet.create({
   modalTitle: { fontSize: 18, fontWeight: 'bold', flex: 1 },
   createButton: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', padding: 12, borderWidth: 1, borderRadius: 8, marginBottom: 15 },
   createButtonText: { marginLeft: 8, fontSize: 16, fontWeight: '500' },
-  playlistItem: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 15, borderBottomWidth: 1, borderBottomColor: '#28282833' },
+  playlistItem: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 15, borderBottomWidth: 1 },
   playlistInfo: { flex: 1 },
   playlistName: { fontSize: 16, fontWeight: '500' },
   playlistCount: { fontSize: 12, marginTop: 4 },

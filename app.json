@@ -3,8 +3,8 @@
     "name": "Elias Music App",
     "slug": "eliasapp",
     "version": "1.0.0",
-    "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
@@ -21,8 +21,17 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#121212"
       },
-      "package": "com.elias.musicapp"
+      "package": "com.elias.musicapp",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
     },
-    "plugins": ["expo-av"]
+    "plugins": ["expo-av", "expo-sqlite"],
+    "extra": {
+      "eas": {
+        "projectId": "2003c2c5-1955-4662-89bb-c49a9b3a5b28"
+      }
+    }
   }
 }

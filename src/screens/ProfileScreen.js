@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Switch, ScrollView } from 'react-native';
 import { User, Moon, Sun, Music, Heart, Folder } from 'lucide-react-native';
 import { useThemeStore } from '../store/useThemeStore';
-import { musicData, getAllSongs } from '../data/musicData';
+import { getTotalSongCount, getAllCategories } from '../data/database';
 
 export default function ProfileScreen() {
   const { isDark, toggleTheme, colors } = useThemeStore();
   const theme = isDark ? colors.dark : colors.light;
-  const allSongs = getAllSongs();
-  const totalCategories = musicData.categories.length;
-  const totalSubcategories = musicData.categories.reduce((sum, cat) => sum + cat.subcategories.length, 0);
+  const [totalSongs, setTotalSongs] = useState(0);
+  const [totalCategories, setTotalCategories] = useState(0);
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const [count, cats] = await Promise.all([getTotalSongCount(), getAllCategories()]);
+        setTotalSongs(count);
+        setTotalCategories(cats.length);
+      } catch (e) {}
+    };
+    load();
+  }, []);
 
   return (
     <ScrollView style={[styles.container, { backgroundColor: theme.background }]}>
@@ -24,7 +34,7 @@ export default function ProfileScreen() {
       <View style={styles.statsContainer}>
         <View style={[styles.statCard, { backgroundColor: theme.card }]}>
           <Music color={colors.primary} size={24} />
-          <Text style={[styles.statNumber, { color: theme.text }]}>{allSongs.length}</Text>
+          <Text style={[styles.statNumber, { color: theme.text }]}>{totalSongs}</Text>
           <Text style={[styles.statLabel, { color: theme.subText }]}>Songs</Text>
         </View>
         <View style={[styles.statCard, { backgroundColor: theme.card }]}>
@@ -34,8 +44,8 @@ export default function ProfileScreen() {
         </View>
         <View style={[styles.statCard, { backgroundColor: theme.card }]}>
           <Heart color={colors.primary} size={24} />
-          <Text style={[styles.statNumber, { color: theme.text }]}>{totalSubcategories}</Text>
-          <Text style={[styles.statLabel, { color: theme.subText }]}>Collections</Text>
+          <Text style={[styles.statNumber, { color: theme.text }]}>∞</Text>
+          <Text style={[styles.statLabel, { color: theme.subText }]}>Offline</Text>
         </View>
       </View>
 
@@ -46,11 +56,7 @@ export default function ProfileScreen() {
               {isDark ? <Moon color={theme.text} size={22} /> : <Sun color={theme.text} size={22} />}
               <Text style={[styles.rowText, { color: theme.text }]}>Dark Mode</Text>
             </View>
-            <Switch
-              value={isDark}
-              onValueChange={toggleTheme}
-              trackColor={{ false: '#767577', true: colors.primary }}
-            />
+            <Switch value={isDark} onValueChange={toggleTheme} trackColor={{ false: '#767577', true: colors.primary }} />
           </View>
           <View style={[styles.separator, { backgroundColor: theme.border }]} />
           <View style={styles.row}>
@@ -61,19 +67,18 @@ export default function ProfileScreen() {
             <Text style={[styles.badge, { color: colors.primary }]}>Active</Text>
           </View>
           <View style={[styles.separator, { backgroundColor: theme.border }]} />
-          
           <View style={styles.row}>
             <View style={styles.rowLeft}>
               <Folder color={theme.text} size={22} />
               <Text style={[styles.rowText, { color: theme.text }]}>Total Music</Text>
             </View>
-            <Text style={[styles.badge, { color: theme.subText }]}>{allSongs.length} tracks</Text>
+            <Text style={[styles.badge, { color: theme.subText }]}>{totalSongs} tracks</Text>
           </View>
         </View>
 
         <View style={styles.versionContainer}>
           <Text style={[styles.versionText, { color: theme.subText }]}>Elias Music App v1.0.0</Text>
-          <Text style={[styles.versionText, { color: theme.subText }]}>Made with ❤️ for music lovers</Text>
+          <Text style={[styles.versionText, { color: theme.subText }]}>Made by betaliz for  lovers</Text>
         </View>
       </View>
     </ScrollView>

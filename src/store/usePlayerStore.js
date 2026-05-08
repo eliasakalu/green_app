@@ -56,13 +56,17 @@ export const usePlayerStore = create((set, get) => ({
   },
 
   setCurrentSong: async (song) => {
+    const { currentSong } = get();
+    if (currentSong?.id === song?.id) {
+      set({ isPlaying: true });
+      return;
+    }
     await get().stopCurrentPlayback();
     set({ currentSong: song, currentTime: 0, isPlaying: true });
   },
 
   setAudioRef: (ref) => set({ audioRef: ref }),
 
-  // Called from MiniPlayer — uses the live audioRef from the store
   togglePlay: async () => {
     const { audioRef, isPlaying } = get();
     if (!audioRef) return;
@@ -100,24 +104,30 @@ export const usePlayerStore = create((set, get) => ({
   },
 
   playNext: async () => {
-    const { queue, queueIndex, stopCurrentPlayback, setCurrentSong } = get();
+    const { queue, queueIndex, stopCurrentPlayback } = get();
+    
     if (queue.length > 0 && queueIndex < queue.length) {
       const nextSong = queue[queueIndex];
       await stopCurrentPlayback();
-      await setCurrentSong(nextSong);
-      set({ queueIndex: queueIndex + 1 });
+      set({ 
+        currentSong: nextSong, 
+        currentTime: 0, 
+        isPlaying: true,
+        queueIndex: queueIndex + 1 
+      });
       return nextSong;
     }
     return null;
   },
 
   playPrevious: async () => {
-    const { queue, queueIndex, stopCurrentPlayback, setCurrentSong, currentTime, audioRef } = get();
+    const { queue, queueIndex, stopCurrentPlayback, currentTime, audioRef } = get();
     if (currentTime > 3000 && audioRef) {
       try {
         const status = await audioRef.getStatusAsync();
         if (status.isLoaded) {
           await audioRef.setPositionAsync(0);
+          set({ currentTime: 0 });
           return get().currentSong;
         }
       } catch (_) {}
@@ -125,8 +135,12 @@ export const usePlayerStore = create((set, get) => ({
     if (queueIndex > 1) {
       const prevSong = queue[queueIndex - 2];
       await stopCurrentPlayback();
-      await setCurrentSong(prevSong);
-      set({ queueIndex: queueIndex - 1 });
+      set({ 
+        currentSong: prevSong, 
+        currentTime: 0, 
+        isPlaying: true,
+        queueIndex: queueIndex - 1 
+      });
       return prevSong;
     }
     return null;
@@ -139,14 +153,16 @@ export const usePlayerStore = create((set, get) => ({
       songs: [],
       song_count: 0,
     };
-    const updatedPlaylists = [...get().playlists, newPlaylist];
+    const currentPlaylists = get().playlists;
+    const updatedPlaylists = [...currentPlaylists, newPlaylist];
     set({ playlists: updatedPlaylists });
     await AsyncStorage.setItem('playlists', JSON.stringify(updatedPlaylists));
     return newPlaylist;
   },
 
   addSongToPlaylist: async (playlistId, song) => {
-    const updatedPlaylists = get().playlists.map((playlist) => {
+    const currentPlaylists = get().playlists;
+    const updatedPlaylists = currentPlaylists.map((playlist) => {
       if (playlist.id === playlistId) {
         const songs = playlist.songs || [];
         if (!songs.some((s) => s.id === song.id)) {
@@ -161,7 +177,8 @@ export const usePlayerStore = create((set, get) => ({
   },
 
   removeSongFromPlaylist: async (playlistId, songId) => {
-    const updatedPlaylists = get().playlists.map((playlist) => {
+    const currentPlaylists = get().playlists;
+    const updatedPlaylists = currentPlaylists.map((playlist) => {
       if (playlist.id === playlistId) {
         const songs = (playlist.songs || []).filter((s) => s.id !== songId);
         return { ...playlist, songs, song_count: songs.length };
@@ -173,7 +190,8 @@ export const usePlayerStore = create((set, get) => ({
   },
 
   deletePlaylist: async (playlistId) => {
-    const updatedPlaylists = get().playlists.filter((p) => p.id !== playlistId);
+    const currentPlaylists = get().playlists;
+    const updatedPlaylists = currentPlaylists.filter((p) => p.id !== playlistId);
     set({ playlists: updatedPlaylists });
     await AsyncStorage.setItem('playlists', JSON.stringify(updatedPlaylists));
   },

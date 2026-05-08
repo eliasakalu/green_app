@@ -8,15 +8,21 @@ import { useNavigation } from '@react-navigation/native';
 const { width } = Dimensions.get('window');
 
 export default function MiniPlayer() {
-  const { currentSong, isPlaying, togglePlay, playNext, currentTime, duration } = usePlayerStore();
+  const { 
+    currentSong, 
+    isPlaying, 
+    togglePlay, 
+    playNext, 
+    currentTime, 
+    duration,
+    audioRef,
+    stopPlayback  // Add this
+  } = usePlayerStore();
   const { isDark, colors } = useThemeStore();
   const navigation = useNavigation();
   const theme = isDark ? colors.dark : colors.light;
-
-  // Local state to manage dismissing the mini player
   const [isDismissed, setIsDismissed] = useState(false);
 
-  // If a new song starts, reset the dismissed state so the player reappears
   useEffect(() => {
     if (currentSong?.id) {
       setIsDismissed(false);
@@ -28,17 +34,18 @@ export default function MiniPlayer() {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   const handleTogglePlay = async (e) => {
-    e.stopPropagation(); // Prevents navigating to Player Screen
+    e.stopPropagation();
     await togglePlay();
   };
 
   const handleSkipNext = async (e) => {
-    e.stopPropagation(); // Prevents navigating to Player Screen
+    e.stopPropagation();
     await playNext();
   };
 
-  const handleDismiss = (e) => {
-    e.stopPropagation(); // Prevents navigating to Player Screen
+  const handleDismiss = async (e) => {
+    e.stopPropagation();
+    await stopPlayback();  // Stop the music
     setIsDismissed(true);
   };
 
@@ -48,7 +55,6 @@ export default function MiniPlayer() {
       activeOpacity={0.9}
       onPress={() => navigation.navigate('Player')}
     >
-      {/* Progress bar */}
       <View style={styles.progressBg}>
         <View style={[styles.progressFill, { width: `${progress}%`, backgroundColor: colors.primary }]} />
       </View>
@@ -70,7 +76,6 @@ export default function MiniPlayer() {
             <SkipForward size={24} color={theme.text} fill={theme.text} />
           </TouchableOpacity>
 
-          {/* Close Button */}
           <TouchableOpacity onPress={handleDismiss} style={styles.closeBtn}>
             <X size={20} color={theme.subText} />
           </TouchableOpacity>
@@ -83,7 +88,7 @@ export default function MiniPlayer() {
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    bottom: 80, // Sits above the Tab Navigator
+    bottom: 80,
     width: width - 20,
     marginHorizontal: 10,
     height: 62,

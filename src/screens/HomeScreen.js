@@ -1,36 +1,107 @@
 import React, { useState, useEffect } from 'react';
 import {
   View, Text, FlatList, Image, TouchableOpacity,
-  StyleSheet, ScrollView, ImageBackground,
+  StyleSheet, ScrollView, ImageBackground, ActivityIndicator,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { usePlayerStore } from '../store/usePlayerStore';
 import { useThemeStore } from '../store/useThemeStore';
-import { musicData } from '../data/musicData';
+import { getAllCategories, getSubcategoriesByCategory, getAllSongs, initDatabase, seedDatabase } from '../data/database';
+import { seedData } from '../data/seedData';
 import { useTranslation } from 'react-i18next';
+
+import silaseImage from '../assets/images/silase.jpg';
+
+// Default fallback image for categories
+const DEFAULT_CATEGORY_IMAGE = silaseImage;
 
 const FEATURED_SONG = {
   id: 0,
-  title: 'Midnight City',
+  title: 'ሥላሴ ትትረመም',
   artist: 'M83',
-  cover_url: 'https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=800',
+  cover_url: silaseImage,
   audio_url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
   lyrics: [],
 };
 
+// Build a lookup of category id → image directly from seedData
+const buildCategoryImageMap = () => {
+  const map = {};
+  try {
+    if (seedData && seedData.categories && Array.isArray(seedData.categories)) {
+      seedData.categories.forEach((cat) => {
+        if (cat && cat.id && cat.image) {
+          map[cat.id] = cat.image;
+        }
+      });
+    }
+  } catch (error) {
+    console.error('Error building category image map:', error);
+  }
+  return map;
+};
+
+const getImageSource = (cover) => {
+  if (!cover) return DEFAULT_CATEGORY_IMAGE;
+
+  // Handle number type (require() returns a number in React Native)
+  if (typeof cover === 'number') return cover;
+
+  // Handle object that might have a uri property
+  if (typeof cover === 'object' && cover !== null) {
+    if (cover.uri) return { uri: cover.uri };
+    if (cover.default) return cover.default;
+    return DEFAULT_CATEGORY_IMAGE;
+  }
+
+  // Handle string (remote URL)
+  if (typeof cover === 'string') {
+    // Check if it's a remote URL
+    if (cover.startsWith('http://') || cover.startsWith('https://')) {
+      return { uri: cover };
+    }
+    return DEFAULT_CATEGORY_IMAGE;
+  }
+
+  return DEFAULT_CATEGORY_IMAGE;
+};
+
+const CATEGORY_IMAGE_MAP = buildCategoryImageMap();
+
 export default function HomeScreen({ navigation }) {
   const [songs, setSongs] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { setCurrentSong, stopPlayback } = usePlayerStore();
   const { isDark, colors } = useThemeStore();
   const theme = isDark ? colors.dark : colors.light;
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
-    const allSongs = [];
-    musicData.categories.forEach((category) => {
-      category.subcategories.forEach((sub) => allSongs.push(...sub.songs));
-    });
-    setSongs(allSongs.slice(0, 10));
+    const load = async () => {
+      try {
+        await initDatabase();
+        await seedDatabase(seedData);
+
+        const [cats, popularSongs] = await Promise.all([
+          getAllCategories(),
+          getAllSongs(10, 0),
+        ]);
+        const catsWithSubs = await Promise.all(
+          cats.map(async (cat) => {
+            const subs = await getSubcategoriesByCategory(cat.id);
+            return { ...cat, subcategories: subs };
+          })
+        );
+        setCategories(catsWithSubs);
+        setSongs(popularSongs);
+      } catch (e) {
+        console.error('HomeScreen load error:', e);
+      } finally {
+        setLoading(false);
+      }
+    };
+    load();
   }, []);
 
   const playSong = async (song) => {
@@ -41,18 +112,23 @@ export default function HomeScreen({ navigation }) {
 
   const getGreeting = () => {
     const hour = new Date().getHours();
-    if (hour >= 5 && hour < 12) return 'Good Morning';
-    if (hour >= 12 && hour < 18) return 'Good Afternoon';
-    return 'Good Evening';
+    if (hour >= 5 && hour < 12) return t('good_morning');
+    if (hour >= 12 && hour < 18) return t('good_afternoon');
+    return t('good_evening');
   };
 
-  const displayedSongs = songs.slice(0, 10);
+  if (loading) {
+    return (
+      <View style={[styles.centered, { backgroundColor: theme.background }]}>
+        <ActivityIndicator size="large" color={colors.primary} />
+      </View>
+    );
+  }
 
   return (
     <ScrollView style={[styles.container, { backgroundColor: theme.background }]} showsVerticalScrollIndicator={false}>
       <LinearGradient colors={[colors.primary + '33', 'transparent']} style={styles.topHeader}>
         <Text style={[styles.headerTitle, { color: theme.text }]}>{getGreeting()}</Text>
-        {/* Language switcher for testing */}
         <View style={styles.langRow}>
           <TouchableOpacity onPress={() => i18n.changeLanguage('en')} style={styles.langBtn}>
             <Text style={[styles.langText, { color: i18n.language === 'en' ? colors.primary : theme.subText }]}>EN</Text>
@@ -64,7 +140,7 @@ export default function HomeScreen({ navigation }) {
       </LinearGradient>
 
       <TouchableOpacity onPress={() => playSong(FEATURED_SONG)} style={styles.bannerWrapper}>
-        <ImageBackground source={{ uri: FEATURED_SONG.cover_url }} style={styles.banner} imageStyle={{ borderRadius: 15 }}>
+        <ImageBackground source={FEATURED_SONG.cover_url} style={styles.banner} imageStyle={{ borderRadius: 15 }}>
           <LinearGradient colors={['transparent', 'rgba(0,0,0,0.8)']} style={styles.bannerGradient}>
             <Text style={styles.featuredLabel}>FEATURED</Text>
             <Text style={styles.bannerTitle}>{FEATURED_SONG.title}</Text>
@@ -76,32 +152,53 @@ export default function HomeScreen({ navigation }) {
       <Text style={[styles.sectionTitle, { color: theme.text }]}>Browse Categories</Text>
       <FlatList
         horizontal
-        data={musicData.categories}
+        data={categories}
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <TouchableOpacity style={styles.categoryCard} onPress={() => navigation.navigate('Category', { category: item })}>
-            <LinearGradient colors={[item.color, item.color + 'aa']} style={styles.categoryGradient} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}>
-              <Text style={styles.categoryIcon}>{item.icon}</Text>
-              <Text style={styles.categoryName}>{item.name}</Text>
-              <Text style={styles.categoryCount}>{item.subcategories.length} {t('collections')}</Text>
-            </LinearGradient>
-          </TouchableOpacity>
-        )}
+        renderItem={({ item }) => {
+          const categoryImage = CATEGORY_IMAGE_MAP[item.id] || DEFAULT_CATEGORY_IMAGE;
+          return (
+            <TouchableOpacity
+              style={styles.categoryCard}
+              onPress={() => navigation.navigate('Category', {
+                categoryId: item.id,
+                categoryName: item.name,
+                categoryColor: item.color,
+                categoryIcon: item.icon,
+              })}
+            >
+              <ImageBackground
+                source={categoryImage}
+                style={styles.categoryImageBg}
+                imageStyle={styles.categoryImageStyle}
+              >
+                <LinearGradient
+                  colors={['transparent', 'rgba(0,0,0,0.75)']}
+                  style={styles.categoryGradient}
+                  start={{ x: 0, y: 0 }}
+                  end={{ x: 0, y: 1 }}
+                >
+                  <Text style={styles.categoryName}>{item.name}</Text>
+                  <Text style={styles.categoryCount}>{item.subcategories.length} {t('collections')}</Text>
+                </LinearGradient>
+              </ImageBackground>
+            </TouchableOpacity>
+          );
+        }}
         contentContainerStyle={styles.categoriesList}
       />
 
-      {displayedSongs.length > 0 && (
+      {songs.length > 0 && (
         <>
           <Text style={[styles.sectionTitle, { color: theme.text }]}>{t('popularsongs')}</Text>
           <FlatList
             horizontal
-            data={displayedSongs}
+            data={songs}
             showsHorizontalScrollIndicator={false}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => (
               <TouchableOpacity style={styles.albumCard} onPress={() => playSong(item)}>
-                <Image source={{ uri: item.cover_url }} style={styles.albumCover} />
+                <Image source={getImageSource(item.cover_url)} style={styles.albumCover} />
                 <Text style={[styles.albumTitle, { color: theme.text }]} numberOfLines={1}>{item.title}</Text>
                 <Text style={[styles.albumArtist, { color: theme.subText }]}>{item.artist}</Text>
               </TouchableOpacity>
@@ -109,9 +206,9 @@ export default function HomeScreen({ navigation }) {
           />
 
           <Text style={[styles.sectionTitle, { color: theme.text }]}>{t('recommededforyou')}</Text>
-          {displayedSongs.slice(0, 5).map((song) => (
+          {songs.slice(0, 5).map((song) => (
             <TouchableOpacity key={song.id} style={styles.songRow} onPress={() => playSong(song)}>
-              <Image source={{ uri: song.cover_url }} style={styles.rowCover} />
+              <Image source={getImageSource(song.cover_url)} style={styles.rowCover} />
               <View>
                 <Text style={[styles.rowTitle, { color: theme.text }]}>{song.title}</Text>
                 <Text style={[styles.rowArtist, { color: theme.subText }]}>{song.artist}</Text>
@@ -120,7 +217,6 @@ export default function HomeScreen({ navigation }) {
           ))}
         </>
       )}
-
       <View style={{ height: 140 }} />
     </ScrollView>
   );
@@ -128,6 +224,7 @@ export default function HomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
+  centered: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   topHeader: { paddingTop: 60, paddingHorizontal: 20, paddingBottom: 20 },
   headerTitle: { fontSize: 24, fontWeight: 'bold' },
   langRow: { flexDirection: 'row', marginTop: 8, gap: 12 },
@@ -142,10 +239,11 @@ const styles = StyleSheet.create({
   sectionTitle: { fontSize: 22, fontWeight: 'bold', marginLeft: 20, marginVertical: 20 },
   categoriesList: { paddingLeft: 20, paddingRight: 10 },
   categoryCard: { width: 140, height: 140, marginRight: 15, borderRadius: 15, overflow: 'hidden' },
-  categoryGradient: { flex: 1, padding: 15, justifyContent: 'flex-end' },
-  categoryIcon: { fontSize: 40, marginBottom: 10 },
-  categoryName: { fontSize: 16, fontWeight: 'bold', color: '#fff' },
-  categoryCount: { fontSize: 10, color: '#fff' },
+  categoryImageBg: { flex: 1, width: '100%', height: '100%' },
+  categoryImageStyle: { borderRadius: 15 },
+  categoryGradient: { flex: 1, padding: 10, justifyContent: 'flex-end' },
+  categoryName: { fontSize: 13, fontWeight: 'bold', color: '#fff' },
+  categoryCount: { fontSize: 10, color: '#fff', opacity: 0.85 },
   albumCard: { marginLeft: 20, width: 140 },
   albumCover: { width: 140, height: 140, borderRadius: 10 },
   albumTitle: { fontWeight: 'bold', marginTop: 10 },

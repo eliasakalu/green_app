@@ -7,5 +7,8 @@
     },
     "collections":"ስብስቦች",
     "popularsongs":"ታዋቂ መዝሙራት",
-    "recommededforyou":"የተመረጡ መዝሙራት"
+    "recommededforyou":"የተመረጡ መዝሙራት",
+    "good_morning": "እንደምን አደሩ",
+    "good_afternoon": "እንደምን ዋሉ",
+    "good_evening": "እንደምን አመሹ"
 }

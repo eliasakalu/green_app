@@ -7,6 +7,9 @@
     },
     "collections":"Collections",
     "popularsongs":"Popular Songs",
-    "recommededforyou":"Recommended For You"
+    "recommededforyou":"Recommended For You",
+    "good_morning": "Good Morning",
+    "good_afternoon": "Good Afternoon", 
+    "good_evening": "Good Evening"
 
 }

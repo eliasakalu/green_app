@@ -1,27 +1,71 @@
-import React from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
-import { Heart, Play } from 'lucide-react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, ActivityIndicator, ScrollView, Alert } from 'react-native';
+import { Heart, Play, PlusCircle, Music, ChevronRight } from 'lucide-react-native';
 import { useThemeStore } from '../store/useThemeStore';
 import { usePlayerStore } from '../store/usePlayerStore';
-import { musicData } from '../data/musicData';
+import { getAllCategories, getSubcategoriesByCategory } from '../data/database';
+import PlaylistModal from '../components/PlaylistModal';
 
 export default function LibraryScreen({ navigation }) {
   const { isDark, colors } = useThemeStore();
-  const { likedSongs, setCurrentSong, stopPlayback } = usePlayerStore();
+  const { likedSongs, setCurrentSong, stopPlayback, playlists, deletePlaylist } = usePlayerStore();
   const theme = isDark ? colors.dark : colors.light;
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showPlaylistModal, setShowPlaylistModal] = useState(false);
 
-  const playLikedSongs = async () => {
-    if (likedSongs.length > 0) {
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const cats = await getAllCategories();
+        const catsWithSubs = await Promise.all(
+          cats.map(async (cat) => {
+            const subs = await getSubcategoriesByCategory(cat.id);
+            return { ...cat, subcategories: subs };
+          })
+        );
+        setCategories(catsWithSubs);
+      } catch (e) {
+        console.error('LibraryScreen load error:', e);
+      } finally {
+        setLoading(false);
+      }
+    };
+    load();
+  }, []);
+
+  const openLikedSongs = () => {
+    navigation.navigate('LikedSongs');
+  };
+
+  const playPlaylist = async (playlist) => {
+    if (playlist.songs && playlist.songs.length > 0) {
       await stopPlayback();
-      await setCurrentSong(likedSongs[0]);
+      await setCurrentSong(playlist.songs[0]);
+      if (playlist.songs.length > 1) {
+        const { addMultipleToQueue } = usePlayerStore.getState();
+        await addMultipleToQueue(playlist.songs.slice(1));
+      }
       navigation.navigate('Player');
     }
+  };
+
+  const handleDeletePlaylist = (playlist) => {
+    Alert.alert('Delete Playlist', `Delete "${playlist.name}"?`, [
+      { text: 'Cancel', style: 'cancel' },
+      { text: 'Delete', style: 'destructive', onPress: () => deletePlaylist(playlist.id) },
+    ]);
   };
 
   const renderCategory = ({ item }) => (
     <TouchableOpacity
       style={[styles.categoryCard, { backgroundColor: theme.card }]}
-      onPress={() => navigation.navigate('Category', { category: item })}
+      onPress={() => navigation.navigate('Category', {
+        categoryId: item.id,
+        categoryName: item.name,
+        categoryColor: item.color,
+        categoryIcon: item.icon,
+      })}
     >
       <Text style={styles.categoryIcon}>{item.icon}</Text>
       <View style={styles.categoryInfo}>
@@ -31,16 +75,30 @@ export default function LibraryScreen({ navigation }) {
     </TouchableOpacity>
   );
 
+  const renderPlaylist = ({ item }) => (
+    <TouchableOpacity
+      style={[styles.playlistCard, { backgroundColor: theme.card }]}
+      onPress={() => playPlaylist(item)}
+      onLongPress={() => handleDeletePlaylist(item)}
+    >
+      <View style={[styles.playlistIcon, { backgroundColor: colors.primary + '33' }]}>
+        <Music color={colors.primary} size={24} />
+      </View>
+      <View style={styles.playlistInfo}>
+        <Text style={[styles.playlistName, { color: theme.text }]}>{item.name}</Text>
+        <Text style={[styles.playlistCount, { color: theme.subText }]}>{item.song_count || 0} songs</Text>
+      </View>
+      <Play color={theme.subText} size={20} />
+    </TouchableOpacity>
+  );
+
   return (
-    <View style={[styles.container, { backgroundColor: theme.background }]}>
+    <ScrollView style={[styles.container, { backgroundColor: theme.background }]}>
       <View style={styles.header}>
         <Text style={[styles.headerTitle, { color: theme.text }]}>Your Library</Text>
       </View>
 
-      <TouchableOpacity
-        style={[styles.likedSection, { backgroundColor: theme.card }]}
-        onPress={playLikedSongs}
-      >
+      <TouchableOpacity style={[styles.likedSection, { backgroundColor: theme.card }]} onPress={openLikedSongs}>
         <View style={[styles.likedIcon, { backgroundColor: colors.primary }]}>
           <Heart color="#fff" size={28} fill="#fff" />
         </View>
@@ -48,23 +106,66 @@ export default function LibraryScreen({ navigation }) {
           <Text style={[styles.likedTitle, { color: theme.text }]}>Liked Songs</Text>
           <Text style={[styles.likedCount, { color: theme.subText }]}>{likedSongs.length} songs</Text>
         </View>
-        {likedSongs.length > 0 && <Play color={theme.subText} size={20} />}
+        {likedSongs.length > 0 && <ChevronRight color={theme.subText} size={20} />}
       </TouchableOpacity>
 
+      {/* Playlists Section */}
+      <View style={styles.playlistsHeader}>
+        <Text style={[styles.sectionTitle, { color: theme.text }]}>Your Playlists</Text>
+        <TouchableOpacity onPress={() => setShowPlaylistModal(true)}>
+          <PlusCircle color={colors.primary} size={24} />
+        </TouchableOpacity>
+      </View>
+
+      {playlists && playlists.length > 0 ? (
+        <FlatList
+          data={playlists}
+          keyExtractor={(item) => item.id}
+          renderItem={renderPlaylist}
+          scrollEnabled={false}
+          contentContainerStyle={styles.playlistsList}
+        />
+      ) : (
+        <TouchableOpacity 
+          style={[styles.emptyPlaylists, { backgroundColor: theme.card }]}
+          onPress={() => setShowPlaylistModal(true)}
+        >
+          <PlusCircle color={theme.subText} size={40} />
+          <Text style={[styles.emptyPlaylistsText, { color: theme.subText }]}>Create your first playlist</Text>
+        </TouchableOpacity>
+      )}
+
       <Text style={[styles.sectionTitle, { color: theme.text }]}>All Categories</Text>
-      <FlatList
-        data={musicData.categories}
-        keyExtractor={(item) => item.id}
-        renderItem={renderCategory}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.listContent}
+
+      {loading ? (
+        <View style={styles.centered}>
+          <ActivityIndicator size="large" color={colors.primary} />
+        </View>
+      ) : (
+        <FlatList
+          data={categories}
+          keyExtractor={(item) => item.id}
+          renderItem={renderCategory}
+          scrollEnabled={false}
+          contentContainerStyle={styles.listContent}
+        />
+      )}
+      
+      <View style={{ height: 80 }} />
+
+      <PlaylistModal 
+        visible={showPlaylistModal} 
+        onClose={() => setShowPlaylistModal(false)} 
+        song={null}
+        onSuccess={() => {}}
       />
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
+  centered: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   header: { paddingTop: 60, paddingHorizontal: 20, paddingBottom: 20 },
   headerTitle: { fontSize: 28, fontWeight: 'bold' },
   likedSection: { flexDirection: 'row', alignItems: 'center', marginHorizontal: 20, marginBottom: 25, padding: 15, borderRadius: 15 },
@@ -73,7 +174,16 @@ const styles = StyleSheet.create({
   likedTitle: { fontSize: 18, fontWeight: 'bold' },
   likedCount: { fontSize: 13, marginTop: 4 },
   sectionTitle: { fontSize: 20, fontWeight: 'bold', marginHorizontal: 20, marginBottom: 15 },
-  listContent: { paddingHorizontal: 20, paddingBottom: 140 },
+  playlistsHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginHorizontal: 20, marginBottom: 15 },
+  playlistsList: { paddingHorizontal: 20, paddingBottom: 20 },
+  playlistCard: { flexDirection: 'row', alignItems: 'center', padding: 15, borderRadius: 12, marginBottom: 12 },
+  playlistIcon: { width: 50, height: 50, borderRadius: 10, justifyContent: 'center', alignItems: 'center', marginRight: 15 },
+  playlistInfo: { flex: 1 },
+  playlistName: { fontSize: 16, fontWeight: 'bold' },
+  playlistCount: { fontSize: 12, marginTop: 4 },
+  emptyPlaylists: { alignItems: 'center', justifyContent: 'center', padding: 40, marginHorizontal: 20, borderRadius: 15, marginBottom: 25 },
+  emptyPlaylistsText: { fontSize: 16, marginTop: 10, textAlign: 'center' },
+  listContent: { paddingHorizontal: 20, paddingBottom: 20 },
   categoryCard: { flexDirection: 'row', alignItems: 'center', padding: 15, borderRadius: 12, marginBottom: 12 },
   categoryIcon: { fontSize: 32, marginRight: 15 },
   categoryInfo: { flex: 1 },

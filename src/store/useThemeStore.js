@@ -4,7 +4,7 @@ export const useThemeStore = create((set) => ({
   isDark: true,
   toggleTheme: () => set((state) => ({ isDark: !state.isDark })),
   colors: {
-    primary: '#1DB954',
+    primary: '#1d5eb9',
     dark: {
       background: '#121212',
       card: '#181818',
