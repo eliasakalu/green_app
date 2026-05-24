@@ -2,12 +2,15 @@ import React from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image, Alert } from 'react-native';
 import { usePlayerStore } from '../store/usePlayerStore';
 import { useThemeStore } from '../store/useThemeStore';
+import { getImageSource } from '../utils/mediaSource';
 import { Trash2, ArrowLeft } from 'lucide-react-native';
+import { useTranslation } from 'react-i18next';
 
 export default function QueueScreen({ navigation }) {
   const { queue, removeFromQueue, clearQueue, setCurrentSong, stopPlayback } = usePlayerStore();
   const { isDark, colors } = useThemeStore();
   const theme = isDark ? colors.dark : colors.light;
+  const { t } = useTranslation();
 
   const playSongFromQueue = async (song) => {
     await stopPlayback();
@@ -32,7 +35,7 @@ export default function QueueScreen({ navigation }) {
 
   const renderQueueItem = ({ item, index }) => (
     <TouchableOpacity style={[styles.queueItem, { borderBottomColor: theme.border }]} onPress={() => playSongFromQueue(item)}>
-      <Image source={{ uri: item.cover_url }} style={styles.cover} />
+      <Image source={getImageSource(item.cover_url)} style={styles.cover} />
       <View style={styles.info}>
         <Text style={[styles.title, { color: theme.text }]} numberOfLines={1}>{item.title}</Text>
         <Text style={[styles.artist, { color: theme.subText }]}>{item.artist}</Text>
@@ -52,16 +55,16 @@ export default function QueueScreen({ navigation }) {
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <ArrowLeft color={theme.text} size={24} />
         </TouchableOpacity>
-        <Text style={[styles.headerTitle, { color: theme.text }]}>Queue</Text>
+        <Text style={[styles.headerTitle, { color: theme.text }]}>{t('queue')}</Text>
         {queue.length > 0
-          ? <TouchableOpacity onPress={handleClearQueue}><Text style={styles.clearButton}>Clear All</Text></TouchableOpacity>
+          ? <TouchableOpacity onPress={handleClearQueue}><Text style={styles.clearButton}>{t('clear_all')}</Text></TouchableOpacity>
           : <View style={{ width: 60 }} />}
       </View>
 
       {queue.length === 0 ? (
         <View style={styles.emptyContainer}>
-          <Text style={[styles.emptyText, { color: theme.subText }]}>Queue is empty</Text>
-          <Text style={[styles.emptySubtext, { color: theme.subText }]}>Add songs to play them next</Text>
+          <Text style={[styles.emptyText, { color: theme.subText }]}>{t('empty_queue')}</Text>
+          <Text style={[styles.emptySubtext, { color: theme.subText }]}>{t('next_hymn_add')}</Text>
         </View>
       ) : (
         <FlatList

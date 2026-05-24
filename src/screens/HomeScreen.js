@@ -9,10 +9,10 @@ import { useThemeStore } from '../store/useThemeStore';
 import { getAllCategories, getSubcategoriesByCategory, getAllSongs, initDatabase, seedDatabase } from '../data/database';
 import { seedData } from '../data/seedData';
 import { useTranslation } from 'react-i18next';
+import { getImageSource } from '../utils/mediaSource';
 
 import silaseImage from '../assets/images/silase.jpg';
 
-// Default fallback image for categories
 const DEFAULT_CATEGORY_IMAGE = silaseImage;
 
 const FEATURED_SONG = {
@@ -24,49 +24,34 @@ const FEATURED_SONG = {
   lyrics: [],
 };
 
-// Build a lookup of category id → image directly from seedData
+// Build image map from seedData (these are local require() numbers — never pass through nav params)
 const buildCategoryImageMap = () => {
   const map = {};
   try {
     if (seedData && seedData.categories && Array.isArray(seedData.categories)) {
       seedData.categories.forEach((cat) => {
-        if (cat && cat.id && cat.image) {
-          map[cat.id] = cat.image;
-        }
+        if (cat && cat.id && cat.image) map[cat.id] = cat.image;
       });
     }
-  } catch (error) {
-    console.error('Error building category image map:', error);
-  }
+  } catch (e) {}
   return map;
 };
 
-const getImageSource = (cover) => {
-  if (!cover) return DEFAULT_CATEGORY_IMAGE;
-
-  // Handle number type (require() returns a number in React Native)
-  if (typeof cover === 'number') return cover;
-
-  // Handle object that might have a uri property
-  if (typeof cover === 'object' && cover !== null) {
-    if (cover.uri) return { uri: cover.uri };
-    if (cover.default) return cover.default;
-    return DEFAULT_CATEGORY_IMAGE;
-  }
-
-  // Handle string (remote URL)
-  if (typeof cover === 'string') {
-    // Check if it's a remote URL
-    if (cover.startsWith('http://') || cover.startsWith('https://')) {
-      return { uri: cover };
+// Build color map from seedData so we use the original color, not the DB string
+const buildCategoryColorMap = () => {
+  const map = {};
+  try {
+    if (seedData && seedData.categories && Array.isArray(seedData.categories)) {
+      seedData.categories.forEach((cat) => {
+        if (cat && cat.id && cat.color) map[cat.id] = cat.color;
+      });
     }
-    return DEFAULT_CATEGORY_IMAGE;
-  }
-
-  return DEFAULT_CATEGORY_IMAGE;
+  } catch (e) {}
+  return map;
 };
 
 const CATEGORY_IMAGE_MAP = buildCategoryImageMap();
+const CATEGORY_COLOR_MAP = buildCategoryColorMap();
 
 export default function HomeScreen({ navigation }) {
   const [songs, setSongs] = useState([]);
@@ -82,7 +67,6 @@ export default function HomeScreen({ navigation }) {
       try {
         await initDatabase();
         await seedDatabase(seedData);
-
         const [cats, popularSongs] = await Promise.all([
           getAllCategories(),
           getAllSongs(10, 0),
@@ -142,14 +126,14 @@ export default function HomeScreen({ navigation }) {
       <TouchableOpacity onPress={() => playSong(FEATURED_SONG)} style={styles.bannerWrapper}>
         <ImageBackground source={FEATURED_SONG.cover_url} style={styles.banner} imageStyle={{ borderRadius: 15 }}>
           <LinearGradient colors={['transparent', 'rgba(0,0,0,0.8)']} style={styles.bannerGradient}>
-            <Text style={styles.featuredLabel}>FEATURED</Text>
+            <Text style={styles.featuredLabel}>{t('featured')}</Text>
             <Text style={styles.bannerTitle}>{FEATURED_SONG.title}</Text>
             <Text style={styles.bannerArtist}>{FEATURED_SONG.artist}</Text>
           </LinearGradient>
         </ImageBackground>
       </TouchableOpacity>
 
-      <Text style={[styles.sectionTitle, { color: theme.text }]}>Browse Categories</Text>
+      <Text style={[styles.sectionTitle, { color: theme.text }]}>{t('browse_category')}</Text>
       <FlatList
         horizontal
         data={categories}
@@ -163,8 +147,7 @@ export default function HomeScreen({ navigation }) {
               onPress={() => navigation.navigate('Category', {
                 categoryId: item.id,
                 categoryName: item.name,
-                categoryColor: item.color,
-                categoryIcon: item.icon,
+      
               })}
             >
               <ImageBackground

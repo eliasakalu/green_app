@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, ActivityIndicator, ScrollView, Alert } from 'react-native';
-import { Heart, Play, PlusCircle, Music, ChevronRight } from 'lucide-react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, ActivityIndicator, ScrollView, Alert, Image } from 'react-native';
+import { Heart, Play, PlusCircle, ChevronRight } from 'lucide-react-native';
 import { useThemeStore } from '../store/useThemeStore';
 import { usePlayerStore } from '../store/usePlayerStore';
 import { getAllCategories, getSubcategoriesByCategory } from '../data/database';
+import { useTranslation } from 'react-i18next';
 import PlaylistModal from '../components/PlaylistModal';
 
 export default function LibraryScreen({ navigation }) {
@@ -13,6 +14,7 @@ export default function LibraryScreen({ navigation }) {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showPlaylistModal, setShowPlaylistModal] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const load = async () => {
@@ -67,10 +69,14 @@ export default function LibraryScreen({ navigation }) {
         categoryIcon: item.icon,
       })}
     >
-      <Text style={styles.categoryIcon}>{item.icon}</Text>
+      {typeof item.icon === 'string' ? (
+        <Text style={styles.categoryIcon}>{item.icon}</Text>
+      ) : (
+        <Image source={item.icon} style={styles.categoryIconImage} resizeMode="contain" />
+      )}
       <View style={styles.categoryInfo}>
         <Text style={[styles.categoryName, { color: theme.text }]}>{item.name}</Text>
-        <Text style={[styles.categoryCount, { color: theme.subText }]}>{item.subcategories.length} collections</Text>
+        <Text style={[styles.categoryCount, { color: theme.subText }]}>{item.subcategories.length} {t('collections')}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -82,11 +88,11 @@ export default function LibraryScreen({ navigation }) {
       onLongPress={() => handleDeletePlaylist(item)}
     >
       <View style={[styles.playlistIcon, { backgroundColor: colors.primary + '33' }]}>
-        <Music color={colors.primary} size={24} />
+        <Image source={require('../icons/earbud.png')} style={{ width: 24, height: 24, tintColor: colors.primary }} />
       </View>
       <View style={styles.playlistInfo}>
         <Text style={[styles.playlistName, { color: theme.text }]}>{item.name}</Text>
-        <Text style={[styles.playlistCount, { color: theme.subText }]}>{item.song_count || 0} songs</Text>
+        <Text style={[styles.playlistCount, { color: theme.subText }]}>{item.song_count || 0} {t('songs')}</Text>
       </View>
       <Play color={theme.subText} size={20} />
     </TouchableOpacity>
@@ -97,21 +103,20 @@ export default function LibraryScreen({ navigation }) {
       <View style={styles.header}>
         <Text style={[styles.headerTitle, { color: theme.text }]}>Your Library</Text>
       </View>
-
       <TouchableOpacity style={[styles.likedSection, { backgroundColor: theme.card }]} onPress={openLikedSongs}>
         <View style={[styles.likedIcon, { backgroundColor: colors.primary }]}>
           <Heart color="#fff" size={28} fill="#fff" />
         </View>
         <View style={styles.likedInfo}>
-          <Text style={[styles.likedTitle, { color: theme.text }]}>Liked Songs</Text>
-          <Text style={[styles.likedCount, { color: theme.subText }]}>{likedSongs.length} songs</Text>
+          <Text style={[styles.likedTitle, { color: theme.text }]}>{t('liked_hyms')}</Text>
+          <Text style={[styles.likedCount, { color: theme.subText }]}>{likedSongs.length} {t('songs')}</Text>
         </View>
         {likedSongs.length > 0 && <ChevronRight color={theme.subText} size={20} />}
       </TouchableOpacity>
 
       {/* Playlists Section */}
       <View style={styles.playlistsHeader}>
-        <Text style={[styles.sectionTitle, { color: theme.text }]}>Your Playlists</Text>
+        <Text style={[styles.sectionTitle, { color: theme.text }]}>{t('your_playlist')}</Text>
         <TouchableOpacity onPress={() => setShowPlaylistModal(true)}>
           <PlusCircle color={colors.primary} size={24} />
         </TouchableOpacity>
@@ -128,14 +133,14 @@ export default function LibraryScreen({ navigation }) {
       ) : (
         <TouchableOpacity 
           style={[styles.emptyPlaylists, { backgroundColor: theme.card }]}
-          onPress={() => setShowPlaylistModal(true)}
+          onPress={() => setShowPlaylistModal(true)} 
         >
           <PlusCircle color={theme.subText} size={40} />
-          <Text style={[styles.emptyPlaylistsText, { color: theme.subText }]}>Create your first playlist</Text>
+          <Text style={[styles.emptyPlaylistsText, { color: theme.subText }]}>{t('create_your_playlist')}</Text>
         </TouchableOpacity>
       )}
 
-      <Text style={[styles.sectionTitle, { color: theme.text }]}>All Categories</Text>
+      <Text style={[styles.sectionTitle, { color: theme.text }]}>{t('all_categories')}</Text>
 
       {loading ? (
         <View style={styles.centered}>
@@ -186,6 +191,7 @@ const styles = StyleSheet.create({
   listContent: { paddingHorizontal: 20, paddingBottom: 20 },
   categoryCard: { flexDirection: 'row', alignItems: 'center', padding: 15, borderRadius: 12, marginBottom: 12 },
   categoryIcon: { fontSize: 32, marginRight: 15 },
+  categoryIconImage: { width: 32, height: 32, marginRight: 15 },
   categoryInfo: { flex: 1 },
   categoryName: { fontSize: 16, fontWeight: 'bold' },
   categoryCount: { fontSize: 12, marginTop: 4 },

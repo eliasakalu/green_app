@@ -4,6 +4,7 @@ import { Play, Pause, SkipForward, X } from 'lucide-react-native';
 import { usePlayerStore } from '../store/usePlayerStore';
 import { useThemeStore } from '../store/useThemeStore';
 import { useNavigation } from '@react-navigation/native';
+import { getImageSource } from '../utils/mediaSource';
 
 const { width } = Dimensions.get('window');
 
@@ -16,7 +17,7 @@ export default function MiniPlayer() {
     currentTime, 
     duration,
     audioRef,
-    stopPlayback  // Add this
+    stopPlayback  
   } = usePlayerStore();
   const { isDark, colors } = useThemeStore();
   const navigation = useNavigation();
@@ -60,7 +61,7 @@ export default function MiniPlayer() {
       </View>
 
       <View style={styles.content}>
-        <Image source={{ uri: currentSong.cover_url }} style={styles.cover} />
+        <Image source={getImageSource(currentSong.cover_url)} style={styles.cover} />
         <View style={styles.info}>
           <Text style={[styles.title, { color: theme.text }]} numberOfLines={1}>{currentSong.title}</Text>
           <Text style={[styles.artist, { color: theme.subText }]} numberOfLines={1}>{currentSong.artist}</Text>

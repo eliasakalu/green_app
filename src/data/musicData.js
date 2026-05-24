@@ -1,5 +1,5 @@
 // ============================================================
-// HOW TO ADD YOUR REAL SONGS:
+// REAL SONGS:
 //
 // Each song needs:
 //   id        – unique number (never repeat this across ALL songs)
@@ -27,7 +27,7 @@ export const musicData = {
     {
       id: 'yewede_amet',
       name: 'የዓወደ አመት መዝሙራት',
-      icon: '🎤',
+      icon: require('../icons/playlist.png'),
       color: '#FF6B6B',
       subcategories: [
 

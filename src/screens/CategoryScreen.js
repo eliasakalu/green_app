@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  View, Text, FlatList, TouchableOpacity, StyleSheet, 
-  ActivityIndicator, ImageBackground, SafeAreaView, Dimensions 
+import {
+  View, Text, FlatList, TouchableOpacity, StyleSheet,
+  ActivityIndicator, ImageBackground, SafeAreaView, Dimensions
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { ArrowLeft } from 'lucide-react-native';
 import { useThemeStore } from '../store/useThemeStore';
-import { getSubcategoriesByCategory, getSongsBySubcategory, initDatabase, seedDatabase, getAllCategories } from '../data/database';
+import { getSubcategoriesByCategory, getSongsBySubcategory } from '../data/database';
 import { seedData } from '../data/seedData';
 
 const { width } = Dimensions.get('window');
-const CARD_WIDTH = (width - 48) / 2; // 2 columns with padding
+const CARD_WIDTH = (width - 48) / 2;
 
-// Helper function to build image map safely
 const buildImageMap = () => {
   const map = {};
   try {
@@ -35,47 +34,35 @@ const buildImageMap = () => {
 
 const SUBCATEGORY_IMAGE_MAP = buildImageMap();
 
+// FIX: safe color helper — never lets null/undefined crash LinearGradient
+const safeColor = (color, fallback = '#1d5eb9') => {
+  if (!color || typeof color !== 'string' || color === 'null') return fallback;
+  return color;
+};
+
 export default function CategoryScreen({ navigation, route }) {
   const { categoryId, categoryName, categoryColor, categoryIcon } = route.params;
   const { isDark, colors } = useThemeStore();
   const theme = isDark ? colors.dark : colors.light;
   const [subcategories, setSubcategories] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [debugInfo, setDebugInfo] = useState('');
+
+
+  const baseColor = safeColor(categoryColor, colors.primary);
 
   useEffect(() => {
     const load = async () => {
       try {
-        console.log('CategoryScreen - Starting load for:', categoryId);
-        
-        await initDatabase();
-        await seedDatabase(seedData);
-        
-        const allCategories = await getAllCategories();
-        console.log('All categories in DB:', allCategories.map(c => ({ id: c.id, name: c.name })));
-        
         const subs = await getSubcategoriesByCategory(categoryId);
-        console.log('Raw subcategories from DB:', subs);
-        console.log('Number of subcategories found:', subs.length);
-        
-        if (subs.length === 0) {
-          const db = (await import('../data/database')).getDb();
-          const allSubs = await (await db()).getAllAsync('SELECT * FROM subcategories');
-          console.log('All subcategories in DB:', allSubs);
-          setDebugInfo(`No subcategories found for ${categoryId}. Total subcategories in DB: ${allSubs.length}`);
-        }
-        
         const subsWithCount = await Promise.all(
           subs.map(async (sub) => {
             const songs = await getSongsBySubcategory(sub.id);
-            console.log(`Subcategory ${sub.name} has ${songs.length} songs`);
             return { ...sub, songCount: songs.length };
           })
         );
         setSubcategories(subsWithCount);
       } catch (e) {
         console.error('CategoryScreen load error:', e);
-        setDebugInfo(`Error: ${e.message}`);
       } finally {
         setLoading(false);
       }
@@ -89,7 +76,7 @@ export default function CategoryScreen({ navigation, route }) {
       <TouchableOpacity
         style={[
           styles.subcategoryCard,
-          { 
+          {
             width: CARD_WIDTH,
             marginLeft: index % 2 === 0 ? 0 : 8,
             marginRight: index % 2 === 0 ? 8 : 0,
@@ -99,7 +86,7 @@ export default function CategoryScreen({ navigation, route }) {
         onPress={() => navigation.navigate('SongList', {
           subcategoryId: item.id,
           subcategoryName: item.name,
-          categoryColor,
+          categoryColor: baseColor,
         })}
       >
         {image ? (
@@ -121,7 +108,7 @@ export default function CategoryScreen({ navigation, route }) {
           </ImageBackground>
         ) : (
           <LinearGradient
-            colors={[categoryColor + '99', categoryColor + '44']}
+            colors={[baseColor + '99', baseColor + '44']}
             style={[styles.cardGradient, styles.cardGradientFallback]}
           >
             <Text style={styles.subcategoryName} numberOfLines={2}>{item.name}</Text>
@@ -134,12 +121,10 @@ export default function CategoryScreen({ navigation, route }) {
 
   return (
     <SafeAreaView style={[styles.safeContainer, { backgroundColor: theme.background }]}>
-      {/* MAIN CONTAINER - MUST HAVE flex: 1 */}
       <View style={[styles.mainContainer, { backgroundColor: theme.background }]}>
-        
-        {/* HEADER SECTION */}
+
         <LinearGradient
-          colors={[categoryColor + 'cc', categoryColor + '88', theme.background]}
+          colors={[baseColor + 'cc', baseColor + '88', theme.background]}
           style={styles.header}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
@@ -147,12 +132,16 @@ export default function CategoryScreen({ navigation, route }) {
           <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
             <ArrowLeft color="#fff" size={24} />
           </TouchableOpacity>
-          <Text style={styles.categoryIcon}>{categoryIcon}</Text>
+
+          {/* FIX: categoryIcon from DB is a stringified number — only render if it's actually an emoji/text */}
+          {categoryIcon && isNaN(Number(categoryIcon)) && (
+            <Text style={styles.categoryIcon}>{categoryIcon}</Text>
+          )}
+
           <Text style={styles.categoryName}>{categoryName}</Text>
           <Text style={styles.categoryDesc}>{subcategories.length} collections</Text>
         </LinearGradient>
 
-        {/* LIST CONTAINER - MUST HAVE flex: 1 TO ALLOW SCROLLING */}
         <View style={styles.listContainer}>
           {loading ? (
             <View style={styles.centered}>
@@ -161,11 +150,6 @@ export default function CategoryScreen({ navigation, route }) {
           ) : subcategories.length === 0 ? (
             <View style={styles.centered}>
               <Text style={[styles.emptyText, { color: theme.subText }]}>No collections found</Text>
-              {debugInfo ? (
-                <Text style={[styles.debugText, { color: theme.subText, marginTop: 10, fontSize: 12 }]}>
-                  {debugInfo}
-                </Text>
-              ) : null}
             </View>
           ) : (
             <FlatList
@@ -193,33 +177,12 @@ export default function CategoryScreen({ navigation, route }) {
 }
 
 const styles = StyleSheet.create({
-  safeContainer: {
-    flex: 1,
-  },
-  mainContainer: {
-    flex: 1, // CRITICAL: This makes the main container take full height
-  },
-  listContainer: {
-    flex: 1, // CRITICAL: This makes the list container take remaining space after header
-  },
-  flatList: {
-    flex: 1, // CRITICAL: This makes FlatList take all available space
-  },
-  centered: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-  },
-  emptyText: {
-    fontSize: 16,
-    textAlign: 'center',
-  },
-  debugText: {
-    fontSize: 12,
-    textAlign: 'center',
-    paddingHorizontal: 20,
-  },
+  safeContainer: { flex: 1 },
+  mainContainer: { flex: 1 },
+  listContainer: { flex: 1 },
+  flatList: { flex: 1 },
+  centered: { flex: 1, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 20 },
+  emptyText: { fontSize: 16, textAlign: 'center' },
   header: {
     paddingTop: 60,
     paddingBottom: 30,
@@ -228,38 +191,12 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 30,
     marginBottom: 5,
   },
-  backButton: {
-    position: 'absolute',
-    top: 60,
-    left: 20,
-    zIndex: 1,
-    padding: 8,
-  },
-  categoryIcon: {
-    fontSize: 70,
-    marginBottom: 8,
-  },
-  categoryName: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#fff',
-    textAlign: 'center',
-    paddingHorizontal: 20,
-  },
-  categoryDesc: {
-    fontSize: 14,
-    color: '#fff',
-    opacity: 0.9,
-    marginTop: 5,
-  },
-  listContent: {
-    padding: 16,
-    paddingBottom: 150, // Extra padding to ensure last item is visible
-  },
-  columnWrapper: {
-    justifyContent: 'space-between',
-    marginBottom: 16,
-  },
+  backButton: { position: 'absolute', top: 60, left: 20, zIndex: 1, padding: 8 },
+  categoryIcon: { fontSize: 70, marginBottom: 8 },
+  categoryName: { fontSize: 28, fontWeight: 'bold', color: '#fff', textAlign: 'center', paddingHorizontal: 20 },
+  categoryDesc: { fontSize: 14, color: '#fff', opacity: 0.9, marginTop: 5 },
+  listContent: { padding: 16, paddingBottom: 150 },
+  columnWrapper: { justifyContent: 'space-between', marginBottom: 16 },
   subcategoryCard: {
     height: 140,
     borderRadius: 15,
@@ -270,35 +207,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
   },
-  cardImageBg: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-  },
-  cardImageStyle: {
-    borderRadius: 15,
-  },
-  cardGradient: {
-    flex: 1,
-    padding: 12,
-    justifyContent: 'flex-end',
-  },
-  cardGradientFallback: {
-    minHeight: 140,
-    justifyContent: 'flex-end',
-  },
+  cardImageBg: { flex: 1, width: '100%', height: '100%' },
+  cardImageStyle: { borderRadius: 15 },
+  cardGradient: { flex: 1, padding: 12, justifyContent: 'flex-end' },
+  cardGradientFallback: { minHeight: 140, justifyContent: 'flex-end' },
   subcategoryName: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: '#fff',
-    textShadowColor: 'rgba(0, 0, 0, 0.5)',
+    fontSize: 14, fontWeight: 'bold', color: '#fff',
+    textShadowColor: 'rgba(0,0,0,0.5)',
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 2,
   },
-  songCount: {
-    fontSize: 11,
-    color: '#fff',
-    opacity: 0.85,
-    marginTop: 4,
-  },
+  songCount: { fontSize: 11, color: '#fff', opacity: 0.85, marginTop: 4 },
 });

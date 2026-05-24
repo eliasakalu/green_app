@@ -61,7 +61,7 @@ export const usePlayerStore = create((set, get) => ({
       set({ isPlaying: true });
       return;
     }
-    await get().stopCurrentPlayback();
+    await get().stopPlayback();
     set({ currentSong: song, currentTime: 0, isPlaying: true });
   },
 
@@ -103,17 +103,18 @@ export const usePlayerStore = create((set, get) => ({
     await AsyncStorage.setItem('queue', JSON.stringify([]));
   },
 
+  // FIX: properly stop old audio before playing next song
   playNext: async () => {
-    const { queue, queueIndex, stopCurrentPlayback } = get();
-    
+    const { queue, queueIndex } = get();
+
     if (queue.length > 0 && queueIndex < queue.length) {
       const nextSong = queue[queueIndex];
-      await stopCurrentPlayback();
-      set({ 
-        currentSong: nextSong, 
-        currentTime: 0, 
+      await get().stopPlayback();
+      set({
+        currentSong: nextSong,
+        currentTime: 0,
         isPlaying: true,
-        queueIndex: queueIndex + 1 
+        queueIndex: queueIndex + 1,
       });
       return nextSong;
     }
@@ -121,7 +122,7 @@ export const usePlayerStore = create((set, get) => ({
   },
 
   playPrevious: async () => {
-    const { queue, queueIndex, stopCurrentPlayback, currentTime, audioRef } = get();
+    const { queue, queueIndex, currentTime, audioRef } = get();
     if (currentTime > 3000 && audioRef) {
       try {
         const status = await audioRef.getStatusAsync();
@@ -134,12 +135,12 @@ export const usePlayerStore = create((set, get) => ({
     }
     if (queueIndex > 1) {
       const prevSong = queue[queueIndex - 2];
-      await stopCurrentPlayback();
-      set({ 
-        currentSong: prevSong, 
-        currentTime: 0, 
+      await get().stopPlayback();
+      set({
+        currentSong: prevSong,
+        currentTime: 0,
         isPlaying: true,
-        queueIndex: queueIndex - 1 
+        queueIndex: queueIndex - 1,
       });
       return prevSong;
     }

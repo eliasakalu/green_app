@@ -10,7 +10,7 @@
 
 import * as SQLite from 'expo-sqlite';
 
-const DB_VERSION = 3; // ← bump this number whenever you change seedData.js
+const DB_VERSION = 7;  // ← bump this number whenever you change seedData.js
 
 let db = null;
 
@@ -22,11 +22,23 @@ export const getDb = async () => {
 };
 
 // Export parseSong so other files can use it if needed
+const parseAssetReference = (value) => {
+  if (value === null || value === undefined) return value;
+  if (typeof value === 'number') return value;
+  if (typeof value === 'string') {
+    if (/^\d+$/.test(value)) return Number(value);
+    return value;
+  }
+  return value;
+};
+
 export const parseSong = (row) => ({
   ...row,
+  cover_url: parseAssetReference(row.cover_url),
+  audio_url: parseAssetReference(row.audio_url),
   lyrics: (() => {
-    try { 
-      return JSON.parse(row.lyrics); 
+    try {
+      return JSON.parse(row.lyrics);
     } catch {
       return [];
     }

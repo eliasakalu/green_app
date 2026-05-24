@@ -11,9 +11,11 @@ import {
   ListMusic, Heart, PlusCircle, MoreVertical,
 } from 'lucide-react-native';
 import { usePlayerStore } from '../store/usePlayerStore';
+import { useTranslation } from 'react-i18next';
 import { useThemeStore } from '../store/useThemeStore';
 import LyricsContainer from '../components/LyricsContainer';
 import PlaylistModal from '../components/PlaylistModal';
+import { getAudioSource, getImageSource } from '../utils/mediaSource';
 
 const { width } = Dimensions.get('window');
 
@@ -33,6 +35,8 @@ export default function PlayerScreen({ navigation }) {
   const [isSeeking, setIsSeeking] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const isMounted = useRef(true);
+
+  const { t } = useTranslation();
 
   // ==================== COLORS & THEMING ====================
   // 🔧 COLOR CUSTOMIZATION: Change gradient colors here
@@ -62,7 +66,7 @@ export default function PlayerScreen({ navigation }) {
     if (audioRef) {
       try {
         const status = await audioRef.getStatusAsync();
-        if (status.isLoaded && status.uri === currentSong.audio_url) {
+        if (status.isLoaded && typeof currentSong.audio_url === 'string' && status.uri === currentSong.audio_url) {
           if (!status.isPlaying) await audioRef.playAsync();
           setIsLoading(false);
           return;
@@ -84,8 +88,9 @@ export default function PlayerScreen({ navigation }) {
       });
       // =============================================================
 
+      const source = getAudioSource(currentSong.audio_url);
       const { sound: newSound } = await Audio.Sound.createAsync(
-        { uri: currentSong.audio_url },
+        source,
         { shouldPlay: true },
         onPlaybackStatusUpdate
       );
@@ -155,7 +160,7 @@ export default function PlayerScreen({ navigation }) {
           
           <View style={styles.headerCenter}>
             {/* 🔧 TEXT CUSTOMIZATION: Change header label text and style */}
-            <Text style={[styles.headerLabel, { color: theme.subText }]}>NOW PLAYING</Text>
+            <Text style={[styles.headerLabel, { color: theme.subText }]}>{t('now_playing')}</Text>
             <Text style={[styles.headerSong, { color: theme.text }]} numberOfLines={1}>
               {currentSong.title}
             </Text>
@@ -169,7 +174,7 @@ export default function PlayerScreen({ navigation }) {
 
         {/* ==================== ARTWORK SECTION ==================== */}
         <View style={styles.artworkContainer}>
-          <Image source={{ uri: currentSong.cover_url }} style={styles.artwork} />
+          <Image source={getImageSource(currentSong.cover_url)} style={styles.artwork} />
         </View>
 
         {/* ==================== SONG INFO SECTION ==================== */}
@@ -196,7 +201,7 @@ export default function PlayerScreen({ navigation }) {
           ) : (
             <View style={styles.noLyricsContainer}>
               <Text style={[styles.noLyricsText, { color: theme.subText }]}>
-                ♪ No lyrics available
+                 No lyrics available
               </Text>
             </View>
           )}
@@ -285,14 +290,14 @@ export default function PlayerScreen({ navigation }) {
               onPress={() => { setShowMenu(false); navigation.navigate('Queue'); }}
             >
               <ListMusic color={theme.text} size={20} />
-              <Text style={[styles.menuText, { color: theme.text }]}>Go to Queue</Text>
+              <Text style={[styles.menuText, { color: theme.text }]}>{t('go_to_queue')}</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.menuItem}
               onPress={() => { setShowMenu(false); setShowPlaylistModal(true); }}
             >
               <PlusCircle color={theme.text} size={20} />
-              <Text style={[styles.menuText, { color: theme.text }]}>Add to Playlist</Text>
+              <Text style={[styles.menuText, { color: theme.text }]}>{t('add_to_playlist')}</Text>
             </TouchableOpacity>
           </View>
         </TouchableOpacity>

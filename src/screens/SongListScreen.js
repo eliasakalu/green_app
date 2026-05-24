@@ -5,6 +5,7 @@ import { ArrowLeft, Play } from 'lucide-react-native';
 import { useThemeStore } from '../store/useThemeStore';
 import { usePlayerStore } from '../store/usePlayerStore';
 import { getSongsBySubcategory } from '../data/database';
+import { getImageSource } from '../utils/mediaSource';
 
 export default function SongListScreen({ navigation, route }) {
   const { subcategoryId, subcategoryName, categoryColor } = route.params;
@@ -51,7 +52,7 @@ export default function SongListScreen({ navigation, route }) {
       <View style={styles.songNumber}>
         <Text style={[styles.numberText, { color: theme.subText }]}>{index + 1}</Text>
       </View>
-      <Image source={{ uri: item.cover_url }} style={styles.songCover} />
+      <Image source={getImageSource(item.cover_url)} style={styles.songCover} />
       <View style={styles.songInfo}>
         <Text style={[styles.songTitle, { color: theme.text }]} numberOfLines={1}>{item.title}</Text>
         <Text style={[styles.songArtist, { color: theme.subText }]} numberOfLines={1}>{item.artist}</Text>

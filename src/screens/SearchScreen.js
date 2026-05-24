@@ -3,19 +3,31 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput, Activity
 import { Search, X } from 'lucide-react-native';
 import { useThemeStore } from '../store/useThemeStore';
 import { usePlayerStore } from '../store/usePlayerStore';
+import { useTranslation } from 'react-i18next';
+import { getImageSource } from '../utils/mediaSource';
 import { searchSongs, getTotalSongCount } from '../data/database';
 import { useEffect } from 'react';
 
-const GENRES = ['እዝል', 'ግዕዝ', 'Pop', 'Rock', 'Electronic', 'Hip Hop'];
+// FIX: these genre values now exactly match the 'genre' field in seedData.js
+// Real genres found: ግእዝ (215 songs), አማርኛ (97), ግእዝ/አማርኛ (63), እዝል (46), ግዕዝ (3), አማርኛ/ግእዝ (2)
+const GENRES = [
+  { label: 'ግእዝ',        query: 'ግእዝ' },
+  { label: 'አማርኛ',       query: 'አማርኛ' },
+  { label: 'ግእዝ/አማርኛ',  query: 'ግእዝ/አማርኛ' },
+  { label: 'እዝል',        query: 'እዝል' },
+  { label: 'አማርኛ/ግእዝ',  query: 'አማርኛ/ግእዝ' },
+];
 
 export default function SearchScreen({ navigation }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [totalSongs, setTotalSongs] = useState(0);
+  const [activeGenre, setActiveGenre] = useState(null);
   const { isDark, colors } = useThemeStore();
   const theme = isDark ? colors.dark : colors.light;
   const { setCurrentSong, stopPlayback } = usePlayerStore();
+  const { t } = useTranslation();
 
   useEffect(() => {
     getTotalSongCount().then(setTotalSongs).catch(() => {});
@@ -23,6 +35,7 @@ export default function SearchScreen({ navigation }) {
 
   const handleSearch = async (text) => {
     setSearchQuery(text);
+    setActiveGenre(null);
     if (!text.trim()) { setResults([]); return; }
     setLoading(true);
     try {
@@ -35,6 +48,26 @@ export default function SearchScreen({ navigation }) {
     }
   };
 
+  const handleGenrePress = async (genre) => {
+    setActiveGenre(genre.label);
+    setSearchQuery(genre.label);
+    setLoading(true);
+    try {
+      const found = await searchSongs(genre.query);
+      setResults(found);
+    } catch (e) {
+      console.error('Genre search error:', e);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const clearSearch = () => {
+    setSearchQuery('');
+    setResults([]);
+    setActiveGenre(null);
+  };
+
   const playSong = async (song) => {
     await stopPlayback();
     await setCurrentSong(song);
@@ -42,8 +75,8 @@ export default function SearchScreen({ navigation }) {
   };
 
   const renderSearchResult = ({ item }) => (
-    <TouchableOpacity style={styles.resultItem} onPress={() => playSong(item)}>
-      <Image source={{ uri: item.cover_url }} style={styles.resultImage} />
+    <TouchableOpacity style={[styles.resultItem, { borderBottomColor: theme.border }]} onPress={() => playSong(item)}>
+      <Image source={getImageSource(item.cover_url)} style={styles.resultImage} />
       <View style={styles.resultInfo}>
         <Text style={[styles.resultTitle, { color: theme.text }]} numberOfLines={1}>{item.title}</Text>
         <Text style={[styles.resultArtist, { color: theme.subText }]} numberOfLines={1}>{item.artist}</Text>
@@ -52,9 +85,11 @@ export default function SearchScreen({ navigation }) {
     </TouchableOpacity>
   );
 
+  const showResults = searchQuery.length > 0;
+
   return (
     <View style={[styles.container, { backgroundColor: theme.background }]}>
-      <Text style={[styles.title, { color: theme.text }]}>Search</Text>
+      <Text style={[styles.title, { color: theme.text }]}>{t('search')}</Text>
 
       <View style={[styles.searchBox, { backgroundColor: theme.input }]}>
         <Search color={theme.subText} size={20} />
@@ -68,7 +103,7 @@ export default function SearchScreen({ navigation }) {
           autoCorrect={false}
         />
         {searchQuery.length > 0 && (
-          <TouchableOpacity onPress={() => { setSearchQuery(''); setResults([]); }}>
+          <TouchableOpacity onPress={clearSearch}>
             <X color={theme.subText} size={20} />
           </TouchableOpacity>
         )}
@@ -76,34 +111,51 @@ export default function SearchScreen({ navigation }) {
 
       {loading ? (
         <ActivityIndicator size="large" color={colors.primary} style={styles.loader} />
-      ) : searchQuery.length > 0 ? (
-        <FlatList
-          data={results}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={renderSearchResult}
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ paddingBottom: 140 }}
-          ListEmptyComponent={
-            <View style={styles.emptyContainer}>
-              <Text style={[styles.emptyText, { color: theme.subText }]}>No results for "{searchQuery}"</Text>
-            </View>
-          }
-        />
+      ) : showResults ? (
+        <>
+          <Text style={[styles.resultCount, { color: theme.subText }]}>
+            {results.length} results{activeGenre ? ` for "${activeGenre}"` : ''}
+          </Text>
+          <FlatList
+            data={results}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={renderSearchResult}
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={{ paddingBottom: 140 }}
+            ListEmptyComponent={
+              <View style={styles.emptyContainer}>
+                <Text style={[styles.emptyText, { color: theme.subText }]}>{t('no_result')} "{searchQuery}"</Text>
+              </View>
+            }
+          />
+        </>
       ) : (
         <View>
-          <Text style={[styles.sectionTitle, { color: theme.text }]}>Browse by Genre</Text>
+          <Text style={[styles.sectionTitle, { color: theme.text }]}>{t('browse_by_genre')}</Text>
+          {/* FIX: 5 genre cards that map to real genre values in the database */}
           <View style={styles.categoriesGrid}>
             {GENRES.map((genre) => (
               <TouchableOpacity
-                key={genre}
-                style={[styles.categoryCard, { backgroundColor: colors.primary + '33' }]}
-                onPress={() => handleSearch(genre)}
+                key={genre.label}
+                style={[
+                  styles.categoryCard,
+                  { backgroundColor: colors.primary + '33' },
+                  activeGenre === genre.label && { backgroundColor: colors.primary },
+                ]}
+                onPress={() => handleGenrePress(genre)}
               >
-                <Text style={[styles.categoryText, { color: theme.text }]}>{genre}</Text>
+                <Text style={[
+                  styles.categoryText,
+                  { color: activeGenre === genre.label ? '#fff' : theme.text },
+                ]}>
+                  {genre.label}
+                </Text>
               </TouchableOpacity>
             ))}
           </View>
-          <Text style={[styles.totalSongs, { color: theme.subText }]}>{totalSongs} songs available</Text>
+          <Text style={[styles.totalSongs, { color: theme.subText }]}>
+            {totalSongs} {t('songs')} {t('available')}
+          </Text>
         </View>
       )}
     </View>
@@ -116,7 +168,8 @@ const styles = StyleSheet.create({
   searchBox: { flexDirection: 'row', padding: 12, borderRadius: 8, alignItems: 'center', marginBottom: 20 },
   input: { flex: 1, marginLeft: 10, fontWeight: '500', fontSize: 16 },
   loader: { marginTop: 50 },
-  resultItem: { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: '#28282833' },
+  resultCount: { fontSize: 13, marginBottom: 10 },
+  resultItem: { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, borderBottomWidth: 1 },
   resultImage: { width: 50, height: 50, borderRadius: 5, marginRight: 12 },
   resultInfo: { flex: 1 },
   resultTitle: { fontSize: 16, fontWeight: 'bold' },
@@ -127,6 +180,6 @@ const styles = StyleSheet.create({
   sectionTitle: { fontSize: 18, fontWeight: 'bold', marginTop: 20, marginBottom: 15 },
   categoriesGrid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' },
   categoryCard: { width: '48%', padding: 20, borderRadius: 8, marginBottom: 12, alignItems: 'center' },
-  categoryText: { fontSize: 16, fontWeight: '500' },
+  categoryText: { fontSize: 16, fontWeight: '500', textAlign: 'center' },
   totalSongs: { fontSize: 14, marginTop: 20, textAlign: 'center' },
 });

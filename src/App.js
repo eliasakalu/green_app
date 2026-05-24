@@ -1,7 +1,7 @@
 import './i18n';
 
 import React, { useEffect, useState } from 'react';
-import { View, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, ActivityIndicator, StyleSheet, Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer, DefaultTheme, DarkTheme as NavigationDarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -23,8 +23,6 @@ import ProfileScreen from './screens/ProfileScreen';
 import QueueScreen from './screens/QueueScreen';
 import MiniPlayer from './components/MiniPlayer';
 import LikedSongsScreen from './screens/LikedSongsScreen';
-
-
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -70,15 +68,18 @@ export default function App() {
   const { isDark, colors } = useThemeStore();
   const { initStore } = usePlayerStore();
   const [dbReady, setDbReady] = useState(false);
+  // FIX: track setup errors so user sees a message instead of blank screen
+  const [setupError, setSetupError] = useState(null);
 
   useEffect(() => {
     const setup = async () => {
       try {
-        await initDatabase();         // creates tables on first launch
-        await seedDatabase(seedData); // inserts songs (skips if already seeded)
-        await initStore();            // loads liked songs / playlists
+        await initDatabase();
+        await seedDatabase(seedData);
+        await initStore();
       } catch (e) {
         console.error('DB init error:', e);
+        setSetupError(e.message || 'Failed to initialize database');
       } finally {
         setDbReady(true);
       }
@@ -90,6 +91,16 @@ export default function App() {
     return (
       <View style={styles.loading}>
         <ActivityIndicator size="large" color="#1DB954" />
+      </View>
+    );
+  }
+
+  // FIX: show error screen instead of silently loading empty app
+  if (setupError) {
+    return (
+      <View style={styles.loading}>
+        <Text style={styles.errorText}>Failed to load database.</Text>
+        <Text style={styles.errorSub}>{setupError}</Text>
       </View>
     );
   }
@@ -129,5 +140,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#121212',
+  },
+  errorText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  errorSub: {
+    color: '#B3B3B3',
+    fontSize: 13,
+    textAlign: 'center',
+    paddingHorizontal: 30,
   },
 });

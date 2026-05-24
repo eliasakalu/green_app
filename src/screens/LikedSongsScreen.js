@@ -4,11 +4,14 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { ArrowLeft, Heart, Play, Trash2 } from 'lucide-react-native';
 import { useThemeStore } from '../store/useThemeStore';
 import { usePlayerStore } from '../store/usePlayerStore';
+import { useTranslation } from 'react-i18next';
+import { getImageSource } from '../utils/mediaSource';
 
 export default function LikedSongsScreen({ navigation }) {
   const { isDark, colors } = useThemeStore();
   const { likedSongs, setCurrentSong, stopPlayback, removeFromLiked, addMultipleToQueue } = usePlayerStore();
   const theme = isDark ? colors.dark : colors.light;
+  const { t } = useTranslation();
 
   const playSong = async (song) => {
     await stopPlayback();
@@ -35,7 +38,7 @@ export default function LikedSongsScreen({ navigation }) {
 
   const renderSong = ({ item }) => (
     <TouchableOpacity style={[styles.songItem, { borderBottomColor: theme.border }]} onPress={() => playSong(item)}>
-      <Image source={{ uri: item.cover_url }} style={styles.songCover} />
+      <Image source={getImageSource(item.cover_url)} style={styles.songCover} />
       <View style={styles.songInfo}>
         <Text style={[styles.songTitle, { color: theme.text }]} numberOfLines={1}>{item.title}</Text>
         <Text style={[styles.songArtist, { color: theme.subText }]}>{item.artist}</Text>
@@ -56,8 +59,8 @@ export default function LikedSongsScreen({ navigation }) {
           <View style={[styles.iconCircle, { backgroundColor: '#fff' }]}>
             <Heart color="#E91429" size={40} fill="#E91429" />
           </View>
-          <Text style={styles.headerTitle}>Liked Songs</Text>
-          <Text style={styles.headerCount}>{likedSongs.length} songs</Text>
+          <Text style={styles.headerTitle}>{t('liked_hyms')}</Text>
+          <Text style={styles.headerCount}>{likedSongs.length} {t('songs')}</Text>
         </View>
       </LinearGradient>
 
@@ -65,7 +68,7 @@ export default function LikedSongsScreen({ navigation }) {
         <>
           <TouchableOpacity style={[styles.playAllButton, { backgroundColor: colors.primary }]} onPress={playAll}>
             <Play color="#fff" size={20} fill="#fff" />
-            <Text style={styles.playAllText}>Play All</Text>
+            <Text style={styles.playAllText}>{t('play_all')}</Text>
           </TouchableOpacity>
           
           <FlatList
@@ -79,8 +82,8 @@ export default function LikedSongsScreen({ navigation }) {
       ) : (
         <View style={styles.emptyContainer}>
           <Heart color={theme.subText} size={80} />
-          <Text style={[styles.emptyTitle, { color: theme.text }]}>No liked songs yet</Text>
-          <Text style={[styles.emptyText, { color: theme.subText }]}>Tap the heart icon on any song to add it to your liked songs</Text>
+          <Text style={[styles.emptyTitle, { color: theme.text }]}>{t('no_liked_yet')}</Text>
+          <Text style={[styles.emptyText, { color: theme.subText }]}>{t('press_the_heart_icon')}</Text>
         </View>
       )}
     </View>
