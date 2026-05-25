@@ -11,11 +11,11 @@ import { useEffect } from 'react';
 // FIX: these genre values now exactly match the 'genre' field in seedData.js
 // Real genres found: ግእዝ (215 songs), አማርኛ (97), ግእዝ/አማርኛ (63), እዝል (46), ግዕዝ (3), አማርኛ/ግእዝ (2)
 const GENRES = [
-  { label: 'ግእዝ',        query: 'ግእዝ' },
-  { label: 'አማርኛ',       query: 'አማርኛ' },
-  { label: 'ግእዝ/አማርኛ',  query: 'ግእዝ/አማርኛ' },
-  { label: 'እዝል',        query: 'እዝል' },
-  { label: 'አማርኛ/ግእዝ',  query: 'አማርኛ/ግእዝ' },
+  { label: 'ግእዝ',        query: 'ግእዝ 1' },
+  { label: 'ግእዝ 2',       query: 'ግእዝ 2' },
+  { label: 'ግእዝ 3',  query: 'ግእዝ 3' },
+  { label: 'እዝል/ዓራራይ ቅኝት', query: 'እዝል ዓራራይ ቅኝት' },
+  
 ];
 
 export default function SearchScreen({ navigation }) {
@@ -95,7 +95,7 @@ export default function SearchScreen({ navigation }) {
         <Search color={theme.subText} size={20} />
         <TextInput
           style={[styles.input, { color: theme.text }]}
-          placeholder="Search songs, artists..."
+          placeholder="Search hyms..."
           placeholderTextColor={theme.subText}
           value={searchQuery}
           onChangeText={handleSearch}

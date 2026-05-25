@@ -7,6 +7,51 @@ import { getAllCategories, getSubcategoriesByCategory } from '../data/database';
 import { useTranslation } from 'react-i18next';
 import PlaylistModal from '../components/PlaylistModal';
 
+// Hymnal category icon map — matches by category name (case-insensitive, partial match)
+const CATEGORY_ICON_MAP = [
+  { keywords: ['praise',  'prais'],           icon: '🙌' },
+  { keywords: ['worship', 'worsh'],           icon: '🛐' },
+  { keywords: ['prayer', 'pray'],             icon: '🙏' },
+  { keywords: ['christmas', 'advent', 'xmas'],icon: '🎄' },
+  { keywords: ['easter', 'resurrection'],     icon: '✝️' },
+  { keywords: ['holy spirit', 'spirit'],      icon: '🕊️' },
+  { keywords: ['communion', 'lord\'s supper', 'eucharist'], icon: '🍷' },
+  { keywords: ['baptism', 'baptis'],          icon: '💧' },
+  { keywords: ['faith', 'trust'],             icon: '⛪' },
+  { keywords: ['grace', 'mercy'],             icon: '🌿' },
+  { keywords: ['salvation', 'redeem', 'redemp'], icon: '✨' },
+  { keywords: ['mission', 'evangelism', 'gospel'], icon: '📖' },
+  { keywords: ['love', 'agape'],              icon: '❤️' },
+  { keywords: ['joy', 'rejoic'],              icon: '😊' },
+  { keywords: ['peace', 'comfort'],           icon: '☮️' },
+  { keywords: ['hope', 'promis'],             icon: '🌅' },
+  { keywords: ['creation', 'nature', 'earth'],icon: '🌍' },
+  { keywords: ['anthem', 'national'],         icon: '🎵' },
+  { keywords: ['morning', 'dawn'],            icon: '🌄' },
+  { keywords: ['evening', 'night', 'vesper'], icon: '🌙' },
+  { keywords: ['children', 'child', 'youth'], icon: '👶' },
+  { keywords: ['funeral', 'death', 'memorial'], icon: '🕯️' },
+  { keywords: ['wedding', 'marriage'],        icon: '💍' },
+  { keywords: ['harvest', 'thanksgiving'],    icon: '🌾' },
+  { keywords: ['doxology', 'glory', 'glorif'],icon: '👑' },
+  { keywords: ['hymn', 'song', 'music'],      icon: '🎶' },
+  { keywords: ['amharic', 'ethiopi', 'ሀ'],    icon: '🇪🇹' },
+  { keywords: ['english'],                    icon: '🇬🇧' },
+];
+
+const EARBUD_ICON = require('../icons/earbud.png');
+
+function getCategoryIcon(categoryName) {
+  if (!categoryName) return null;
+  const lower = categoryName.toLowerCase();
+  for (const entry of CATEGORY_ICON_MAP) {
+    if (entry.keywords.some((kw) => lower.includes(kw))) {
+      return entry.icon;
+    }
+  }
+  return null;
+}
+
 export default function LibraryScreen({ navigation }) {
   const { isDark, colors } = useThemeStore();
   const { likedSongs, setCurrentSong, stopPlayback, playlists, deletePlaylist } = usePlayerStore();
@@ -59,27 +104,42 @@ export default function LibraryScreen({ navigation }) {
     ]);
   };
 
-  const renderCategory = ({ item }) => (
-    <TouchableOpacity
-      style={[styles.categoryCard, { backgroundColor: theme.card }]}
-      onPress={() => navigation.navigate('Category', {
-        categoryId: item.id,
-        categoryName: item.name,
-        categoryColor: item.color,
-        categoryIcon: item.icon,
-      })}
-    >
-      {typeof item.icon === 'string' ? (
-        <Text style={styles.categoryIcon}>{item.icon}</Text>
-      ) : (
-        <Image source={item.icon} style={styles.categoryIconImage} resizeMode="contain" />
-      )}
-      <View style={styles.categoryInfo}>
-        <Text style={[styles.categoryName, { color: theme.text }]}>{item.name}</Text>
-        <Text style={[styles.categoryCount, { color: theme.subText }]}>{item.subcategories.length} {t('collections')}</Text>
-      </View>
-    </TouchableOpacity>
-  );
+  const renderCategory = ({ item }) => {
+    const emoji = getCategoryIcon(item.name);
+
+    return (
+      <TouchableOpacity
+        style={[styles.categoryCard, { backgroundColor: theme.card }]}
+        onPress={() =>
+          navigation.navigate('Category', {
+            categoryId: item.id,
+            categoryName: item.name,
+            categoryColor: item.color,
+            categoryIcon: emoji,
+          })
+        }
+      >
+        <View style={[styles.categoryIconWrapper, { backgroundColor: (item.color || colors.primary) + '22' }]}>
+          {emoji ? (
+            <Text style={styles.categoryIcon}>{emoji}</Text>
+          ) : (
+            <Image
+              source={EARBUD_ICON}
+              style={[styles.categoryIconImg, { tintColor: item.color || colors.primary }]}
+              resizeMode="contain"
+            />
+          )}
+        </View>
+        <View style={styles.categoryInfo}>
+          <Text style={[styles.categoryName, { color: theme.text }]}>{item.name}</Text>
+          <Text style={[styles.categoryCount, { color: theme.subText }]}>
+            {item.subcategories.length} {t('collections')}
+          </Text>
+        </View>
+        <ChevronRight color={theme.subText} size={18} />
+      </TouchableOpacity>
+    );
+  };
 
   const renderPlaylist = ({ item }) => (
     <TouchableOpacity
@@ -88,7 +148,7 @@ export default function LibraryScreen({ navigation }) {
       onLongPress={() => handleDeletePlaylist(item)}
     >
       <View style={[styles.playlistIcon, { backgroundColor: colors.primary + '33' }]}>
-        <Image source={require('../icons/earbud.png')} style={{ width: 24, height: 24, tintColor: colors.primary }} />
+        <Image source={EARBUD_ICON} style={{ width: 24, height: 24, tintColor: colors.primary }} />
       </View>
       <View style={styles.playlistInfo}>
         <Text style={[styles.playlistName, { color: theme.text }]}>{item.name}</Text>
@@ -103,6 +163,7 @@ export default function LibraryScreen({ navigation }) {
       <View style={styles.header}>
         <Text style={[styles.headerTitle, { color: theme.text }]}>Your Library</Text>
       </View>
+
       <TouchableOpacity style={[styles.likedSection, { backgroundColor: theme.card }]} onPress={openLikedSongs}>
         <View style={[styles.likedIcon, { backgroundColor: colors.primary }]}>
           <Heart color="#fff" size={28} fill="#fff" />
@@ -131,9 +192,9 @@ export default function LibraryScreen({ navigation }) {
           contentContainerStyle={styles.playlistsList}
         />
       ) : (
-        <TouchableOpacity 
+        <TouchableOpacity
           style={[styles.emptyPlaylists, { backgroundColor: theme.card }]}
-          onPress={() => setShowPlaylistModal(true)} 
+          onPress={() => setShowPlaylistModal(true)}
         >
           <PlusCircle color={theme.subText} size={40} />
           <Text style={[styles.emptyPlaylistsText, { color: theme.subText }]}>{t('create_your_playlist')}</Text>
@@ -155,12 +216,12 @@ export default function LibraryScreen({ navigation }) {
           contentContainerStyle={styles.listContent}
         />
       )}
-      
+
       <View style={{ height: 80 }} />
 
-      <PlaylistModal 
-        visible={showPlaylistModal} 
-        onClose={() => setShowPlaylistModal(false)} 
+      <PlaylistModal
+        visible={showPlaylistModal}
+        onClose={() => setShowPlaylistModal(false)}
         song={null}
         onSuccess={() => {}}
       />
@@ -190,8 +251,9 @@ const styles = StyleSheet.create({
   emptyPlaylistsText: { fontSize: 16, marginTop: 10, textAlign: 'center' },
   listContent: { paddingHorizontal: 20, paddingBottom: 20 },
   categoryCard: { flexDirection: 'row', alignItems: 'center', padding: 15, borderRadius: 12, marginBottom: 12 },
-  categoryIcon: { fontSize: 32, marginRight: 15 },
-  categoryIconImage: { width: 32, height: 32, marginRight: 15 },
+  categoryIconWrapper: { width: 48, height: 48, borderRadius: 12, justifyContent: 'center', alignItems: 'center', marginRight: 15 },
+  categoryIcon: { fontSize: 26 },
+  categoryIconImg: { width: 28, height: 28 },
   categoryInfo: { flex: 1 },
   categoryName: { fontSize: 16, fontWeight: 'bold' },
   categoryCount: { fontSize: 12, marginTop: 4 },

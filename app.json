@@ -1,24 +1,26 @@
 {
   "expo": {
     "name": "Zefinote Selam Hyms",
-    "slug": "zefinote-selam",
+    "slug": "eliasapp",
     "version": "1.0.0",
     "icon": "./assets/icon.png",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash2.png",
       "resizeMode": "contain",
       "backgroundColor": "#121212"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.elias.musicapp"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#121212"
       },
       "package": "com.elias.musicapp",
@@ -27,11 +29,15 @@
         "android.permission.MODIFY_AUDIO_SETTINGS"
       ]
     },
-    "plugins": ["expo-av", "expo-sqlite"],
+    "plugins": [
+      "expo-av",
+      "expo-sqlite"
+    ],
     "extra": {
       "eas": {
         "projectId": "2003c2c5-1955-4662-89bb-c49a9b3a5b28"
       }
-    }
+    },
+    "owner": "eliasz21"
   }
 }

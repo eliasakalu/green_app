@@ -31,7 +31,7 @@ def main():
         return
 
     # Filter for audio files
-    valid_extensions = ['.mp3', '.wav', '.m4a', '.m4p', '.aac']
+    valid_extensions = ['.mp3', '.wav', '.m4a', '.m4p', '.aac','.ogg']
     files_to_process = [f for f in os.listdir(source_dir) if os.path.splitext(f)[1].lower() in valid_extensions]
 
     print(f"🚀 Found {len(files_to_process)} files. Starting batch compression...")

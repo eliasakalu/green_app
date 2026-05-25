@@ -12,6 +12,9 @@ import { useTranslation } from 'react-i18next';
 import { getImageSource } from '../utils/mediaSource';
 
 import silaseImage from '../assets/images/silase.jpg';
+// ── Place your school logo at assets/images/school_logo.png
+// ── If you don't have one yet, the circle with initials is shown as fallback
+import schoolLogo from '../../assets/icon.png';
 
 const DEFAULT_CATEGORY_IMAGE = silaseImage;
 
@@ -20,11 +23,16 @@ const FEATURED_SONG = {
   title: 'ሥላሴ ትትረመም',
   artist: 'M83',
   cover_url: silaseImage,
-  audio_url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-  lyrics: [],
+  audio_url: require('../assets/music/Silasen_Amesgnu.opus'),
+  lyrics: [{ timestamp: 0, text: 'ሥላሴን አመስግኑ(2) የምድር ፍጥረታት ዘምሩ እልል በሉ' },
+            { timestamp: 28, text: 'በስመ አብ ወወልድ ወመንፈስ ቅዱስ ምስጋና ይገባል ከምንም በፊት' },
+            { timestamp: 40, text: 'ዓለማትን ሁሉ ከፈጠረ ጌታ ምስጋና ይገባል ከጠዋት እስከ ማታ' },
+            { timestamp: 54, text: 'ኪሩቤል ሱራፌል የሚያመሰግኑህ መላእክት በሰማይ የሚዘምሩልህ' },
+            { timestamp: 116, text: 'እኛም የአዳም ልጆች እንዘምራለን በሰማይ በምድር እንጠራሃለን' },
+            { timestamp: 118, text: 'ብራብ በሥላሴ እጠግባለሁኝ ብጠማም በአምላኬ እረካለሁኝ' },
+            { timestamp: 129, text: 'ሥላሴ አምባዬ ክብሬም ናቸውና ሁሌም ይመሩኛል በሕይወት ጎዳና' }],
 };
 
-// Build image map from seedData (these are local require() numbers — never pass through nav params)
 const buildCategoryImageMap = () => {
   const map = {};
   try {
@@ -37,7 +45,6 @@ const buildCategoryImageMap = () => {
   return map;
 };
 
-// Build color map from seedData so we use the original color, not the DB string
 const buildCategoryColorMap = () => {
   const map = {};
   try {
@@ -52,6 +59,14 @@ const buildCategoryColorMap = () => {
 
 const CATEGORY_IMAGE_MAP = buildCategoryImageMap();
 const CATEGORY_COLOR_MAP = buildCategoryColorMap();
+
+// Fallback if school_logo.png doesn't exist yet — renders initials circle in JSX
+let logoSource = null;
+try {
+  logoSource = schoolLogo;
+} catch (_) {
+  logoSource = null;
+}
 
 export default function HomeScreen({ navigation }) {
   const [songs, setSongs] = useState([]);
@@ -110,19 +125,48 @@ export default function HomeScreen({ navigation }) {
   }
 
   return (
-    <ScrollView style={[styles.container, { backgroundColor: theme.background }]} showsVerticalScrollIndicator={false}>
+    <ScrollView
+      style={[styles.container, { backgroundColor: theme.background }]}
+      showsVerticalScrollIndicator={false}
+    >
+      {/* ── Header: greeting + lang switcher + school logo ── */}
       <LinearGradient colors={[colors.primary + '33', 'transparent']} style={styles.topHeader}>
-        <Text style={[styles.headerTitle, { color: theme.text }]}>{getGreeting()}</Text>
-        <View style={styles.langRow}>
-          <TouchableOpacity onPress={() => i18n.changeLanguage('en')} style={styles.langBtn}>
-            <Text style={[styles.langText, { color: i18n.language === 'en' ? colors.primary : theme.subText }]}>EN</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => i18n.changeLanguage('am')} style={styles.langBtn}>
-            <Text style={[styles.langText, { color: i18n.language === 'am' ? colors.primary : theme.subText }]}>አማ</Text>
-          </TouchableOpacity>
+        <View style={styles.headerRow}>
+          {/* Left: greeting + lang buttons */}
+          <View style={styles.headerLeft}>
+            <Text style={[styles.headerTitle, { color: theme.text }]}>{getGreeting()}</Text>
+            <View style={styles.langRow}>
+              <TouchableOpacity onPress={() => i18n.changeLanguage('en')} style={styles.langBtn}>
+                <Text style={[styles.langText, { color: i18n.language === 'en' ? colors.primary : theme.subText }]}>EN</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => i18n.changeLanguage('am')} style={styles.langBtn}>
+                <Text style={[styles.langText, { color: i18n.language === 'am' ? colors.primary : theme.subText }]}>አማ</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          {/* Right: school logo */}
+          <View style={[styles.logoCircle, { backgroundColor: 'transparent' }]}>
+            {logoSource ? (
+              <Image
+                source={logoSource}
+                style={styles.logoImage}
+                resizeMode="cover"
+              />
+            ) : (
+              // Fallback initials badge — remove once you add school_logo.png
+              <View style={styles.logoFallback}>
+                <Text style={[styles.logoInitials, { color: colors.primary }]}>ፊ{'\n'}ሰ</Text>
+              </View>
+            )}
+          </View>
         </View>
+
+        {/* App name subtitle under greeting */}
+        <Text style={[styles.appNameSub, { color: theme.subText }]}>{t('app_subtitle')}</Text>
       </LinearGradient>
 
+      {/* ── Featured banner ── */}
       <TouchableOpacity onPress={() => playSong(FEATURED_SONG)} style={styles.bannerWrapper}>
         <ImageBackground source={FEATURED_SONG.cover_url} style={styles.banner} imageStyle={{ borderRadius: 15 }}>
           <LinearGradient colors={['transparent', 'rgba(0,0,0,0.8)']} style={styles.bannerGradient}>
@@ -133,6 +177,7 @@ export default function HomeScreen({ navigation }) {
         </ImageBackground>
       </TouchableOpacity>
 
+      {/* ── Categories ── */}
       <Text style={[styles.sectionTitle, { color: theme.text }]}>{t('browse_category')}</Text>
       <FlatList
         horizontal
@@ -147,7 +192,6 @@ export default function HomeScreen({ navigation }) {
               onPress={() => navigation.navigate('Category', {
                 categoryId: item.id,
                 categoryName: item.name,
-      
               })}
             >
               <ImageBackground
@@ -171,6 +215,7 @@ export default function HomeScreen({ navigation }) {
         contentContainerStyle={styles.categoriesList}
       />
 
+      {/* ── Popular & Recommended ── */}
       {songs.length > 0 && (
         <>
           <Text style={[styles.sectionTitle, { color: theme.text }]}>{t('popularsongs')}</Text>
@@ -192,8 +237,8 @@ export default function HomeScreen({ navigation }) {
           {songs.slice(0, 5).map((song) => (
             <TouchableOpacity key={song.id} style={styles.songRow} onPress={() => playSong(song)}>
               <Image source={getImageSource(song.cover_url)} style={styles.rowCover} />
-              <View>
-                <Text style={[styles.rowTitle, { color: theme.text }]}>{song.title}</Text>
+              <View style={styles.songRowInfo}>
+                <Text style={[styles.rowTitle, { color: theme.text }]} numberOfLines={1}>{song.title}</Text>
                 <Text style={[styles.rowArtist, { color: theme.subText }]}>{song.artist}</Text>
               </View>
             </TouchableOpacity>
@@ -208,31 +253,54 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   centered: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  topHeader: { paddingTop: 60, paddingHorizontal: 20, paddingBottom: 20 },
+
+  topHeader: { paddingTop: 56, paddingHorizontal: 20, paddingBottom: 14 },
+  headerRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  headerLeft: { flex: 1, marginRight: 14 },
   headerTitle: { fontSize: 24, fontWeight: 'bold' },
-  langRow: { flexDirection: 'row', marginTop: 8, gap: 12 },
-  langBtn: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 6 },
+  appNameSub: { fontSize: 12, marginTop: 6, letterSpacing: 0.3 },
+
+  langRow: { flexDirection: 'row', marginTop: 6, gap: 8 },
+  langBtn: { paddingHorizontal: 10, paddingVertical: 3, borderRadius: 6 },
   langText: { fontSize: 13, fontWeight: 'bold' },
+
+  // School logo circle
+  logoCircle: {
+    width: 58,
+    height: 58,
+    borderRadius: 9,
+    overflow: 'hidden',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logoImage: { width: '100%', height: '100%' },
+  logoFallback: { justifyContent: 'center', alignItems: 'center', flex: 1 },
+  logoInitials: { fontSize: 15, fontWeight: '800', textAlign: 'center', lineHeight: 18 },
+
   bannerWrapper: { paddingHorizontal: 20, marginBottom: 10 },
-  banner: { height: 250, width: '100%', justifyContent: 'flex-end', overflow: 'hidden' },
+  banner: { height: 220, width: '100%', justifyContent: 'flex-end', overflow: 'hidden' },
   bannerGradient: { padding: 20, height: '60%', justifyContent: 'flex-end' },
-  featuredLabel: { color: '#1DB954', fontWeight: 'bold', fontSize: 12, letterSpacing: 1 },
-  bannerTitle: { color: '#fff', fontSize: 28, fontWeight: 'bold' },
-  bannerArtist: { color: '#ccc', fontSize: 16 },
-  sectionTitle: { fontSize: 22, fontWeight: 'bold', marginLeft: 20, marginVertical: 20 },
+  featuredLabel: { color: '#1DB954', fontWeight: 'bold', fontSize: 11, letterSpacing: 1 },
+  bannerTitle: { color: '#fff', fontSize: 26, fontWeight: 'bold' },
+  bannerArtist: { color: '#ccc', fontSize: 14 },
+
+  sectionTitle: { fontSize: 20, fontWeight: 'bold', marginLeft: 20, marginVertical: 16 },
   categoriesList: { paddingLeft: 20, paddingRight: 10 },
-  categoryCard: { width: 140, height: 140, marginRight: 15, borderRadius: 15, overflow: 'hidden' },
+  categoryCard: { width: 130, height: 130, marginRight: 12, borderRadius: 14, overflow: 'hidden' },
   categoryImageBg: { flex: 1, width: '100%', height: '100%' },
-  categoryImageStyle: { borderRadius: 15 },
+  categoryImageStyle: { borderRadius: 14 },
   categoryGradient: { flex: 1, padding: 10, justifyContent: 'flex-end' },
   categoryName: { fontSize: 13, fontWeight: 'bold', color: '#fff' },
   categoryCount: { fontSize: 10, color: '#fff', opacity: 0.85 },
-  albumCard: { marginLeft: 20, width: 140 },
-  albumCover: { width: 140, height: 140, borderRadius: 10 },
-  albumTitle: { fontWeight: 'bold', marginTop: 10 },
-  albumArtist: { fontSize: 12 },
-  songRow: { flexDirection: 'row', alignItems: 'center', marginHorizontal: 20, marginBottom: 15 },
-  rowCover: { width: 55, height: 55, borderRadius: 5, marginRight: 15 },
-  rowTitle: { fontSize: 16, fontWeight: '500' },
-  rowArtist: { fontSize: 14 },
+
+  albumCard: { marginLeft: 20, width: 130 },
+  albumCover: { width: 130, height: 130, borderRadius: 10 },
+  albumTitle: { fontWeight: 'bold', marginTop: 8, fontSize: 13 },
+  albumArtist: { fontSize: 11, marginTop: 2 },
+
+  songRow: { flexDirection: 'row', alignItems: 'center', marginHorizontal: 20, marginBottom: 14 },
+  songRowInfo: { flex: 1, minWidth: 0 },
+  rowCover: { width: 52, height: 52, borderRadius: 8, marginRight: 14 },
+  rowTitle: { fontSize: 15, fontWeight: '600' },
+  rowArtist: { fontSize: 12, marginTop: 2 },
 });

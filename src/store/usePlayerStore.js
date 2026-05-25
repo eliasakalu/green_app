@@ -22,15 +22,14 @@ export const usePlayerStore = create((set, get) => ({
 
       const savedPlaylists = await AsyncStorage.getItem('playlists');
       if (savedPlaylists) {
-        set({ playlists: JSON.parse(savedPlaylists) });
-      } else {
-        const defaultPlaylists = [
-          { id: '1', name: 'My Favorites', songs: [], song_count: 0 },
-          { id: '2', name: 'Workout Mix', songs: [], song_count: 0 },
-          { id: '3', name: 'Chill Vibes', songs: [], song_count: 0 },
-        ];
-        set({ playlists: defaultPlaylists });
-        await AsyncStorage.setItem('playlists', JSON.stringify(defaultPlaylists));
+        const parsed = JSON.parse(savedPlaylists);
+        const defaultIds = ['1', '2', '3'];
+        const defaultNames = ['My Favorites', 'Workout Mix', 'Chill Vibes'];
+        const userPlaylists = parsed.filter(
+          (p) => !defaultIds.includes(p.id) || !defaultNames.includes(p.name)
+        );
+        set({ playlists: userPlaylists });
+        await AsyncStorage.setItem('playlists', JSON.stringify(userPlaylists));
       }
     } catch (error) {
       console.log('Error loading saved data:', error);
@@ -55,6 +54,7 @@ export const usePlayerStore = create((set, get) => ({
     await get().stopCurrentPlayback();
   },
 
+  // ✅ FIXED: clears queue every time a new song session starts
   setCurrentSong: async (song) => {
     const { currentSong } = get();
     if (currentSong?.id === song?.id) {
@@ -62,7 +62,9 @@ export const usePlayerStore = create((set, get) => ({
       return;
     }
     await get().stopPlayback();
-    set({ currentSong: song, currentTime: 0, isPlaying: true });
+    // Clear queue and reset index so old songs don't bleed through
+    set({ currentSong: song, currentTime: 0, isPlaying: true, queue: [], queueIndex: 0 });
+    await AsyncStorage.setItem('queue', JSON.stringify([]));
   },
 
   setAudioRef: (ref) => set({ audioRef: ref }),
@@ -103,10 +105,8 @@ export const usePlayerStore = create((set, get) => ({
     await AsyncStorage.setItem('queue', JSON.stringify([]));
   },
 
-  // FIX: properly stop old audio before playing next song
   playNext: async () => {
     const { queue, queueIndex } = get();
-
     if (queue.length > 0 && queueIndex < queue.length) {
       const nextSong = queue[queueIndex];
       await get().stopPlayback();
