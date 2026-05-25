@@ -1,32 +1,37 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput, ActivityIndicator, Image } from 'react-native';
+// screens/SearchScreen.js
+// ─────────────────────────────────────────────────────────────
+// Fix: tapping a search result queues the remaining results so
+// Next / Previous work inside the player.
+// ─────────────────────────────────────────────────────────────
+import React, { useState, useEffect } from 'react';
+import {
+  View, Text, StyleSheet, FlatList, TouchableOpacity,
+  TextInput, ActivityIndicator, Image,
+} from 'react-native';
 import { Search, X } from 'lucide-react-native';
 import { useThemeStore } from '../store/useThemeStore';
 import { usePlayerStore } from '../store/usePlayerStore';
 import { useTranslation } from 'react-i18next';
 import { getImageSource } from '../utils/mediaSource';
 import { searchSongs, getTotalSongCount } from '../data/database';
-import { useEffect } from 'react';
 
-// FIX: these genre values now exactly match the 'genre' field in seedData.js
-// Real genres found: ግእዝ (215 songs), አማርኛ (97), ግእዝ/አማርኛ (63), እዝል (46), ግዕዝ (3), አማርኛ/ግእዝ (2)
 const GENRES = [
-  { label: 'ግእዝ',        query: 'ግእዝ 1' },
-  { label: 'ግእዝ 2',       query: 'ግእዝ 2' },
-  { label: 'ግእዝ 3',  query: 'ግእዝ 3' },
-  { label: 'እዝል/ዓራራይ ቅኝት', query: 'እዝል ዓራራይ ቅኝት' },
-  
+  { label: 'ግእዝ',           query: 'ግእዝ 1' },
+  { label: 'ግእዝ 2',          query: 'ግእዝ 2' },
+  { label: 'ግእዝ 3',          query: 'ግእዝ 3' },
+  { label: 'እዝል/ዓራራይ ቅኝት',  query: 'እዝል ዓራራይ ቅኝት' },
 ];
 
 export default function SearchScreen({ navigation }) {
   const [searchQuery, setSearchQuery] = useState('');
-  const [results, setResults] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [totalSongs, setTotalSongs] = useState(0);
+  const [results,     setResults]     = useState([]);
+  const [loading,     setLoading]     = useState(false);
+  const [totalSongs,  setTotalSongs]  = useState(0);
   const [activeGenre, setActiveGenre] = useState(null);
+
   const { isDark, colors } = useThemeStore();
   const theme = isDark ? colors.dark : colors.light;
-  const { setCurrentSong, stopPlayback } = usePlayerStore();
+  const { setCurrentSong, stopPlayback, addMultipleToQueue } = usePlayerStore();
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -68,17 +73,23 @@ export default function SearchScreen({ navigation }) {
     setActiveGenre(null);
   };
 
-  const playSong = async (song) => {
+  // ── FIX: queue results after the tapped song ──────────────
+  const playSong = async (song, index) => {
     await stopPlayback();
     await setCurrentSong(song);
+    const rest = results.slice(index + 1);
+    if (rest.length > 0) await addMultipleToQueue(rest);
     navigation.navigate('Player');
   };
 
-  const renderSearchResult = ({ item }) => (
-    <TouchableOpacity style={[styles.resultItem, { borderBottomColor: theme.border }]} onPress={() => playSong(item)}>
+  const renderSearchResult = ({ item, index }) => (
+    <TouchableOpacity
+      style={[styles.resultItem, { borderBottomColor: theme.border }]}
+      onPress={() => playSong(item, index)}
+    >
       <Image source={getImageSource(item.cover_url)} style={styles.resultImage} />
       <View style={styles.resultInfo}>
-        <Text style={[styles.resultTitle, { color: theme.text }]} numberOfLines={1}>{item.title}</Text>
+        <Text style={[styles.resultTitle,  { color: theme.text }]}    numberOfLines={1}>{item.title}</Text>
         <Text style={[styles.resultArtist, { color: theme.subText }]} numberOfLines={1}>{item.artist}</Text>
       </View>
       <Text style={[styles.resultGenre, { color: theme.subText }]}>{item.genre}</Text>
@@ -124,7 +135,9 @@ export default function SearchScreen({ navigation }) {
             contentContainerStyle={{ paddingBottom: 140 }}
             ListEmptyComponent={
               <View style={styles.emptyContainer}>
-                <Text style={[styles.emptyText, { color: theme.subText }]}>{t('no_result')} "{searchQuery}"</Text>
+                <Text style={[styles.emptyText, { color: theme.subText }]}>
+                  {t('no_result')} "{searchQuery}"
+                </Text>
               </View>
             }
           />
@@ -132,7 +145,6 @@ export default function SearchScreen({ navigation }) {
       ) : (
         <View>
           <Text style={[styles.sectionTitle, { color: theme.text }]}>{t('browse_by_genre')}</Text>
-          {/* FIX: 5 genre cards that map to real genre values in the database */}
           <View style={styles.categoriesGrid}>
             {GENRES.map((genre) => (
               <TouchableOpacity
@@ -163,23 +175,23 @@ export default function SearchScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, paddingTop: 60 },
-  title: { fontSize: 32, fontWeight: 'bold', marginBottom: 20 },
-  searchBox: { flexDirection: 'row', padding: 12, borderRadius: 8, alignItems: 'center', marginBottom: 20 },
-  input: { flex: 1, marginLeft: 10, fontWeight: '500', fontSize: 16 },
-  loader: { marginTop: 50 },
-  resultCount: { fontSize: 13, marginBottom: 10 },
-  resultItem: { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, borderBottomWidth: 1 },
-  resultImage: { width: 50, height: 50, borderRadius: 5, marginRight: 12 },
-  resultInfo: { flex: 1 },
-  resultTitle: { fontSize: 16, fontWeight: 'bold' },
-  resultArtist: { fontSize: 13, marginTop: 2 },
-  resultGenre: { fontSize: 12, marginLeft: 10 },
+  container:      { flex: 1, padding: 20, paddingTop: 60 },
+  title:          { fontSize: 32, fontWeight: 'bold', marginBottom: 20 },
+  searchBox:      { flexDirection: 'row', padding: 12, borderRadius: 8, alignItems: 'center', marginBottom: 20 },
+  input:          { flex: 1, marginLeft: 10, fontWeight: '500', fontSize: 16 },
+  loader:         { marginTop: 50 },
+  resultCount:    { fontSize: 13, marginBottom: 10 },
+  resultItem:     { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, borderBottomWidth: 1 },
+  resultImage:    { width: 50, height: 50, borderRadius: 5, marginRight: 12 },
+  resultInfo:     { flex: 1 },
+  resultTitle:    { fontSize: 16, fontWeight: 'bold' },
+  resultArtist:   { fontSize: 13, marginTop: 2 },
+  resultGenre:    { fontSize: 12, marginLeft: 10 },
   emptyContainer: { alignItems: 'center', marginTop: 50 },
-  emptyText: { fontSize: 16, textAlign: 'center' },
-  sectionTitle: { fontSize: 18, fontWeight: 'bold', marginTop: 20, marginBottom: 15 },
+  emptyText:      { fontSize: 16, textAlign: 'center' },
+  sectionTitle:   { fontSize: 18, fontWeight: 'bold', marginTop: 20, marginBottom: 15 },
   categoriesGrid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' },
-  categoryCard: { width: '48%', padding: 20, borderRadius: 8, marginBottom: 12, alignItems: 'center' },
-  categoryText: { fontSize: 16, fontWeight: '500', textAlign: 'center' },
-  totalSongs: { fontSize: 14, marginTop: 20, textAlign: 'center' },
+  categoryCard:   { width: '48%', padding: 20, borderRadius: 8, marginBottom: 12, alignItems: 'center' },
+  categoryText:   { fontSize: 16, fontWeight: '500', textAlign: 'center' },
+  totalSongs:     { fontSize: 14, marginTop: 20, textAlign: 'center' },
 });

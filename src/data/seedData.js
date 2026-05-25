@@ -2370,16 +2370,17 @@ export const seedData = {
               title: 'ደስ አላቸው (የልባቸው ምክር)',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/mushra.jpg'),
-              // audio_url: 'TODO: add local file for song id 144',
+              audio_url: require('../assets/music/desalachew_mushrit_mushraw.opus'),
               duration: 220,
               genre: 'እዝል ዓራራይ ቅኝት',
               lyrics: [
-                { timestamp: 0, text: 'ደስ አላቸው የልባቸው ምክር የብቻቸው ምስጢር ዛሬ ተፈፅሟል በቤተክርስቲያን' },
-                { timestamp: 25, text: 'እርሱ በፈቀደው አገናኝቷቸዋል ደስ አላቸው ቅዳሴው ሲቀደስ' },
-                { timestamp: 50, text: 'ዝማሬው ሲዘመር ሲባረኩ በአምላክ ለዚህ ክብር በቅተው' },
-                { timestamp: 75, text: 'ተክሊል ሲቀዳጁ ቁርባን ተቀብለው ደስ አላቸው ከዝሙት ጠብቆ' },
-                { timestamp: 100, text: 'ከዓለም ፈተና ወደ ቤቱ ጠርቶ ለቅዱስ ጋብቻ ስለመረጣቸው' },
-                { timestamp: 125, text: 'የወንጌልንም ቃል በመፈጸማቸው' }
+                { timestamp: 0, text: 'ደስ አላቸው ሙሽሪት ሙሽራው(2) እግዚአብሔር ስለባረካቸው ' },
+                { timestamp: 25, text: 'ደስ አላቸው የልባቸው ምክር ደስ አላቸው የብቻቸው ምስጢር ደስ አላቸው  ዛሬ ተፈፅሟል ደስ አላቸው በቤተክርስቲያን ' },
+                { timestamp: 35, text: 'እርሱ በፈቀደው ደስ አላቸው አገናኝቷቸዋልደስ አላቸው ደስ አላቸው ሙሽሪት ሙሽራው እግዚአብሔር ስለባረካቸው ደስ አላቸው ቅዳሴው ሲቀደስ' },
+                { timestamp: 50, text: 'ደስ አላቸው ዝማሬው ሲዘመር ደስ አላቸው ሲባረኩ በአምላክ ደስ አላቸው ለዚህ ክብር በቅተው' },
+                { timestamp: 75, text: 'ደስ አላቸው ተክሊል ሲቀዳጁ ደስ አላቸው ቁርባን ተቀብለው ደስ አላቸው ሙሽሪት ሙሽራው እግዚአብሔር ስለባረካቸው ደስ አላቸው ከዝሙት ጠብቆ' },
+                { timestamp: 100, text: 'ደስ አላቸው ከዓለም ፈተና ደስ አላቸው  ወደ ቤቱ ጠርቶ ደስ አላቸው ለቅዱስ ጋብቻ  ደስ አላቸው ስለመረጣቸው' },
+                { timestamp: 125, text: 'ደስ አላቸው የወንጌልንም ቃል ደስ አላቸው  በመፈጸማቸው ደስ አላቸው ሙሽራው እግዚአብሔር ስለባረካቸው' }
               ],
             },
             {
@@ -2584,7 +2585,7 @@ export const seedData = {
               title: 'ያስደስታል',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/mushra.jpg'),
-              // audio_url: 'TODO: add local file for song id 157',
+              audio_url: require('../assets/music/yasdestal_yegna_emnetachn.opus'),
               duration: 130,
               genre: 'ግእዝ 2',
               lyrics: [
@@ -3039,7 +3040,7 @@ export const seedData = {
               title: 'ዐቢይ ነቢይ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/yohannes.jpg'),
-              // audio_url: 'TODO: add local file for song id 178',
+              audio_url: require('../assets/music/abiy_nebye.opus'),
               duration: 100,
               genre: 'እዝል ዓራራይ ቅኝት',
               lyrics: [
@@ -3065,7 +3066,7 @@ export const seedData = {
               title: 'ወአንተኒ ሕጻን',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/yohannes.jpg'),
-              // audio_url: 'TODO: add local file for song id 180',
+              audio_url: require('../assets/music/weanteni_hisan.opus'),
               duration: 130,
               genre: 'እዝል ዓራራይ ቅኝት',
               lyrics: [
@@ -3078,7 +3079,7 @@ export const seedData = {
               title: 'በመንፈስ የሐውር',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/yohannes.jpg'),
-              // audio_url: 'TODO: add local file for song id 181',
+              audio_url: require('../assets/music/bemenfes_yehawre.opus'),
               duration: 120,
               genre: 'እዝል ዓራራይ ቅኝት',
               lyrics: [
@@ -3105,7 +3106,7 @@ export const seedData = {
               title: 'ዮም ነፍስከ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/yohannes.jpg'),
-              // audio_url: 'TODO: add local file for song id 183',
+              audio_url: require('../assets/music/yom_nefseke.opus'),
               duration: 180,
               genre: 'እዝል ዓራራይ ቅኝት',
               lyrics: [

@@ -1,5 +1,13 @@
+// screens/SongListScreen.js
+// ─────────────────────────────────────────────────────────────
+// Fix: tapping any single song now populates the queue with
+// the remaining songs in the list so Next / Previous work.
+// ─────────────────────────────────────────────────────────────
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet, ActivityIndicator, SafeAreaView } from 'react-native';
+import {
+  View, Text, FlatList, Image, TouchableOpacity,
+  StyleSheet, ActivityIndicator, SafeAreaView,
+} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { ArrowLeft, Play } from 'lucide-react-native';
 import { useThemeStore } from '../store/useThemeStore';
@@ -12,7 +20,7 @@ export default function SongListScreen({ navigation, route }) {
   const { setCurrentSong, stopPlayback, addMultipleToQueue } = usePlayerStore();
   const { isDark, colors } = useThemeStore();
   const theme = isDark ? colors.dark : colors.light;
-  const [songs, setSongs] = useState([]);
+  const [songs,   setSongs]   = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -29,12 +37,16 @@ export default function SongListScreen({ navigation, route }) {
     load();
   }, [subcategoryId]);
 
-  const playSong = async (song) => {
+  // ── FIX: single-song tap queues the rest of the list ──────
+  const playSong = async (song, index) => {
     await stopPlayback();
-    await setCurrentSong(song);
+    await setCurrentSong(song);                        // clears queue & sets current
+    const rest = songs.slice(index + 1);               // songs after tapped one
+    if (rest.length > 0) await addMultipleToQueue(rest); // so Next works immediately
     navigation.navigate('Player');
   };
 
+  // "Play All" starts from the first song and queues everything else
   const playAll = async () => {
     if (songs.length === 0) return;
     await stopPlayback();
@@ -44,9 +56,9 @@ export default function SongListScreen({ navigation, route }) {
   };
 
   const renderSong = ({ item, index }) => (
-    <TouchableOpacity 
-      style={[styles.songItem, { borderBottomColor: theme.border }]} 
-      onPress={() => playSong(item)}
+    <TouchableOpacity
+      style={[styles.songItem, { borderBottomColor: theme.border }]}
+      onPress={() => playSong(item, index)}
       activeOpacity={0.7}
     >
       <View style={styles.songNumber}>
@@ -54,7 +66,7 @@ export default function SongListScreen({ navigation, route }) {
       </View>
       <Image source={getImageSource(item.cover_url)} style={styles.songCover} />
       <View style={styles.songInfo}>
-        <Text style={[styles.songTitle, { color: theme.text }]} numberOfLines={1}>{item.title}</Text>
+        <Text style={[styles.songTitle,  { color: theme.text }]}    numberOfLines={1}>{item.title}</Text>
         <Text style={[styles.songArtist, { color: theme.subText }]} numberOfLines={1}>{item.artist}</Text>
       </View>
       <Text style={[styles.songDuration, { color: theme.subText }]}>
@@ -66,8 +78,8 @@ export default function SongListScreen({ navigation, route }) {
   return (
     <SafeAreaView style={[styles.safeContainer, { backgroundColor: theme.background }]}>
       <View style={[styles.container, { backgroundColor: theme.background }]}>
-        <LinearGradient 
-          colors={[(categoryColor || colors.primary) + 'cc', theme.background]} 
+        <LinearGradient
+          colors={[(categoryColor || colors.primary) + 'cc', theme.background]}
           style={styles.header}
         >
           <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
@@ -84,7 +96,11 @@ export default function SongListScreen({ navigation, route }) {
         ) : (
           <>
             {songs.length > 0 && (
-              <TouchableOpacity style={styles.playAllButton} onPress={playAll} activeOpacity={0.8}>
+              <TouchableOpacity
+                style={styles.playAllButton}
+                onPress={playAll}
+                activeOpacity={0.8}
+              >
                 <Play color="#fff" size={20} fill="#fff" />
                 <Text style={styles.playAllText}>Play All</Text>
               </TouchableOpacity>
@@ -100,10 +116,12 @@ export default function SongListScreen({ navigation, route }) {
               maxToRenderPerBatch={15}
               windowSize={10}
               removeClippedSubviews={true}
-              style={styles.flatList}  // ← ADDED THIS
+              style={styles.flatList}
               ListEmptyComponent={
                 <View style={styles.emptyContainer}>
-                  <Text style={[styles.emptyText, { color: theme.subText }]}>No songs found in this collection</Text>
+                  <Text style={[styles.emptyText, { color: theme.subText }]}>
+                    No songs found in this collection
+                  </Text>
                 </View>
               }
             />
@@ -115,20 +133,10 @@ export default function SongListScreen({ navigation, route }) {
 }
 
 const styles = StyleSheet.create({
-  safeContainer: {
-    flex: 1,
-  },
-  container: {
-    flex: 1,
-  },
-  flatList: {  // ← ADDED THIS
-    flex: 1,
-  },
-  centered: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+  safeContainer:  { flex: 1 },
+  container:      { flex: 1 },
+  flatList:       { flex: 1 },
+  centered:       { flex: 1, justifyContent: 'center', alignItems: 'center' },
   header: {
     paddingTop: 60,
     paddingBottom: 30,
@@ -136,22 +144,9 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
   },
-  backButton: {
-    marginBottom: 20,
-    padding: 8,
-    alignSelf: 'flex-start',
-  },
-  headerTitle: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#fff',
-  },
-  headerCount: {
-    fontSize: 14,
-    color: '#fff',
-    opacity: 0.8,
-    marginTop: 5,
-  },
+  backButton:     { marginBottom: 20, padding: 8, alignSelf: 'flex-start' },
+  headerTitle:    { fontSize: 28, fontWeight: 'bold', color: '#fff' },
+  headerCount:    { fontSize: 14, color: '#fff', opacity: 0.8, marginTop: 5 },
   playAllButton: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -162,59 +157,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 10,
   },
-  playAllText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-  listContent: {
-    paddingHorizontal: 20,
-    paddingBottom: 140,
-    flexGrow: 1,
-  },
-  songItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 12,
-    borderBottomWidth: 1,
-  },
-  songNumber: {
-    width: 35,
-    alignItems: 'center',
-  },
-  numberText: {
-    fontSize: 14,
-    fontWeight: '500',
-  },
-  songCover: {
-    width: 50,
-    height: 50,
-    borderRadius: 8,
-    marginRight: 12,
-  },
-  songInfo: {
-    flex: 1,
-  },
-  songTitle: {
-    fontSize: 16,
-    fontWeight: '500',
-  },
-  songArtist: {
-    fontSize: 12,
-    marginTop: 2,
-  },
-  songDuration: {
-    fontSize: 12,
-    marginLeft: 10,
-  },
-  emptyContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 50,
-  },
-  emptyText: {
-    fontSize: 16,
-    textAlign: 'center',
-  },
+  playAllText:    { color: '#fff', fontWeight: 'bold', fontSize: 16 },
+  listContent:    { paddingHorizontal: 20, paddingBottom: 140, flexGrow: 1 },
+  songItem:       { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, borderBottomWidth: 1 },
+  songNumber:     { width: 35, alignItems: 'center' },
+  numberText:     { fontSize: 14, fontWeight: '500' },
+  songCover:      { width: 50, height: 50, borderRadius: 8, marginRight: 12 },
+  songInfo:       { flex: 1 },
+  songTitle:      { fontSize: 16, fontWeight: '500' },
+  songArtist:     { fontSize: 12, marginTop: 2 },
+  songDuration:   { fontSize: 12, marginLeft: 10 },
+  emptyContainer: { flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: 50 },
+  emptyText:      { fontSize: 16, textAlign: 'center' },
 });
