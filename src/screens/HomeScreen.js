@@ -22,9 +22,9 @@ import schoolLogo  from '../../assets/icon.png';
 const DEFAULT_CATEGORY_IMAGE = silaseImage;
 
 const FEATURED_SONG = {
-  id:        'featured_silase',   // FIX: 0 is falsy — AudioManager skips it
+  id:        'featured_silase',   
   title:     'ሥላሴ ትትረመም',
-  artist:    'M83',
+  artist:    'Zefinoteselam Sunday School',
   cover_url: silaseImage,
   audio_url: require('../assets/music/Silasen_Amesgnu.opus'),
   lyrics: [

@@ -161,7 +161,7 @@ export default function LibraryScreen({ navigation }) {
   return (
     <ScrollView style={[styles.container, { backgroundColor: theme.background }]}>
       <View style={styles.header}>
-        <Text style={[styles.headerTitle, { color: theme.text }]}>Your Library</Text>
+        <Text style={[styles.headerTitle, { color: theme.text }]}>{t('your_library')}</Text>
       </View>
 
       <TouchableOpacity style={[styles.likedSection, { backgroundColor: theme.card }]} onPress={openLikedSongs}>

@@ -7,8 +7,6 @@ import { useThemeStore } from '../store/useThemeStore';
 import { getTotalSongCount, getAllCategories } from '../data/database';
 import { useTranslation } from 'react-i18next';
 
-// Place your school logo at assets/images/school_logo.png
-// If the file doesn't exist yet, the User icon fallback is shown automatically
 const defaultLogo = require('../../assets/icon.png');
 
 export default function ProfileScreen() {
@@ -16,7 +14,9 @@ export default function ProfileScreen() {
   const theme = isDark ? colors.dark : colors.light;
   const [totalSongs, setTotalSongs] = useState(0);
   const [totalCategories, setTotalCategories] = useState(0);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  // Destructuring i18n causes the component to re-render whenever
+  // the language changes — without this, t() calls stay stale.
 
   useEffect(() => {
     const load = async () => {
@@ -48,7 +48,7 @@ export default function ProfileScreen() {
             <User color={colors.primary} size={50} />
           )}
         </View>
-        <Text style={[styles.appName, { color: theme.text }]}>{t('app_name')}</Text>
+        <Text style={[styles.appName,   { color: theme.text }]}>{t('app_name')}</Text>
         <Text style={[styles.appSlogan, { color: theme.subText }]}>{t('app_subtitle')}</Text>
       </View>
 
@@ -111,9 +111,22 @@ export default function ProfileScreen() {
       {/* ── About / Credits ── */}
       <View style={styles.section}>
         <Text style={[styles.sectionLabel, { color: theme.subText }]}>{t('about_section')}</Text>
-        <View style={[styles.card, { backgroundColor: theme.card }]}>
 
-          {/* App name + version */}
+        {/* ── Mission / Jubilee card — sits at the TOP of About ── */}
+        <View style={[styles.missionCard, { backgroundColor: colors.primary + '14', borderColor: colors.primary + '44' }]}>
+          {/* Gold jubilee badge */}
+          <View style={[styles.jubileeBadge, { backgroundColor: '#C9A84C' }]}>
+            <Text style={styles.jubileeBadgeText}>🎉 {t('jubilee_badge')}</Text>
+          </View>
+
+          {/* Mission text */}
+          <Text style={[styles.missionText, { color: theme.text }]}>
+            {t('mission_statement')}
+          </Text>
+        </View>
+
+        {/* App info card */}
+        <View style={[styles.card, { backgroundColor: theme.card, marginTop: 14 }]}>
           <View style={styles.creditRow}>
             <Text style={[styles.creditLabel, { color: theme.subText }]}>Application</Text>
             <Text style={[styles.creditValue, { color: theme.text }]}>{t('app_name')}</Text>
@@ -124,21 +137,16 @@ export default function ProfileScreen() {
             <Text style={[styles.creditValue, { color: theme.text }]}>1.0.0</Text>
           </View>
           <View style={[styles.separator, { backgroundColor: theme.border }]} />
-
-          {/* Development credits */}
           <View style={styles.creditRow}>
             <Text style={[styles.creditLabel, { color: theme.subText }]}>Developed by</Text>
             <Text style={[styles.creditValue, { color: theme.text }]}>{t('creator')}</Text>
           </View>
           <View style={[styles.separator, { backgroundColor: theme.border }]} />
-          
-
-          {/* Contact */}
           <View style={styles.creditRow}>
             <Text style={[styles.creditLabel, { color: theme.subText }]}>Contact</Text>
             <Text style={[styles.emailText, { color: colors.primary }]}>{t('contact_email')}</Text>
           </View>
-                    <View style={[styles.separator, { backgroundColor: theme.border }]} />
+          <View style={[styles.separator, { backgroundColor: theme.border }]} />
           <View style={styles.creditRow}>
             <Text style={[styles.creditLabel, { color: theme.subText }]}>Content reviewed by</Text>
             <Text style={[styles.creditValue, { color: theme.text }]}>{t('reviewer_name')}</Text>
@@ -152,7 +160,7 @@ export default function ProfileScreen() {
 
         {/* Copyright footer */}
         <Text style={[styles.copyright, { color: theme.subText }]}>
-          © {new Date().getFullYear()} Finoteselam Sunday School.{''}All rights reserved.
+          © {new Date().getFullYear()} Finoteselam Sunday School. All rights reserved.
         </Text>
       </View>
 
@@ -164,49 +172,71 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
 
-  header: { alignItems: 'center', paddingTop: 56, paddingBottom: 28, paddingHorizontal: 20 },
-  avatarCircle: {
-    width: 100, height: 100,
-    justifyContent: 'center', alignItems: 'center',
-    marginBottom: 14,
-  },
-  avatarImage: { width: 100, height: 100 },
-  appName: { fontSize: 20, fontWeight: '800', textAlign: 'center', letterSpacing: 0.3 },
-  appSlogan: { fontSize: 13, marginTop: 4, textAlign: 'center' },
+  header:       { alignItems: 'center', paddingTop: 56, paddingBottom: 28, paddingHorizontal: 20 },
+  avatarCircle: { width: 100, height: 100, justifyContent: 'center', alignItems: 'center', marginBottom: 14 },
+  avatarImage:  { width: 70, height: 70 },
+  appName:      { fontSize: 20, fontWeight: '800', textAlign: 'center', letterSpacing: 0.3 },
+  appSlogan:    { fontSize: 13, marginTop: 4, textAlign: 'center' },
 
   statsContainer: {
     flexDirection: 'row', justifyContent: 'space-around',
     paddingHorizontal: 20, marginTop: 8, marginBottom: 24, gap: 10,
   },
-  statCard: { flex: 1, alignItems: 'center', padding: 14, borderRadius: 14, gap: 4 },
+  statCard:   { flex: 1, alignItems: 'center', padding: 14, borderRadius: 14, gap: 4 },
   statNumber: { fontSize: 22, fontWeight: 'bold', marginTop: 6 },
-  statLabel: { fontSize: 11 },
+  statLabel:  { fontSize: 11 },
 
-  section: { paddingHorizontal: 20, marginBottom: 20 },
+  section:      { paddingHorizontal: 20, marginBottom: 20 },
   sectionLabel: {
     fontSize: 11, fontWeight: '700', letterSpacing: 1,
     textTransform: 'uppercase', marginBottom: 8, marginLeft: 4,
   },
   card: { borderRadius: 14, paddingHorizontal: 16, overflow: 'hidden' },
 
-  row: {
-    flexDirection: 'row', alignItems: 'center',
-    justifyContent: 'space-between', paddingVertical: 16,
+  // ── Mission card ──────────────────────────────────────────
+  missionCard: {
+    borderRadius: 16,
+    borderWidth: 1,
+    padding: 18,
+    alignItems: 'center',
+    marginBottom: 0,
   },
-  rowLeft: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  rowText: { fontSize: 15, fontWeight: '500' },
-  rowValue: { fontSize: 14 },
-  separator: { height: StyleSheet.hairlineWidth },
+  jubileeBadge: {
+    borderRadius: 20,
+    paddingHorizontal: 14,
+    paddingVertical: 5,
+    marginBottom: 14,
+  },
+  jubileeBadgeText: {
+    color: '#fff',
+    fontSize: 13,
+    fontWeight: '800',
+    letterSpacing: 0.5,
+  },
+  missionCross: {
+    fontSize: 30,
+    marginBottom: 12,
+  },
+  missionText: {
+    fontSize: 13,
+    lineHeight: 22,
+    textAlign: 'center',
+    fontWeight: '500',
+  },
+  // ─────────────────────────────────────────────────────────
 
-  activePill: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 20 },
+  row:          { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 16 },
+  rowLeft:      { flexDirection: 'row', alignItems: 'center', gap: 12 },
+  rowText:      { fontSize: 15, fontWeight: '500' },
+  rowValue:     { fontSize: 14 },
+  separator:    { height: StyleSheet.hairlineWidth },
+
+  activePill:     { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 20 },
   activePillText: { fontSize: 12, fontWeight: '600' },
 
-  creditRow: {
-    flexDirection: 'row', alignItems: 'flex-start',
-    justifyContent: 'space-between', paddingVertical: 14, gap: 12,
-  },
+  creditRow:   { flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', paddingVertical: 14, gap: 12 },
   creditLabel: { fontSize: 13, flex: 1 },
   creditValue: { fontSize: 13, fontWeight: '600', textAlign: 'right', flex: 2 },
-  emailText: { fontSize: 12, fontWeight: '500', textAlign: 'right', flex: 2 },
-  copyright: { fontSize: 11, textAlign: 'center', marginTop: 14, lineHeight: 18, opacity: 0.6 },
+  emailText:   { fontSize: 12, fontWeight: '500', textAlign: 'right', flex: 2 },
+  copyright:   { fontSize: 11, textAlign: 'center', marginTop: 14, lineHeight: 18, opacity: 0.6 },
 });

@@ -54,5 +54,12 @@
     "app_logo_label": "Fenoteselam Sunday School",
     "hymnal": "Hymnal",
     "praise": "Praise",
-    "worship": "Worship"
+    "worship": "Worship",
+    "your_library":"Your Library",
+    "create_new_playlist":"Create New Playlist",
+    "no_playlist_till":"No playlists yet. Create your first!",
+    "my_playlist":"My Playlist",
+    "mission_section": "Our Mission",
+    "mission_statement": "This spiritual application is specially dedicated to celebrating the 25th Silver Jubilee Anniversary of the Finote Selam Sunday School.\n\nThe Sunday School is proudly located at the Kolfe Debre Berhan Kidist Selassie (Holy Trinity) Cathedral, serving under the Addis Ababa Diocese of the Ethiopian Orthodox Tewahedo Church (EOTC).",
+    "jubilee_badge": "25th Anniversary"
 }

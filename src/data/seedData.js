@@ -36,7 +36,7 @@ export const seedData = {
       subcategories: [
         {
           id: 'holy_trinity_sub1',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/silase.jpg'), 
           songs: [
               {
@@ -46,7 +46,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Hayle_Yeslase.opus'),
                 duration: 120,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ኃይልየ ሥላሴ ወጸወንየ ሥላሴ (2)' },
                   { timestamp: 19, text: 'በስመ ሥላሴ(2) እቀጠቅጥ ከይሴ(2)' },
@@ -60,7 +60,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Tenageru.opus'),
                 duration: 130,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ተናገሩ ድንቅ ሥራውንም መስክሩ (2)' },
                   { timestamp: 18, text: 'ተአምሩን ለዓለም ንገሩ(2) ' },
@@ -76,7 +76,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Kulu_Zefekede.opus'),
                 duration: 140,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ኩሉ ዘፈቀደ ገብረ እግዚአብሔር (2)' },
                   { timestamp: 27, text: 'በሰማየኒ ወበምድርኒ ወበባሕርኒ ወበኩሉ ቀላያት(2)' },
@@ -90,7 +90,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Neamen_Beabe.opus'),
                 duration: 150,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ነአምን በአብ ወነአምን በወልድ(2) ወነአምን(4) ነአምን በመንፈስ ቅዱስ(2)' },
                   { timestamp: 55, text: 'እናምናለን በአብ እናምናለን በወልድ(2) እናምናለን(4) እናምናለን በመንፈስ ቅዱስ(2)' }
@@ -103,7 +103,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Hail_Yeegzaber_New.opus'),
                 duration: 125,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ኃይል የእግዚአብሔር ነው ማዳን የእግዚአብሔር ጥበብ የእግዚአብሔር(2)' },
                   { timestamp: 18, text: 'አንመካም በጉልበታችን እግዚአብሔር ነው የእኛ ኃይላችን(2)' }
@@ -116,7 +116,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Enze_Yiblu.opus'),
                 duration: 110,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'እንዘ ይብሉ ይዜምሩ በልሳን ዘኢያረምም(2) ' },
                   { timestamp: 25, text: 'መንግሥተ ሥላሴ ዘለዓለም(2)' },
@@ -130,7 +130,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Ethiopia_Tabese.opus'),
                 duration: 160,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ኢትዮጵያ ታበጽሕ እደዊሃ (2) ኅበ እግዚአብሔር(2)' },
                   { timestamp: 48, text: 'እንዘ ትብል አምላኪየ(2) ነጽረኒ ወአድኅነኒ እምእደ ጻላኢ ወጸር(2)' },
@@ -144,7 +144,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Aateb.opus'),
                 duration: 140,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'አአትብ ወእትነሣእ በስመ አብ ወወልድ ወመንፈስ ቅዱስ(2)' },
                   { timestamp: 39, text: 'ሠለስተ አስማተ ነሢእየ(2) እትዌከል ቦቱ(2)' },
@@ -158,7 +158,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Haleluya.opus'),
                 duration: 180,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ሃሌሉያ(2) ሰላም ዘአብ ወፍቅር ዘወልድ ሃይማኖት ዘመንፈስ ቅዱስ(2)' },
                   { timestamp: 47, text: 'ይኅድር ማዕከሌክሙ አምላከ ሰላም(2) የሃሉ ምስሌክሙ(2)' },
@@ -172,7 +172,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Emkulu_Yeheys.opus'),
                 duration: 145,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'እምኩሉ ይሄይስ በሥላሴከ ተአምኖ(2) ወላዲትከ(2) ወወልድ ወላዲተከ ተማህፀኖ(2)' },
                   { timestamp: 20, text: 'ከሁሉም(2) ሥላሴን ነው  ማመን ማመስገን፤ ወልድን በወለደች(2) ድንግል አማላጃችን በእርስዋ እንማፀን' }
@@ -185,7 +185,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Besmam_Weweld.opus'),
                 duration: 120,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'በስመ አብ ወወልድ ወመንፈስ ቅዱስ ሥላሴ (2) የሲኦልን እሳት ትፈራለች ነፍሴ(2)' },
                   { timestamp: 15, text: 'አንተ አድናት አምላከ ሙሴ(2)' }
@@ -198,7 +198,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Yeab_Tsega.opus'),
                 duration: 110,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'የአብ ፀጋ የወልድ ቸርነት የመንፈስ ቅዱስ አንድነት(2) ይደር በሁላችን እንድናገኝ ሕይወት(2)' }
                 ],
@@ -210,7 +210,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Akedem.opus'),
                 duration: 130,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'አቀድም አእኵቶቶ ለእግዚአብሔር(2) በእንተ እግዚእነ ኢየሱስ ክርስቶስ(2)' },
                   { timestamp: 15, text: 'ከሁሉም አስቀድመን ጌታን እናመስግን(2) አሜን ለዘለዓለም እግዚአብሔር ይመስገን(2)' }
@@ -223,7 +223,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url:  require('../assets/music/Yiredeane.opus'),
                 duration: 150,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ይረድዓነ አምላክነ(2) ወመድኃኒነ(2) አምላክነሰ አምላከ አድኅኖ ስብሐት ለአብ ስብሐት ለወልድ ስብሐት ለመንፈስ ቅዱስ(2) ' },
                   { timestamp: 20, text: 'ይረዳናል አምላካችን(2) መድኃኒታችን፤ አምላካችን የድህነት አምላክ ነው ምስጋና ለአብ ምስጋና ለወልድ ምስጋና ለመንፈስ ቅዱስ(2)' }
@@ -236,7 +236,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Asergeweni_Silase.opus'),
                 duration: 180,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'አሠርግውኒ ሥላሴ በቀጠንተ ምጽዋት ሠናይ(2)' },
                   { timestamp: 15, text: 'እምነ ልማዱ ብሉይ ለነዌ ብሉይ እንዘ በዴዴሁ ይግዕር አልዓዛር ነዳይ(2)' },
@@ -250,7 +250,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Zintu_Kulu_Kone.opus'),
                 duration: 110,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ዝንቱ ኩሉ ኮነ በደብረ ብርሃን(2) በፈቃደ(3) እግዚአብሔር(2)' }
                 ],
@@ -262,7 +262,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Kulu_Yisegde.opus'),
                 duration: 100,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ኩሉ ይሰግድ (2) ለሥላሴ (3) ኩሉ ይሰግድ(2)' },
                   { timestamp: 10, text: 'ሁሉ ይሰግዳል(2) ለሥላሴ(2) ሁሉ ይሰግዳል(2)' }
@@ -275,7 +275,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Yemaysanew_Amlak.opus'),
                 duration: 115,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'የማይሳነው አምላክ(2) ወልደ አምላክ(2) እናንተን አምጥቶ እኛን አቆይቶ(2) አምላክ ቸር አገናኘን(2)' }
                 ],
@@ -287,7 +287,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Egziabher_Birhanena_Medhanitenew.opus'),
                 duration: 120,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'እግዚአብሔር ብርሃኔና መድኃኒቴ ነው(2) የሚያስደነግጠኝ የሚያስፈራኝ ማነው(2)' },
                   { timestamp: 15, text: 'አምላኬ መመኪያዬ ነው(2)' }
@@ -300,7 +300,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Zeyamre.opus'),
                 duration: 135,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ዘየአምር እምቅድመ ኅሊና ዘይሄሊ ልብ የአምር(2)' },
                   { timestamp: 15, text: 'አርአየ ኃይሎ በላዕሌነ ወጸገወነ ሠናይቱ እግዚአብሔር(2)' },
@@ -314,7 +314,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Tabote_Higu.opus'),
                 duration: 160,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ታቦተ ሕጉ ለእግዚአብሔር በካህናት ህፅርት ወበመንፈስ ቅዱስ ክልልት(2)' },
                   { timestamp: 20, text: 'ንጉሥኪ ጽዮን ኢይትመዋዕ ለፀር ወኢየኃድጋ ለሀገር(2)' },
@@ -328,7 +328,7 @@ export const seedData = {
                 cover_url: require('../assets/images/silase.jpg'),
                 audio_url: require('../assets/music/Serawite_Melaktu.opus'),
                 duration: 105,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ሠራዊተ ሠራዊተ መላእክቲሁ (2) ለመድኃኔዓለም(2) ይቀውሙ(2)' }
                 ],
@@ -340,7 +340,7 @@ export const seedData = {
                   cover_url: require('../assets/images/silase.jpg'),
                   audio_url: require('../assets/music/Weybello_Lenoh.opus'),
                   duration: 110,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ወይቤሎ ለኖኅ አመ አይኅ(2) ግበር ታቦተ በዘትድኅን(2)' },
                     { timestamp: 15, text: 'ትርጉም፡ እግዚአብሔር ለኖኅ ከጥፋት ውኃ የምትድንበትን መርከብ ሥራ አለው' }
@@ -353,7 +353,7 @@ export const seedData = {
                   cover_url: require('../assets/images/silase.jpg'),
                   audio_url: require('../assets/music/Seale_Muse.opus'),
                   duration: 130,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ሰአለ ሙሴ(2) በእንተ ዘስሕቱ ሕዝብ(2) ኀበ አቡነ አብርሃም ይስሐቅ ወያዕቆብ(2)' },
                     { timestamp: 20, text: 'ትርጉም፡ ሙሴ ስለ ሳቱት እስራኤላዊያን በአባቶች ስም ማራቸው ብሎ ለመነ' }
@@ -366,7 +366,7 @@ export const seedData = {
                   cover_url: require('../assets/images/silase.jpg'),
                   audio_url: require('../assets/music/Zebesemayni.opus'),
                   duration: 115,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ዘበሰማይኒ ወዘበምድርኒ በቃለ ዳዊት ይሴብሑ (2) ወይብሉ ኩሎሙ ሃሌ ሉያ(2)' }
                   ],
@@ -378,7 +378,7 @@ export const seedData = {
                   cover_url: require('../assets/images/silase.jpg'),
                   audio_url: require('../assets/music/Mebreke_Sibhat.opus'),
                   duration: 160,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'መብረቀ ስብሐት ራጉኤል ሊቀመላእክት(2) አብጽሕ ጸሎተነ(2)' },
                     { timestamp: 15, text: 'ቅድመ መንበረ አብ ወወልድ ወመንፈስ ቅዱስ ሥላሴ ዋሕድ(2)' },
@@ -392,7 +392,7 @@ export const seedData = {
                   cover_url: require('../assets/images/silase.jpg'),
                   audio_url: require('../assets/music/Sibhat_Leab.opus'),
                   duration: 180,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ስብሐት ለአብ ለአሀዜ ኩሉ ዓለም ስብሐት ለወልድ ለገባሬ ኩሉ ዓለም(2)' },
                     { timestamp: 20, text: 'ስብሐት ለመንፈስ ቅዱስ ለዘያርኁ ክረምተ በበዓመት(2)' },
@@ -406,7 +406,7 @@ export const seedData = {
                   cover_url: require('../assets/images/silase.jpg'),
                   audio_url: require('../assets/music/Haleluya2.opus'),
                   duration: 120,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ሃሌሉያ ለአብ ሃሌሉያ ለወልድ ለመንፈስ ቅዱስ(2) ሥላሴ ዋሕድ ለካህናተ ሰማይ ሕብራቲሁ(2)' }
                   ],
@@ -418,7 +418,7 @@ export const seedData = {
                   cover_url: require('../assets/images/silase.jpg'),
                   audio_url: require('../assets/music/Sibhat_Wekibru.opus'),
                   duration: 110,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ስብሐት ወክብር ለሥላሴሁ(3) ይደሉ(2) ተዋሕዳውያን ይቤሉ እስመ ፈጠረነ እስትንፋስ ወበቃሉ(2)' }
                   ],
@@ -430,7 +430,7 @@ export const seedData = {
                   cover_url: require('../assets/images/silase.jpg'),
                   audio_url: require('../assets/music/Abrham_Wesedo.opus'),
                   duration: 170,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'አብርሃም ወሰዶ ለይስሐቅ ወልዱ ከመ ይስዖ (2)' },
                     { timestamp: 15, text: 'አውረደ ሎቱ ቤዛሁ በግዐ እኁዝ አቅርንቲሁ በዕፀ ሳቤቅ ዕፀ ሳቤቅ ብሒል ዕፀ ስርየት መሰቀል(2)' },
@@ -444,7 +444,7 @@ export const seedData = {
                   cover_url: require('../assets/images/silase.jpg'),
                   audio_url: require('../assets/music/Wesa_Emdrekaran.opus'),
                   duration: 110,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ወጽአ እምድረ ካራን ወቦአ ብሔረ ከነዓን(2) ተአመነ አብርሃም(2) በእግዚአብሔር (2)' }
                   ],
@@ -456,7 +456,7 @@ export const seedData = {
                   cover_url: require('../assets/images/silase.jpg'),
                   audio_url: require('../assets/music/Lezih_Ladersen.opus'),
                   duration: 120,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ለዚህ ላደረሰን በሰላም በጤና (2) ሃሌሉያ(4) እናቅርብ ምስጋና(2)' }
                   ],
@@ -468,7 +468,7 @@ export const seedData = {
                   cover_url: require('../assets/images/silase.jpg'),
                   audio_url: require('../assets/music/Etgdfene.opus'),
                   duration: 280,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ኢትግድፈነ (2) ወኢትመንነነ (2) አምላከ ሰላም ተራድአነ(2)' },
                     { timestamp: 20, text: 'አትተወን (2) በፍፁም አትጣለን (2) የሰላም አምላክ ፈጥነህ እርዳን(2)' },
@@ -483,7 +483,7 @@ export const seedData = {
                   cover_url: require('../assets/images/silase.jpg'),
                   audio_url: require('../assets/music/Silasen_Amesgnu.opus'),
                   duration: 300,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ሥላሴን አመስግኑ(2) የምድር ፍጥረታት ዘምሩ እልል በሉ' },
                     { timestamp: 20, text: 'በስመ አብ ወወልድ ወመንፈስ ቅዱስ ምስጋና ይገባል ከምንም በፊት' },
@@ -722,7 +722,7 @@ export const seedData = {
             },
             {
               id: 49,
-              title: 'እሳተ ጽሩህ',
+              title: 'አሳተ ጽርሑ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/silase.jpg'),
               audio_url: require('../assets/music/Esat_Siru.opus'),
@@ -854,7 +854,7 @@ export const seedData = {
 
         {
           id: 'yeketera_mezmurat_sub1',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/ketera.jpg'), 
           songs: [
               {
@@ -864,7 +864,7 @@ export const seedData = {
                 cover_url: require('../assets/images/ketera.jpg'),
                 audio_url: require('../assets/music/Werede_Welde.opus'),
                 duration: 120,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ወረደ ወልድ(3)' },
                   { timestamp: 10, text: 'እምሰማያት ውስተ ምጥማቃት(2)' },
@@ -878,7 +878,7 @@ export const seedData = {
                 cover_url: require('../assets/images/ketera.jpg'),
                 audio_url: require('../assets/music/Hore_Eyesus_1.opus'),
                 duration: 130,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ሖረ ኢየሱስ(2)' },
                   { timestamp: 10, text: 'እም ገሊላ ኀበ ዮሐንስ(2)' },
@@ -893,7 +893,7 @@ export const seedData = {
                 cover_url: require('../assets/images/ketera.jpg'),
                 audio_url: require('../assets/music/Befisha_Webeselame.opus'),
                 duration: 140,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'በፍስሐ(2) ወበሰላም(2)' },
                   { timestamp: 10, text: 'ወረደ ወልድ(4)ወልድ ውስተ ምጥማቃት(2)' },
@@ -907,7 +907,7 @@ export const seedData = {
                 cover_url: require('../assets/images/ketera.jpg'),
                 audio_url: require('../assets/music/Yitfesah_Semay.opus'),
                 duration: 160,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ይትፌሳሕ ሰማይ በልደቱ ወትትሐሰይ ምድር በጥምቀቱ ለመድኃኔዓለም(2)' },
                   { timestamp: 20, text: 'ሶበ ይወርድ ወልድ ውስተ ምጥማቃት(2)' },
@@ -921,7 +921,7 @@ export const seedData = {
                 cover_url: require('../assets/images/ketera.jpg'),
                 audio_url: require('../assets/music/Hadigo_Tesa_2.opus'),
                 duration: 100,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ኅዲጎ ተስዓ(4)' },
                   { timestamp: 10, text: 'ወተስዓተ ተስዓተ ነገደ (2)' },
@@ -935,7 +935,7 @@ export const seedData = {
                 cover_url: require('../assets/images/ketera.jpg'),
                 audio_url: require('../assets/music/Ehe_Hadigo_Tesa.opus'),
                 duration: 150,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ኸኸ ኅዲጎ ተስዓ ኸኸ ወተስዓተ ነገድ' },
                   { timestamp: 15, text: 'ኸኸ ኅዲጎ ተስዓ ኸኸ ወተስዓተ ነገድ' },
@@ -949,7 +949,7 @@ export const seedData = {
                 cover_url: require('../assets/images/ketera.jpg'),
                 audio_url: require('../assets/music/Kidus_Egziabher.opus'),
                 duration: 180,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ቅዱስ እግዚአብሔር ቅዱስ ኃያል ቅዱስ ሕያው ዘኢይመውት(2)' },
                   { timestamp: 15, text: 'ዘተወልደ እማርያም ወተጠምቀ በዮርዳኖስ ተሰአለነ እግዚኦ (2)' },
@@ -963,7 +963,7 @@ export const seedData = {
                 cover_url: require('../assets/images/ketera.jpg'),
                 audio_url: require('../assets/music/wewesa_beselame.opus'),
                 duration: 100,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ወወጽአ በሰላም (4)' },
                   { timestamp: 15, text: 'ቆመ ማዕከለ ባሕር ገባ(2)' },
@@ -1030,7 +1030,7 @@ export const seedData = {
 
         {
           id: 'yetimket_mezmur_sub1',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/timket.jpg'), 
           songs: [
                 {
@@ -1040,7 +1040,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Kirstis_Tewelde_Kirstos.opus'),
                   duration: 120,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ክርስቶስ ተወልደ ክርስቶስ ተጠምቀ ክርስቶስ ተወልደ (2)' },
                     { timestamp: 15, text: 'ወለደነ ዳግመ (2)እመንፈስ ቅዱስ ወማይ (2)' },
@@ -1054,7 +1054,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Hale_Hale_Luya2.opus'),
                   duration: 110,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ሃሌ(2) ሃሌሉያ ሃሌ ሃሌሉያ ሃሌሉያ(2)' },
                     { timestamp: 15, text: 'ተጠምቀ ሰማያዊ በእደ መሬታዊ(2)' },
@@ -1068,7 +1068,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Mesa_Kale_1_1.opus'),
                   duration: 130,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'መጽአ ቃል እምደመና ዘይብል(2)(3)' },
                     { timestamp: 15, text: 'ዝንቱ ውእቱ ወልድየ ዘአፈቅር(2)' },
@@ -1083,7 +1083,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Mesa_Kale_2_.opus'),
                   duration: 140,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'መጽአ ቃል(2) እም ደመና ዘይብል ዝንቱ ውእቱ ወልድየ(2)' },
                     { timestamp: 15, text: 'ዘአፈቅር ሎቱ ስምዕዎ (2)' },
@@ -1092,15 +1092,15 @@ export const seedData = {
                 },
                 {
                   id: 70,
-                  title: 'መጽአ ቃል (ተርህወ ሰማይ)',
+                  title: 'መጽአ ቃል (3)',
                   artist: 'Zefinote Selam Sunday School',
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Metsa_kal_kutr3_edited.opus'),
                   duration: 100,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'መጽአ ቃል(2) እም ደመና ዘይብል (2)' },
-                    { timestamp: 10, text: 'ዝንቱ ውእቱ ወልድየ ዘአፈቅር(2)' },
+                    { timestamp: 10, text: 'ዝንቱ ውእቱ ወልድየ ዘአፈቅር(2)እም ደመና ዘይብል መጽአ ቃል' },
                     { timestamp: 20, text: 'ትርጉም ከደመና እንዲህ የሚል ቃል መጣ ከውኃ ወጥቶ ሰማይ ተከፈተለት' }
                   ],
                 },
@@ -1111,7 +1111,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Beede_Yohannes_Tetemke.opus'),
                   duration: 110,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'በእደ ዮሐንስ ተጠምቀ ኢየሱስ ናዝራዊ(2)' },
                     { timestamp: 10, text: 'ሰማያዊ(5)ኢየሱስ ናዝራዊ(2)' },
@@ -1125,7 +1125,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Yohansni_Halo_Yatemk.opus'),
                   duration: 100,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ዮሐንስኒ ሀሎ ያጠምቅ (2)' },
                     { timestamp: 10, text: 'በሄኖን በቅሩበ ሳሌም(2)' },
@@ -1139,7 +1139,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Atmeko_Bemay.opus'),
                   duration: 80,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'አጥመቆ በማይ(2)' },
                     { timestamp: 10, text: 'ዮሐንስ አጥመቆ በማይ(2)' },
@@ -1153,7 +1153,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Timketke.opus'),
                   duration: 100,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ጥምቀትከ ይኩነነ ቤዛ(2)' },
                     { timestamp: 10, text: 'ይኩነነ ቤዛ(4)ጥምቀትከ ይኩነነ ቤዛ(2)' },
@@ -1167,7 +1167,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Ned_Lemaybahr_Kebebo.opus'),
                   duration: 110,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ነድ ለማየ ባሕር ከበቦ(2)' },
                     { timestamp: 10, text: 'ማየ ባሕር ኀበ የሐውር ፀበቦ(2)' },
@@ -1181,7 +1181,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Timkete_Amsa.opus'),
                   duration: 180,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ጥምቀት አምጽአ ሕፅወ ንግሥት ለእሊአሁ እምኀበ ፊልጶስ ድኀረ ተጠምቀ ለሊሁ(2)' },
                     { timestamp: 15, text: 'ሰላማ አቡነ አምጽአ ለነ በዕድሜሁ ለመድኃኒነ ምሥጢረ ደሙ ወሥጋሁ(2)' },
@@ -1195,7 +1195,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Yibelo_Menfeskiduse.opus'),
                   duration: 180,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ይቤሎ መንፈስ ቅዱስ ለፊልጶስ ሑር ወትልዎ ለዝንቱ ሠረገላ ዘአፍራስ(2)' },
                     { timestamp: 15, text: 'ፊልጶስ መሐሮ ለባኮስ በእንተ ክርስቶስ ወአጥመቆ በማየ ጥምቀት ሐዲስ(2)' },
@@ -1210,7 +1210,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Bewengelu_Yamenachu.opus'),
                   duration: 100,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'በወንጌሉ ያመናችሁ(2)' },
                     { timestamp: 10, text: 'እንኳን ለብርሃነ ጥምቀቱ አደረሳችሁ(2)' }
@@ -1223,7 +1223,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Semayawi.opus'),
                   duration: 100,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ሰማያዊ(3)' },
                     { timestamp: 10, text: 'ተጠምቀ በማይ(2)ሰማያዊ ኢየሱስ ናዝራዊ(2)' }
@@ -1236,7 +1236,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Bahre_Zenegede.opus'),
                   duration: 90,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ባሕረ (2)ዘነገደ(2)' },
                     { timestamp: 10, text: 'ዘነገደ ባሕረ አማኑኤል (2)' }
@@ -1249,7 +1249,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Kirstos_Tewelde_Wetetemke.opus'),
                   duration: 110,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ክርስቶስ ተወልደ ወተጠምቀ(2)' },
                     { timestamp: 10, text: 'አስተርእዮቱ አማን አስተርእዮቱ(2)' }
@@ -1262,7 +1262,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Bezarew_Timketu.opus'),
                   duration: 200,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'በዛሬው ጥምቀቱ እሰይ እሰይ' },
                     { timestamp: 10, text: 'ተነግሮን አዋጅ ነጻነት አገኘን በእግዚአብሔር አብ ልጅ' },
@@ -1283,7 +1283,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Amlake_Yordanos.opus'),
                   duration: 220,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'አምላክ ከዮርዳኖስ(2)ተጠምቆ ሲወጣ' },
                     { timestamp: 15, text: 'ሰማያት ተከፍተው(3)ከሰማይ ቃል መጣ' },
@@ -1304,7 +1304,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Gineyu_Leegzaber.opus'),
                   duration: 320,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ግነዩ ለእግዚአብሔር እስመ ኄር (2)' },
                     { timestamp: 12, text: 'እስመ ለዓለም ምሕረቱ እስመ ለዓለም (4)' },
@@ -1333,7 +1333,7 @@ export const seedData = {
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/Yealemn_Bedeln.opus'),
                   duration: 300,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'የዓለምን በደል የሰውን ግፍ አይቶ' },
                     { timestamp: 10, text: 'ዘጠና ዘጠኙን መላእክት ትቶ' },
@@ -1358,12 +1358,12 @@ export const seedData = {
                 },
                 {
                   id: 86,
-                  title: 'ወወጽአ በሰላም (ዮርዳኖስም ሸሸ)',
+                  title: 'ወወጽአ በሰላም',
                   artist: 'Zefinote Selam Sunday School',
                   cover_url: require('../assets/images/timket.jpg'),
                   audio_url: require('../assets/music/wewesa_beselame.opus'),
                   duration: 180,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ወወጽአ በሰላም (2)' },
                     { timestamp: 10, text: 'ቆመ ማዕከለ ባሕር ገብአ' },
@@ -1443,7 +1443,7 @@ export const seedData = {
                   title: 'አማን በአማን (መንክር)',
                   artist: 'Zefinote Selam Sunday School',
                   cover_url: require('../assets/images/timket.jpg'),
-                  audio_url: require('../assets/music/Aman_beaman_menkere_yeldet_edited.opus'),
+                  audio_url: require('../assets/music/Aman_Beaman_fixed.opus'),
                   duration: 100,
                   genre: 'ግእዝ 1',
                   lyrics: [
@@ -1470,7 +1470,7 @@ export const seedData = {
                   title: 'ከድንግል ተወልዶ',
                   artist: 'Zefinote Selam Sunday School',
                   cover_url: require('../assets/images/timket.jpg'),
-                  audio_url: require('../assets/music/Kedingel_Tewwldo.opus'),
+                  audio_url: require('../assets/music/Kedingel_Tweldo_Egnan.opus'),
                   duration: 220,
                   genre: 'ግእዝ 1',
                   lyrics: [
@@ -1580,7 +1580,7 @@ export const seedData = {
 
         {
           id: 'yekana_mezmur_sub1',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/kanazegelila.png'), 
           songs: [
                 {
@@ -1590,7 +1590,7 @@ export const seedData = {
                   cover_url: require('../assets/images/kanazegelila.png'),
                   audio_url: require('../assets/music/Bekemesemayne.opus'),
                   duration: 110,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'በከመ ሰማዕነ ከማሁ ርኢነ(2)' },
                     { timestamp: 10, text: 'ወይነ ቃና (3)በቤትከ ኮነ(2)' },
@@ -1604,7 +1604,7 @@ export const seedData = {
                   cover_url: require('../assets/images/kanazegelila.png'),
                   audio_url: require('../assets/music/Enzesiwer_Tamre.opus'),
                   duration: 150,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'እንዘ ስውር እምኔነ ይእዜሰ ክሡተ ኮነ (2)' },
                     { timestamp: 15, text: 'ተአምረ ወመንክረ ገብረ መድኃኒነ በቃና ዘገሊላ' },
@@ -1619,7 +1619,7 @@ export const seedData = {
                   cover_url: require('../assets/images/kanazegelila.png'),
                   audio_url: require('../assets/music/enzesiwr_emne.opus'),
                   duration: 130,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'እንዘ ስውር እምኔነ ይእዜሰ ክሡተ ኮነ(2)' },
                     { timestamp: 15, text: 'ወለማየኒ ረሰዮ ወይነ ወለማየኒ ረሰዮ ወይነ (2)' },
@@ -1633,7 +1633,7 @@ export const seedData = {
                   cover_url: require('../assets/images/kanazegelila.png'),
                   audio_url: require('../assets/music/tamre_wemenkre_hana.opus'),
                   duration: 100,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ተአምረ ወመንክረ ገብረ መድኃኒነ(2)' },
                     { timestamp: 15, text: 'በቃና ዘገሊላ(2)ከብካብ ኮነ(2)' }
@@ -1646,7 +1646,7 @@ export const seedData = {
                   cover_url: require('../assets/images/kanazegelila.png'),
                   audio_url: require('../assets/music/Kana_Zegelila.opus'),
                   duration: 280,
-                  genre: 'እዝል ዓራራይ ቅኝት',
+                  genre: 'ዕዝል / አራራይ',
                   lyrics: [
                     { timestamp: 0, text: 'ቃና ዘገሊላ (2) በዚያ በሠርግ ቤት' },
                     { timestamp: 12, text: 'ተገኝተሻል ድንግል ከልጅሽ ጋራ ተገኝተአል ጌታ ከእናት ጋራ' },
@@ -1672,7 +1672,7 @@ export const seedData = {
                   title: 'በቃና ዘገሊላ',
                   artist: 'Zefinote Selam Sunday School',
                   cover_url: require('../assets/images/kanazegelila.png'),
-                  audio_url: require('../assets/music/Bekana_Zegelila.opus'),
+                  audio_url: require('../assets/music/Bekanazegelila_Achru.opus'),
                   duration: 100,
                   genre: 'ግእዝ 1',
                   lyrics: [
@@ -1772,7 +1772,7 @@ export const seedData = {
 
 //         {
 //           id: 'kirkosweeyeluta_mezmur_sub1',
-//           name: 'እዝል ዓራራይ ቅኝት',
+//           name: 'ዕዝል / አራራይ',
 //           image: require('../assets/images/silase.jpg'), 
 //           songs: [
 //                 {
@@ -1992,7 +1992,7 @@ export const seedData = {
     // ═══════════════════════════════════════════════════════
     {
       id: 'zemawi_mezmurat',
-      name: 'የዘመነ መርዕዊ መዝሙራት',
+      name: 'የዘመነ መርዓዊ መዝሙራት',
       icon: require('../icons/playlist.png'),
       color: '#FF6B6B',
       image: require('../assets/images/mushra.jpg'), 
@@ -2000,7 +2000,7 @@ export const seedData = {
 
         {
           id: 'ezil_araray',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/mushra.jpg'), 
           songs: [
             {
@@ -2010,7 +2010,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Mesa_Zemesa.opus'),
               duration: 120,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መጽአ ዘመጽአ እምላእሉ/2/' },
                 { timestamp: 15, text: 'መርዓዊ መጽአ /2/ተቀበሉ ጻኡ ተቀበሉ/2/' }
@@ -2023,7 +2023,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Mesa_Merawi.opus'),
               duration: 110,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መጽአ መራዊ ፍስሃ ለኩሉ/2/ በሰላም ጻኡ ተቀበሉ/2/' },
                 { timestamp: 15, text: 'ትርጉም፡ መጣ ሙሽራ የሁላችን ደስታ/2/ በሰላም ዉጡ ተቀበሉ/2/' }
@@ -2036,7 +2036,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Desalate.opus'),
               duration: 130,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ደስ አላት ቤተክርስቲያን በጣም ደስ አላት /2/' },
                 { timestamp: 15, text: 'ሙሽሪት ሙሽራው ልጆቿ/2/ በተክሊል በቁርባን ተዋሐዱላት /2/' }
@@ -2049,7 +2049,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Merawi_Semayawi.opus'),
               duration: 260,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መርዓዊ ሰማያዊ /2/ ለእመ ገብረ በዓለ/2/ ይኑሩ በሰላም /3/ ጸንተው ዘለዓለም/2/' },
                 { timestamp: 30, text: 'ደናግል ተነሡ ያዙ መብራቱን ሙሽሪው ደረሰ አጉል እንዳንሆን' },
@@ -2066,7 +2066,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Kahnat_Tensu.opus'),
               duration: 100,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ካህናት ተንሥኡ/2/ ለተናብቦ /2/' },
                 { timestamp: 15, text: 'እንዘ ይብሉ ንሴብሖ/2/እንዘ ይብሉ ንሴብሖ/2/' }
@@ -2079,7 +2079,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Dink_New_Betam.opus'),
               duration: 280,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ድንቅ ነው በጣም ድንቅ ነው/2/ በሰርጋቸው ዕለት ተገኘ መድኃኒዓለም' },
                 { timestamp: 20, text: 'በሠርጋቸው እለት ተገኘች ድንግል ማርያም' },
@@ -2100,7 +2100,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Des_yibelen_amelales_edited.opus'),
               duration: 240,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ወንድና ሴት አድርጐ እንደፈጠራቸው ኋላም ለኑሮአቸው ጋብቻን ሰጣቸው' },
                 { timestamp: 20, text: 'አንዴ ከተጋቡ አንድ ሥጋ ናቸው ከእንግዲህ ወደፊት ይጸናል ፍቅራቸው' },
@@ -2115,12 +2115,12 @@ export const seedData = {
             },
             {
               id: 129,
-              title: 'ቃና ዘገሊላ (Wedding Version)',
+              title: 'ቃና ዘገሊላ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Kana_Zegelila.opus'),
               duration: 300,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ቃና ዘገሊላ/2/በዚያ በሠርግ ቤት ተገኝተሻል ድንግል ከልጅሽ ጋራ ተገኝተሃል ጌታ ከእናትህ ጋራ' },
                 { timestamp: 30, text: 'እድምተኞች ሞልተው የተጋበዙት ሲበሉ ሲጠጡ ወይኑ አልቆበት ድንግል እናታችን ቤዛዊት ዓለም አንቺ ደረስሽለት ሆንሽው አማላጅ' },
@@ -2139,7 +2139,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Demeke_aberalen_edited.opus'),
               duration: 250,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ደመቀ አበራልን የአማኑኤል ሥራ/2/ ሙሽሮቹ ሆኑ አብርሃም ወሣራ' },
                 { timestamp: 25, text: 'በቤተክርስቲያን ጥላ ተከልለው ተክሊል አድርገዋል ሙሽሪት ሙሽራው' },
@@ -2159,7 +2159,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Merawi_Sibuh.opus'),
               duration: 100,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መርዓዊ ስቡሕ ዘለዓለም/2/ ወእስከለዓለም /2/ ንጉሥ ውእቱ /2/' }
               ],
@@ -2171,7 +2171,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Huletum_And_Honu_Zare_edited.opus'),
               duration: 240,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ሁለቱም አንድ ሆኑ ዛሬ/2/ በእግዚአብሔር በሕያው ቃሉ ሁለቱም አንድ ሆኑ ዛሬ' },
                 { timestamp: 20, text: 'ወንድና ሴት አድርጐ እንደፈጠራቸው በኋላም በቃሉ አንድ አደረጋቸው' },
@@ -2191,7 +2191,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Des_ale_geta_edited.opus'),
               duration: 120,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ደስ አለው ጌታ በሙሽሮች ደስ አለው ጌታ/2/' },
                 { timestamp: 15, text: 'በቅዱስ ቁርባን ተወስነው ደስ አለው ጌታ/2/' },
@@ -2206,7 +2206,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Eyakemwehana_Mushrochu.opus'),
               duration: 100,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ኢያቄም ወሐና/4/ ሙሽሮቹ ያብባሉ ገና/2/' }
               ],
@@ -2216,9 +2216,9 @@ export const seedData = {
               title: 'ኑ ተመልከቱልኝ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/mushra.jpg'),
-              // audio_url: 'TODO: add local file for song id 135',
+              audio_url: require('../assets/music/Nu_Temelketuln_fixed.opus'),
               duration: 240,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ኑ ተመልከቱልኝ የአማኑኤልን ሥራ/2/ ኑ ተመልከቱልኝ የእመቤቴን ሥራ' },
                 { timestamp: 20, text: 'ሙሽሮቹ ሆኑ አብርሃም ወሣራ/2/' },
@@ -2237,7 +2237,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Netsehet_dengel_edited.opus'),
               duration: 280,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ንጽሕት ድንግል ቡርክት የእምላክ እናት እመቤት ልጆችሽ ሙሽሮች ሁለቱም አንድ ሆኑ' },
                 { timestamp: 20, text: 'ተዋሐዱ ተጣመሩ በቅዱስ ቁርባኑ/2/' },
@@ -2259,7 +2259,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Weemeako.opus'),
               duration: 100,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ወእመአኮ ከመወሬዛ ኃየል/2/ ትዌድሶ መርዓት እንዘትብል/4/' }
               ],
@@ -2271,7 +2271,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Nisebho_Leamlake_Ezra.opus'),
               duration: 120,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ንሴብሖ /2/ ለአምላከ እዝራ(2) እርሱን ለፈጠረ እርሷንም ለሠራ/2/' },
                 { timestamp: 20, text: 'ንሴብሖ ለአምላከ እዝራ' }
@@ -2282,9 +2282,9 @@ export const seedData = {
               title: 'እልል እልል ደስ ይበለን',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/mushra.jpg'),
-              audio_url: require('../assets/music/Ellell_Desyibelene.opus'),
+              audio_url: require('../assets/music/Ellel_ell_Yesergo_ling.opus'),
               duration: 260,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'እልል እልል ደስ ይበለን/2/ አጅበን መጣን ሙሽሮቹን እልል ብላችሁ ተቀበሉን/2/' },
                 { timestamp: 30, text: 'እናንተ ሙሽሮች እንኳን ደስ አላችሁ/2/ የአብርሃም የሣራ ይሁን ጋብቻችሁ' },
@@ -2305,7 +2305,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Yitbarek_endabrham_edited.opus'),
               duration: 260,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ይትባረክ እንደ አብርሃም/2/ እኸ ዘለዓለም/4/ ይትባረክ እንደ አብርሃም/2/' },
                 { timestamp: 30, text: 'ሙሽሪት ሙሽራው እንደአብርሃም እንኳን ደስ አላችሁ ተከበረ ዛሬ ቅዱስ ጋብቻችሁ' },
@@ -2323,7 +2323,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Sobe_Semayne_Zena.opus'),
               duration: 180,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ሶበ ሰማእነ ዜናከ መጻእነ ኀቤከ/2/ መጻእነ/4/' },
                 { timestamp: 20, text: 'እንደ ሰብአ ሰገል ነገሥተ ምሥራቅ ዝናህን ለመስማት መጣን ልንጠየቅ' },
@@ -2341,7 +2341,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Ehe_Tebelo_Merat.opus'),
               duration: 110,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ኸኸ ትብሎ መርዓት ኸኸ ለመርዓዊሀ(2) ኸኸ ሰናየ አንተ አንተ ወልድ እኁየ(2)' },
                 { timestamp: 15, text: 'ትርጉም፡ ኸኸ ሙሽሪት አለች ኸኸ ለሙሽራው(2) ኸኸ ሕይወቴ ነህ አንተ ሕይወቴ ነህ(2) ኸኸ ሙሽራው አለ ኸኸ ለሙሽሪት(2) ኸኸ ሕይወቴ ነሽ አንቺ ሕይወቴ ነሽ' }
@@ -2354,7 +2354,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Desalachew_Longu.opus'),
               duration: 200,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ደስ አላቸው ሙሸራው ሙሽሪት በዝማሬ ሙሸራው ሙሽሪት ደምቆ ታይቷል ሙሸራው ሙሽሪት ጋብቻቸው ሙሸራው ሙሽሪት' },
                 { timestamp: 30, text: 'እግዚአብሔር ይመስገን ሙሽራው ሙሽሪት ኃያሉ ጌታችን ሙሽራው ሙሽሪት ለዚህ ላበቃቸው ሙሸራው ሙሽሪት' },
@@ -2372,7 +2372,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/desalachew_mushrit_mushraw.opus'),
               duration: 220,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ደስ አላቸው ሙሽሪት ሙሽራው(2) እግዚአብሔር ስለባረካቸው ' },
                 { timestamp: 25, text: 'ደስ አላቸው የልባቸው ምክር ደስ አላቸው የብቻቸው ምስጢር ደስ አላቸው  ዛሬ ተፈፅሟል ደስ አላቸው በቤተክርስቲያን ' },
@@ -2388,9 +2388,9 @@ export const seedData = {
               title: 'ይህን ላደረገ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/mushra.jpg'),
-              audio_url: require('../assets/music/Lezih_Ladersen.opus'),
+              audio_url: require('../assets/music/Yihen_Laderege_Yemushra.opus'),
               duration: 300,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ይህን ላደረገ ሃሌሉያ በሉ እግዚአብሔር ታማኝ ነው ሁል ጊዜ ለቃሉ' },
                 { timestamp: 20, text: 'ሙሽሪት ሙሽራው እንኳን ደስ አላችሁ የያእቆብ አምላክ ሞገስ ሆነላችሁ(2)' },
@@ -2409,7 +2409,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Ahadu_Akal.opus'),
               duration: 100,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'አሐዱ አካል/2/ ዘአስተጻመረ/3/ እግዚአብሔር' }
               ],
@@ -2421,7 +2421,7 @@ export const seedData = {
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Yemanu_Tehakfeni.opus'),
               duration: 110,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'የማኑ ተሀቅፈኒ ወፀጋሙ ታሕተርእስየ(2) ትብሎ መርዓት ትብሎ/4/መርዓዊሃ' }
               ],
@@ -2455,26 +2455,26 @@ export const seedData = {
                 { timestamp: 200, text: 'ከድንግልም ጋራ ሚስትህን ይዘህ ተነሥ ወንድሜ ሆይ ደርስዋል ሰዓትህ' }
               ],
             },
-            {
-              id: 149,
-              title: 'የምሥራች ደስ ይበላችሁ',
-              artist: 'Zefinote Selam Sunday School',
-              cover_url: require('../assets/images/mushra.jpg'),
-              // audio_url: require('../assets/music/Yemsrach_Des_Yibelen.opus'),
-              duration: 220,
-              genre: 'ግእዝ 1',
-              lyrics: [
-                { timestamp: 0, text: 'የምሥራች ደስ ይበላችሁ/2/ አሸብርቆ ዋለ ሙሽሮች ሠርጋችሁ/2/' },
-                { timestamp: 25, text: 'ሕይወታችሁ ሰላማዊ ፍጹም ፍቅር/2/ እንደ ጽጌረዳ እንደ አደይ ፈክቶ የሚኖር' },
-                { timestamp: 50, text: 'አማኑኤል ያድርገው መልካም ትሥሥር መተሳሰብ መከባበር ይሁን ተግብራችሁ/2/' },
-                { timestamp: 75, text: 'ሠርጐ እንዳይገባ ዲያብሎስ በትዳራችሁ በጸሎት ይታጠር ሙሽሮች ጐጆአችሁ' },
-                { timestamp: 100, text: 'ዓይኖቻችሁ የጐረቤት አይመልከቱ/2/ ለወሬ ለሐሜት ጆሮአችሁ አይከፈቱ' },
-                { timestamp: 125, text: 'በችግር በደስታ በጾም ጸሎት በርቱ እግሮቻችሁ ይገስግሱ ወደ እውነት/2/' },
-                { timestamp: 150, text: 'አማናዊ ማእድ ክርስቶስ ወዳለበት በልባችሁ አኑሩት ታላቁን አባት' },
-                { timestamp: 175, text: 'ድንግል ማርያም ቅድስት እናት ለምኚላቸው/2/ የሚፈልጉትን በሙሉ አንቺ አስጪያቸው' },
-                { timestamp: 200, text: 'በሰማይ በምድርም ምልጃሽ አይራቃቸው' }
-              ],
-            },
+            // {
+            //   id: 149,
+            //   title: 'የምሥራች ደስ ይበላችሁ',
+            //   artist: 'Zefinote Selam Sunday School',
+            //   cover_url: require('../assets/images/mushra.jpg'),
+            //   // audio_url: require('../assets/music/Yemsrach_Des_Yibelen.opus'),
+            //   duration: 220,
+            //   genre: 'ግእዝ 1',
+            //   lyrics: [
+            //     { timestamp: 0, text: 'የምሥራች ደስ ይበላችሁ/2/ አሸብርቆ ዋለ ሙሽሮች ሠርጋችሁ/2/' },
+            //     { timestamp: 25, text: 'ሕይወታችሁ ሰላማዊ ፍጹም ፍቅር/2/ እንደ ጽጌረዳ እንደ አደይ ፈክቶ የሚኖር' },
+            //     { timestamp: 50, text: 'አማኑኤል ያድርገው መልካም ትሥሥር መተሳሰብ መከባበር ይሁን ተግብራችሁ/2/' },
+            //     { timestamp: 75, text: 'ሠርጐ እንዳይገባ ዲያብሎስ በትዳራችሁ በጸሎት ይታጠር ሙሽሮች ጐጆአችሁ' },
+            //     { timestamp: 100, text: 'ዓይኖቻችሁ የጐረቤት አይመልከቱ/2/ ለወሬ ለሐሜት ጆሮአችሁ አይከፈቱ' },
+            //     { timestamp: 125, text: 'በችግር በደስታ በጾም ጸሎት በርቱ እግሮቻችሁ ይገስግሱ ወደ እውነት/2/' },
+            //     { timestamp: 150, text: 'አማናዊ ማእድ ክርስቶስ ወዳለበት በልባችሁ አኑሩት ታላቁን አባት' },
+            //     { timestamp: 175, text: 'ድንግል ማርያም ቅድስት እናት ለምኚላቸው/2/ የሚፈልጉትን በሙሉ አንቺ አስጪያቸው' },
+            //     { timestamp: 200, text: 'በሰማይ በምድርም ምልጃሽ አይራቃቸው' }
+            //   ],
+            // },
             {
               id: 150,
               title: 'በቃና ዘገሊላ ቁ.1',
@@ -2559,7 +2559,7 @@ export const seedData = {
             },
             {
               id: 156,
-              title: 'በክብር ዙፋኑ (Wedding Version)',
+              title: 'በክብር ዙፋኑ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/mushra.jpg'),
               audio_url: require('../assets/music/Bekibir_Zufanu.opus'),
@@ -2598,7 +2598,7 @@ export const seedData = {
               title: 'በቃና ዘገሊላ ቁ.2',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/mushra.jpg'),
-              audio_url: require('../assets/music/Bekana_Zegelila_2.opus'),
+              audio_url: require('../assets/music/Bekana_Zegelila.opus'),
               duration: 110,
               genre: 'ግእዝ 2',
               lyrics: [
@@ -2610,7 +2610,7 @@ export const seedData = {
               title: 'የቃናው ደስታ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/mushra.jpg'),
-              // audio_url: 'TODO: add local file for song id 159',
+              audio_url: require('../assets/music/Yekanaw_Desta.opus'),
               duration: 240,
               genre: 'ግእዝ 2',
               lyrics: [
@@ -2706,24 +2706,24 @@ export const seedData = {
 
         {
           id: 'yewede_amet_ezil_araray',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/awdeamet.jpg'), 
           songs: [
-            {
-    id: 164,
-    title: 'ሃሌ ሉያ',
-    artist: 'Zefinote Selam Sunday School',
-    cover_url: require('../assets/images/awdeamet.jpg'),
-    // audio_url: 'TODO: add local file for song id 164',
-    duration: 233,
-    genre: 'እዝል ዓራራይ ቅኝት',
-    lyrics: [
-      { timestamp: 0, text: 'ዋይ ዜማ ዘሰማዕኩ በሰማይ እመላእክት' },
-      { timestamp: 5, text: 'ቅዱሳን እንዘ ይብሉ ቅዱስ /3/' },
-      { timestamp: 10, text: 'እግዘብሔር መልዓ ሰማያተ' },
-      { timestamp: 15, text: 'ወምድረ ቅድሳተ ስብሐቲከ' }
-    ],
-  },
+  //           {
+  //   id: 164,
+  //   title: 'ሃሌ ሉያ',
+  //   artist: 'Zefinote Selam Sunday School',
+  //   cover_url: require('../assets/images/awdeamet.jpg'),
+  //   // audio_url: 'TODO: add local file for song id 164',
+  //   duration: 233,
+  //   genre: 'ዕዝል / አራራይ',
+  //   lyrics: [
+  //     { timestamp: 0, text: 'ዋይ ዜማ ዘሰማዕኩ በሰማይ እመላእክት' },
+  //     { timestamp: 5, text: 'ቅዱሳን እንዘ ይብሉ ቅዱስ /3/' },
+  //     { timestamp: 10, text: 'እግዘብሔር መልዓ ሰማያተ' },
+  //     { timestamp: 15, text: 'ወምድረ ቅድሳተ ስብሐቲከ' }
+  //   ],
+  // },
   {
     id: 165,
     title: 'ጸሊ ኀበ አምላክ',
@@ -2731,7 +2731,7 @@ export const seedData = {
     cover_url: require('../assets/images/awdeamet.jpg'),
     audio_url: require('../assets/music/Tseli.opus'),
     duration: 203,
-    genre: 'እዝል ዓራራይ ቅኝት',
+    genre: 'ዕዝል / አራራይ',
     lyrics: [
       { timestamp: 0, text: 'ጸሊ ኀበ አምላክ ራጉኤል መልአክ /፪/' },
       { timestamp: 5, text: 'ዓውደ ዓመት ከመ ይትባረክ /፬/' },
@@ -2746,7 +2746,7 @@ export const seedData = {
     cover_url: require('../assets/images/awdeamet.jpg'),
     audio_url: require('../assets/music/Barek_Lene.opus'),
     duration: 240,
-    genre: 'እዝል ዓራራይ ቅኝት',
+    genre: 'ዕዝል / አራራይ',
     lyrics: [
       { timestamp: 0, text: 'ባርክ ለነ እግዚኦ ዘንተ ዓመተ ምሕረትነ' },
       { timestamp: 5, text: 'በብዝኅ ሒሩትከ ለሕዝብከ ኢትዮጵያ' },
@@ -2766,7 +2766,7 @@ export const seedData = {
     cover_url: require('../assets/images/awdeamet.jpg'),
     audio_url: require('../assets/music/Awdeamet_Lebarko.opus'),
     duration: 180,
-    genre: 'እዝል ዓራራይ ቅኝት',
+    genre: 'ዕዝል / አራራይ',
     lyrics: [
       { timestamp: 0, text: 'ዓውደ ዓመት ለባርኮ ባርኮ ዓውደ ዓመት /፪/' },
       { timestamp: 5, text: 'ንዒ ማርያም ለምሕረት ወሣህል /፪/' },
@@ -2780,7 +2780,7 @@ export const seedData = {
     cover_url: require('../assets/images/awdeamet.jpg'),
     audio_url: require('../assets/music/Meskeren_Teba.opus'),
     duration: 310,
-    genre: 'እዝል ዓራራይ ቅኝት',
+    genre: 'ዕዝል / አራራይ',
     lyrics: [
       { timestamp: 0, text: 'መስከረም ጠባ ኢዮሃ አበባ/፪/' },
       { timestamp: 5, text: 'መስከረም ጠባ ኢዮሃ አበባ' },
@@ -2801,69 +2801,83 @@ export const seedData = {
       { timestamp: 80, text: 'ኢዮሃ አበባ /፫/' }
     ],
   },
-  {
-    id: 169,
-    title: 'ራጉኤልኒ ይቤ',
-    artist: 'Zefinote Selam Sunday School',
-    cover_url: require('../assets/images/awdeamet.jpg'),
-    audio_url: require('../assets/music/Timketke.opus'),
-    duration: 195,
-    genre: 'እዝል ዓራራይ ቅኝት',
-    lyrics: [
-      { timestamp: 0, text: 'ራጉኤልኒ ይቤ በውስተ ኦሪት ምድር ሠናይት ደብረ ኃይል /፪/' },
-      { timestamp: 5, text: 'እንተ ዘልፈ ይሔውጻ እግዚአብሔር ለኢትዮጵያ እም ዓመት' },
-      { timestamp: 10, text: 'እስከ ርዕሰ ዓውደ ዓመት /፪/' },
-      { timestamp: 15, text: 'ራጉኤል በሕግ ውስጥ ደብረ ኃይልን ያማረች የተዋበች ምድር ይላል' },
-      { timestamp: 20, text: 'እግዚአብሔር ከዓመት እስከ ርዕሰ ዓውደ ዓመት ይጎበኛታልና' }
-    ],
-  },
-  {
-    id: 170,
-    title: 'በምድረ ጽዮን',
-    artist: 'Zefinote Selam Sunday School',
-    cover_url: require('../assets/images/awdeamet.jpg'),
-    audio_url: require('../assets/music/Bemidrawi_Hiwot.opus'),
-    duration: 215,
-    genre: 'እዝል ዓራራይ ቅኝት',
-    lyrics: [
-      { timestamp: 0, text: 'በምድረ ጽዮን ዕይኩን ሐከክ ወበ ገራኀይታ ዒይብቁል ሶክ /፪/' },
-      { timestamp: 5, text: 'ጸሊይ ኀበ አምላክ ራጉኤል መልአክ' },
-      { timestamp: 10, text: 'ዓውደ ዓመት ከመ ይትባረክ /፪/' },
-      { timestamp: 15, text: 'ትር፦ በጽዮን ምድር ድርቅ/ረሀብ እንዳይሆን' },
-      { timestamp: 20, text: 'በእርሻዎቿም እሾክ እንዳይበቀል ዓውደ ዓመቱም ይባረክ' },
-      { timestamp: 25, text: 'ዘንድ መልአኩ ቅዱስ ራጉኤል ወደ አምላክ ወደ እግዚአብሔር ጸልይ' }
-    ],
-  },
-  {
-    id: 171,
-    title: 'ለባርኮ',
-    artist: 'Zefinote Selam Sunday School',
-    cover_url: require('../assets/images/awdeamet.jpg'),
-    // audio_url: 'TODO: add local file for song id 171',
-    duration: 150,
-    genre: 'እዝል ዓራራይ ቅኝት',
-    lyrics: [
-      { timestamp: 0, text: 'ለባርኮ ዓውደ ዓመት ምስለ ራጉኤል መልአክ /፪/' },
-      { timestamp: 5, text: 'ንዒ ማርያም /፬/ እመ አምላክ /፪/' },
-      { timestamp: 10, text: 'ትርጉም የአምላክ እናት ማርያም ሆይ ከቅዱስ ራጉኤል ጋር አዲሱን ዓመት ለመባረክ ነይ' }
-    ],
-  },
-  {
-    id: 172,
-    title: 'ንዒ ኀበየ',
-    artist: 'Zefinote Selam Sunday School',
-    cover_url: require('../assets/images/awdeamet.jpg'),
-    // audio_url: 'TODO: add local file for song id 172',
-    duration: 220,
-    genre: 'እዝል ዓራራይ ቅኝት',
-    lyrics: [
-      { timestamp: 0, text: 'ንዒ ኀቤየ ኦ ድንግል ምስለ ኤልያስ ወራጉኤል ወበርተሎሚዎስ' },
-      { timestamp: 5, text: 'ነቢያተ እሥራኤል /፪/' },
-      { timestamp: 10, text: 'ወምስለ ዮሐንስ ድንግል /፪/ ለባርኮ ዓውደ' },
-      { timestamp: 15, text: 'ትርጉም:-ድንግል ሆይ ከኤልያስ ነቢይ ከራጉኤል መልአክ ከበርተሎሚዎስ' },
-      { timestamp: 20, text: 'ከእስራኤል ነቢያት እንዲሁም ከቅዱስ ዮሐንስ ጋር አዲሱን ዓመት ለመባረክ ነይ' }
-    ],}
-            // ↓ you can add song suggession by elias
+  // {
+  //   id: 169,
+  //   title: 'ራጉኤልኒ ይቤ',
+  //   artist: 'Zefinote Selam Sunday School',
+  //   cover_url: require('../assets/images/awdeamet.jpg'),
+  //   audio_url: require('../assets/music/Timketke.opus'),
+  //   duration: 195,
+  //   genre: 'ዕዝል / አራራይ',
+  //   lyrics: [
+  //     { timestamp: 0, text: 'ራጉኤልኒ ይቤ በውስተ ኦሪት ምድር ሠናይት ደብረ ኃይል /፪/' },
+  //     { timestamp: 5, text: 'እንተ ዘልፈ ይሔውጻ እግዚአብሔር ለኢትዮጵያ እም ዓመት' },
+  //     { timestamp: 10, text: 'እስከ ርዕሰ ዓውደ ዓመት /፪/' },
+  //     { timestamp: 15, text: 'ራጉኤል በሕግ ውስጥ ደብረ ኃይልን ያማረች የተዋበች ምድር ይላል' },
+  //     { timestamp: 20, text: 'እግዚአብሔር ከዓመት እስከ ርዕሰ ዓውደ ዓመት ይጎበኛታልና' }
+  //   ],
+  // },
+  // {
+  //   id: 170,
+  //   title: 'በምድረ ጽዮን',
+  //   artist: 'Zefinote Selam Sunday School',
+  //   cover_url: require('../assets/images/awdeamet.jpg'),
+  //   audio_url: require('../assets/music/Bemidrawi_Hiwot.opus'),
+  //   duration: 215,
+  //   genre: 'ዕዝል / አራራይ',
+  //   lyrics: [
+  //     { timestamp: 0, text: 'በምድረ ጽዮን ዕይኩን ሐከክ ወበ ገራኀይታ ዒይብቁል ሶክ /፪/' },
+  //     { timestamp: 5, text: 'ጸሊይ ኀበ አምላክ ራጉኤል መልአክ' },
+  //     { timestamp: 10, text: 'ዓውደ ዓመት ከመ ይትባረክ /፪/' },
+  //     { timestamp: 15, text: 'ትር፦ በጽዮን ምድር ድርቅ/ረሀብ እንዳይሆን' },
+  //     { timestamp: 20, text: 'በእርሻዎቿም እሾክ እንዳይበቀል ዓውደ ዓመቱም ይባረክ' },
+  //     { timestamp: 25, text: 'ዘንድ መልአኩ ቅዱስ ራጉኤል ወደ አምላክ ወደ እግዚአብሔር ጸልይ' }
+  //   ],
+  // },
+  // {
+  //   id: 171,
+  //   title: 'ለባርኮ',
+  //   artist: 'Zefinote Selam Sunday School',
+  //   cover_url: require('../assets/images/awdeamet.jpg'),
+  //   // audio_url: 'TODO: add local file for song id 171',
+  //   duration: 150,
+  //   genre: 'ዕዝል / አራራይ',
+  //   lyrics: [
+  //     { timestamp: 0, text: 'ለባርኮ ዓውደ ዓመት ምስለ ራጉኤል መልአክ /፪/' },
+  //     { timestamp: 5, text: 'ንዒ ማርያም /፬/ እመ አምላክ /፪/' },
+  //     { timestamp: 10, text: 'ትርጉም የአምላክ እናት ማርያም ሆይ ከቅዱስ ራጉኤል ጋር አዲሱን ዓመት ለመባረክ ነይ' }
+  //   ],
+  // },
+  // {
+  //   id: 172,
+  //   title: 'ንዒ ኀበየ',
+  //   artist: 'Zefinote Selam Sunday School',
+  //   cover_url: require('../assets/images/awdeamet.jpg'),
+  //   // audio_url: 'TODO: add local file for song id 172',
+  //   duration: 220,
+  //   genre: 'ዕዝል / አራራይ',
+  //   lyrics: [
+  //     { timestamp: 0, text: 'ንዒ ኀቤየ ኦ ድንግል ምስለ ኤልያስ ወራጉኤል ወበርተሎሚዎስ' },
+  //     { timestamp: 5, text: 'ነቢያተ እሥራኤል /፪/' },
+  //     { timestamp: 10, text: 'ወምስለ ዮሐንስ ድንግል /፪/ ለባርኮ ዓውደ' },
+  //     { timestamp: 15, text: 'ትርጉም:-ድንግል ሆይ ከኤልያስ ነቢይ ከራጉኤል መልአክ ከበርተሎሚዎስ' },
+  //     { timestamp: 20, text: 'ከእስራኤል ነቢያት እንዲሁም ከቅዱስ ዮሐንስ ጋር አዲሱን ዓመት ለመባረክ ነይ' }
+  //   ],},
+    {
+      id: 121,
+      title: 'ዮም ነፍስከ',
+      artist: 'Zefinote Selam Sunday School',
+      cover_url: require('../assets/images/yohannes.jpg'),
+      audio_url: require('../assets/music/yom_nefseke.opus'),
+      duration: 180,
+      genre: 'ዕዝል / አራራይ',
+      lyrics: [
+        { timestamp: 0, text: 'ዮም ነፍስከ አዕረጉ መላእክት ሚካኤል ወገብርኤል ዑራኤል ወሩፋኤል ሊቃነ መላእክት(2)' },
+        { timestamp: 30, text: 'እንዘ እንዘ ይብሉ ስብሐት ካህናተ ኢትዮጵያ አማን በአማን ቅዱስ ዮሐንስ መሠረተ ቤተክርስቲያን(2)' },
+        { timestamp: 60, text: 'ትርጉም፡ ቅዱስ ዮሐንስ መላእክት ሚካኤል ገብርኤል ኡራኤልና ሩፋኤል ነፍስን አሳረጉ የኢትዮጵያ ካህናት እውነት በእውነት ምስጋና ይሁን ቅዱስ ዮሐንስ የቤተክርስቲያን መሠረት ነው ይላሉ' }
+      ],
+    },
+            
           ],
         },
 
@@ -2985,23 +2999,7 @@ export const seedData = {
           ],
         },
 
-        // {
-        //   id: 'yewede_amet_geez_2',
-        //   name: 'ግዕዝ 2',
-        //   image: require('../assets/images/awdeamet.jpg'), 
-        //   songs: [
-        //     {
-        //       id: 174,
-        //       title: 'Song Title 4',
-        //       artist: 'Zefinote Selam Sunday School',
-        //       cover_url: require('../assets/images/awdeamet.jpg'),
-        //       // audio_url: 'TODO: add local file for song id 174',
-        //       duration: 354,
-        //       genre: 'ግዕዝ',
-        //       lyrics: [],
-        //     },
-        //   ],
-        // },
+        
 
       ],
     },
@@ -3018,7 +3016,7 @@ export const seedData = {
       subcategories: [
         {
           id: 'st_john_ezil_araray',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/yohannes.jpg'), 
           songs: [
             {
@@ -3028,7 +3026,7 @@ export const seedData = {
               cover_url: require('../assets/images/yohannes.jpg'),
               audio_url: require('../assets/music/Emheso_leherodse_edited.opus'),
               duration: 140,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'እምሄሶ ለሄሮድስ ይብላ መሐላሁ (2) እምያምትር ርዕሶ ለዮሐንስ(2)' },
                 { timestamp: 20, text: 'ዐቢይ ነቢይ(2)ሰባኬ ጥምቀት(2)' },
@@ -3042,7 +3040,7 @@ export const seedData = {
               cover_url: require('../assets/images/yohannes.jpg'),
               audio_url: require('../assets/music/abiy_nebye.opus'),
               duration: 100,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ዐቢይ ነቢይ (2) ዮሐንስ(2) ዐቢይ ነቢይ(2)' },
                 { timestamp: 15, text: 'ትርጉም፡ ዮሐንስ ታላቅ ነቢይ ነው' }
@@ -3053,9 +3051,9 @@ export const seedData = {
               title: 'ዮሐንስ ክቡር',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/yohannes.jpg'),
-              // audio_url: 'TODO: add local file for song id 179',
+              audio_url: require('../assets/music/Yohannes_Kibure_Nebye.opus'),
               duration: 120,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ዮሐንስ ክቡር ነቢየ ልዑል(2) ብእሴ ሰላም(4)ዘንብረቱ (2)ገዳም (2)' },
                 { timestamp: 20, text: 'ትርጉም፡ የከበረ የልዑል ነቢይ ዮሐንስ ሆይ መኖሪያው በገዳም የሆነ የሰላም ሰው ነው' }
@@ -3066,9 +3064,9 @@ export const seedData = {
               title: 'ወአንተኒ ሕጻን',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/yohannes.jpg'),
-              audio_url: require('../assets/music/weanteni_hisan.opus'),
+              audio_url: require('../assets/music/Weanteni_Histane_Nebye.opus'),
               duration: 130,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ወአንተኒ ሕጻን ነቢየ ልዑል(2) አርኩ ለመርዓዊ ትሰመይ(2)ነቢየ ልዑል(2)' },
                 { timestamp: 20, text: 'ትርጉም፡ አንተ ሕጻን የልዑል ነቢይ የሙሽራው ክርስቶስ መንገድ ጠራጊ ትባላለህ ትሰኛለህ' }
@@ -3081,7 +3079,7 @@ export const seedData = {
               cover_url: require('../assets/images/yohannes.jpg'),
               audio_url: require('../assets/music/bemenfes_yehawre.opus'),
               duration: 120,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'በመንፈስ የሐውር እምኃይል ውስተ ኃይል(2) ካህን(2)ወነቢይ ካህን ወነቢይ ዮሐንስ መጥምቅ(2)' },
                 { timestamp: 20, text: 'ትርጉም፡ ከኃይል ወደ ኃይል በመንፈስ ይሄዳል ዮሐንስ መጥምቅ ካህንና ነቢይ ነው' }
@@ -3092,9 +3090,9 @@ export const seedData = {
               title: 'ወአንተኒ ዮሐንስ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/yohannes.jpg'),
-              // audio_url: 'TODO: add local file for song id 182',
+              audio_url: require('../assets/music/Weanteni_Yohannese.opus'),
               duration: 150,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ወአንተኒ ዮሐንስ ነቢየ ልዑል ትሰመይ(2) ነቢየ ልዑል(2)' },
                 { timestamp: 20, text: 'እስመ ተሐውር ቅድመ እግዚአብሔር(2) ከመ ትጺሕ ፍኖቶ(2)' },
@@ -3106,9 +3104,9 @@ export const seedData = {
               title: 'ዮም ነፍስከ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/yohannes.jpg'),
-              audio_url: require('../assets/music/yom_nefseke.opus'),
+              audio_url: require('../assets/music/Yome_nefske_group.opus'),
               duration: 180,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ዮም ነፍስከ አዕረጉ መላእክት ሚካኤል ወገብርኤል ዑራኤል ወሩፋኤል ሊቃነ መላእክት(2)' },
                 { timestamp: 30, text: 'እንዘ እንዘ ይብሉ ስብሐት ካህናተ ኢትዮጵያ አማን በአማን ቅዱስ ዮሐንስ መሠረተ ቤተክርስቲያን(2)' },
@@ -3122,7 +3120,7 @@ export const seedData = {
               cover_url: require('../assets/images/yohannes.jpg'),
              audio_url: require('../assets/music/Yohansni_Halo_Yatemk.opus'),
               duration: 110,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ዮሐንስኒ ሀሎ ያጠምቅ (2) በሄኖን በቅሩበ ሳሌም(2)' },
                 { timestamp: 15, text: 'ትርጉም፡ ዮሐንስ በሳሌም አቅራቢያ በሄኖን በዮርዳኖስ ማዶ ያጠምቅ ነበረ' }
@@ -3133,9 +3131,9 @@ export const seedData = {
               title: 'የአዋጅ ነጋሪ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/yohannes.jpg'),
-              // audio_url: 'TODO: add local file for song id 185',
+              audio_url: require('../assets/music/Yeawaj_negariwkal.opus'),
               duration: 260,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'የአዋጅ ነጋሪው ቃል በበረሃ አየለ የእግዚአብሔርን መንገድ አስተካክሉ እያለ' },
                 { timestamp: 25, text: 'ምስክርነቱን ዮሐንስ ካስረዳን ልባችን ለጌታ መልካም መንገድ ይሁን' },
@@ -3153,9 +3151,9 @@ export const seedData = {
               title: 'ምን ሰማ ዮሐንስ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/yohannes.jpg'),
-              // audio_url: 'TODO: add local file for song id 186',
+              audio_url: require('../assets/music/Minsemah_Yohannes_find.opus'),
               duration: 280,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ምን ሰማህ ዮሐንስ በማኀፀን ሳለህ (2) ሕጻን ሆነህ ነቢይ ለክብር የተጠራህ(2)' },
                 { timestamp: 30, text: 'እንደ እንቦሳ ጥጃ ያዘለለህ ደስታ(2) ምን ዓይነት ድምጽ ነው ምን ዓይነት ሰላምታ(2)' },
@@ -3331,7 +3329,7 @@ export const seedData = {
         },
         {
           id: 'yedebretabor_mezmur_ezil_araray',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/debretabor.png'), 
           songs: [
               {
@@ -3341,7 +3339,7 @@ export const seedData = {
                 cover_url: require('../assets/images/debretabor.png'),
                 audio_url: require('../assets/music/Besime_Ziake.opus'),
                 duration: 110,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'በስመ ዚአከ ይትፌስሑ ዮም ታቦር ወአርሞንየም' },
                   { timestamp: 20, text: 'ትርጉም ፡- ታቦር እና አርሞንየም ዛሬ በስምህ ደስ አላቸው' }
@@ -3354,7 +3352,7 @@ export const seedData = {
                 cover_url: require('../assets/images/debretabor.png'),
                 audio_url: require('../assets/music/Ahade_Leke.opus'),
                 duration: 120,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'አሐደ ለከ ወአሐደ ለሙሴ(2) ወአሐደ ለኤልያስ(2) ንግበር ማኀደረ /2/' },
                   { timestamp: 25, text: 'ትርጉም፡ - አንዱን ለአንተ አንዱንም ለሙሴ(2) አንዱንም ለኤልያስ(2) እንስራ ቤት(2)' }
@@ -3367,7 +3365,7 @@ export const seedData = {
                 cover_url: require('../assets/images/debretabor.png'),
                 audio_url: require('../assets/music/Sebahuke_Bedebre_Tabor.opus'),
                 duration: 100,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'በደብረ ታቦር /2/ ሰባሕኩከ(3) በደብረ ታቦር /4/' }
                 ],
@@ -3379,7 +3377,7 @@ export const seedData = {
                 cover_url: require('../assets/images/debretabor.png'),
                 audio_url: require('../assets/music/Tabor_Abera.opus'),
                 duration: 320,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ታቦር አበራ ምድርን ከደናት ደመና እንቅልፍ የለንም ታላቅ ነጎጓድ ሆኗልና አነቃን ለምስጋና' },
                   { timestamp: 30, text: 'ሙሴም የቀደው ሰው ኤልያስ ኃይለኛው ተገኝተዋል በታቦር ምስክርህ ሆነው' },
@@ -3394,23 +3392,23 @@ export const seedData = {
                   { timestamp: 300, text: 'በደስታዬም ቀን አለህ አይሃለሁ ከጎኔ ከእኔ ጋር አልቅሰሀል አሳዝኖህ ሐዘኔ' }
                 ],
               },
-              {
-                id: 198,
-                title: 'እንዲህ አለው ጴጥሮስ',
-                artist: 'Zefinote Selam Sunday School',
-                cover_url: require('../assets/images/debretabor.png'),
-                // audio_url: 'TODO: add local file for song id 198',
-                duration: 210,
-                genre: 'እዝል ዓራራይ ቅኝት',
-                lyrics: [
-                  { timestamp: 0, text: 'እንዲህ አለው ጵጥሮስ ኢየሱስን ምስጢር ገሐድ ሲሆን በዚ በተራራ' },
-                  { timestamp: 20, text: 'በአንድ ላይ እንኑር ሦስት ዳስ እንስራ አንዱን ላንተ አንዱንም ለሙሴ አንዱን ለኤልያስ' },
-                  { timestamp: 50, text: 'ተለወጠ ገጹ ከመ ጽጌሬዳ ወርዶ ከለላቸው ደመና ፀአዳ' },
-                  { timestamp: 80, text: 'ከሰማይ ቃል መጣ እንደዚህ የሚል የምወደው ልጄን እርሱን ስሙት ሲል' },
-                  { timestamp: 110, text: 'ኤልያስም ሄደ በሰረገላው ሙሴም ከመቃብር ወደ መኖሪያው' },
-                  { timestamp: 140, text: 'ስላስደነቃቸው ግሩም ተአምራቱ ይሕን ምስጢር አይተው ተሰነባበቱ' }
-                ],
-              },
+              // {
+              //   id: 198,
+              //   title: 'እንዲህ አለው ጴጥሮስ',
+              //   artist: 'Zefinote Selam Sunday School',
+              //   cover_url: require('../assets/images/debretabor.png'),
+              //   // audio_url: 'TODO: add local file for song id 198',
+              //   duration: 210,
+              //   genre: 'ዕዝል / አራራይ',
+              //   lyrics: [
+              //     { timestamp: 0, text: 'እንዲህ አለው ጵጥሮስ ኢየሱስን ምስጢር ገሐድ ሲሆን በዚ በተራራ' },
+              //     { timestamp: 20, text: 'በአንድ ላይ እንኑር ሦስት ዳስ እንስራ አንዱን ላንተ አንዱንም ለሙሴ አንዱን ለኤልያስ' },
+              //     { timestamp: 50, text: 'ተለወጠ ገጹ ከመ ጽጌሬዳ ወርዶ ከለላቸው ደመና ፀአዳ' },
+              //     { timestamp: 80, text: 'ከሰማይ ቃል መጣ እንደዚህ የሚል የምወደው ልጄን እርሱን ስሙት ሲል' },
+              //     { timestamp: 110, text: 'ኤልያስም ሄደ በሰረገላው ሙሴም ከመቃብር ወደ መኖሪያው' },
+              //     { timestamp: 140, text: 'ስላስደነቃቸው ግሩም ተአምራቱ ይሕን ምስጢር አይተው ተሰነባበቱ' }
+              //   ],
+              // },
               {
                 id: 199,
                 title: 'በስመ ዚአከ (Full Version)',
@@ -3418,7 +3416,7 @@ export const seedData = {
                 cover_url: require('../assets/images/debretabor.png'),
                 audio_url: require('../assets/music/Besime_Ziake.opus'),
                 duration: 100,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'በስመ ዚአከ ይትፌሥሑ ዮም /፪/ ታቦር ወአርሞንየም /፬/' },
                   { timestamp: 20, text: 'ትርጉም፦ ታቦርና አርሞንየም በስምህ ዛሬ ደስ ይላቸዋል፡፡' }
@@ -3441,7 +3439,7 @@ export const seedData = {
       subcategories: [
         {
           id: 'yemeskel_sub_1',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/meskel.jpg'), 
           songs: [
             {
@@ -3451,7 +3449,7 @@ export const seedData = {
               cover_url: require('../assets/images/meskel.jpg'),
               audio_url: require('../assets/music/Bemeskelke_Redane.opus'),
               duration: 185,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'በመስቀልከ ርድዐነ/፪/' },
                 { timestamp: 5, text: 'ወበኃይልከ ተማኅጸነ/፪/' },
@@ -3465,7 +3463,7 @@ export const seedData = {
               cover_url: require('../assets/images/meskel.jpg'),
               audio_url: require('../assets/music/Meskel_Birhane_Lekulu_Alem.opus'),
               duration: 160,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መስቀል ብርሃን ለኲሉ ዓለም/፪/' },
                 { timestamp: 5, text: 'መሠረተ/፫/ ቤተክርስቲያን' },
@@ -3479,7 +3477,7 @@ export const seedData = {
               cover_url: require('../assets/images/meskel.jpg'),
               audio_url: require('../assets/music/Meskel_birhan_kutr2_edited.opus'),
               duration: 210,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መስቀል ብርሃን ለኲሉ ዓለም መሠረተ ቤተክርስቲያን /፪/' },
                 { timestamp: 5, text: 'ወሀቤ ሰላም መድኃኔዓለም መስቀል መድኅን ለእለ ነአምን/፪/' },
@@ -3496,7 +3494,7 @@ export const seedData = {
               cover_url: require('../assets/images/meskel.jpg'),
               audio_url: require('../assets/music/Meskel_Haile.opus'),
               duration: 190,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መስቀል ኃይልነ መስቀል ጽንዕነ መስቀል ቤዛነ/፪/' },
                 { timestamp: 5, text: 'መድኀኒትነ ለዕለ አመነ/፪/' },
@@ -3511,7 +3509,7 @@ export const seedData = {
               cover_url: require('../assets/images/meskel.jpg'),
               audio_url: require('../assets/music/Seganesayne.opus'),
               duration: 240,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ጸጋ ነሣእነ ወሕይወተ ረከብነ በኃይለ መስቀሉ' },
                 { timestamp: 5, text: 'ለኢየሱስ ክርስቶስ በኃይለ መስቀሉ/፪/' },
@@ -3525,10 +3523,10 @@ export const seedData = {
               id: 205,
               title: 'ዘእጣን አንጸረ',
               artist: 'Zefinote Selam Sunday School',
-              cover_url: require('../assets/images/meskel.jpg'),
-              // audio_url: 'TODO: add local file for song id 205',
+              cover_url: require('../assets/images/meskel.jpg'),   
+              audio_url: require('../assets/music/Zeetan_Ansere.opus'),
               duration: 175,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ዘእጣን አንጸረ/፬/' },
                 { timestamp: 5, text: 'በጎልጎታ ተረክበ ዕፀ መስቀል/፬/' },
@@ -3555,7 +3553,7 @@ export const seedData = {
               cover_url: require('../assets/images/meskel.jpg'),
               audio_url: require('../assets/music/Yibelomu_Eyesus.opus'),
               duration: 200,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ይቤሎሙ ኢየሱስ ለአይሁድ እመኑ ብየ/፪/' },
                 { timestamp: 5, text: 'ወእመኑ በአቡየ አበርህ/፪/ በመስቀልየ/፪/' },
@@ -3570,7 +3568,7 @@ export const seedData = {
               cover_url: require('../assets/images/meskel.jpg'),
               audio_url: require('../assets/music/Haylene_Wesewenene.opus'),
               duration: 180,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ኃይልነ ወጸወንነ ወሞገስነ/፪/' },
                 { timestamp: 5, text: 'ዝንቱ ውእቱ መስቀል/፪/' },
@@ -3584,7 +3582,7 @@ export const seedData = {
               cover_url: require('../assets/images/meskel.jpg'),
               audio_url: require('../assets/music/Haberu_Kale.opus'),
               duration: 170,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ኀበሩ ቃለ ነቢያት /፪/' },
                 { timestamp: 5, text: 'ወይቤሉ መሰቀል ብርሃን/፪/ ለኲሉ ዓለም/፪/' },
@@ -3598,7 +3596,7 @@ export const seedData = {
               cover_url: require('../assets/images/meskel.jpg'),
               audio_url: require('../assets/music/Yom_Beale_Meskelu.opus'),
               duration: 190,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ዮም በዓለ መስቀሉ በሰማያት በላዕሉ/፪/' },
                 { timestamp: 5, text: 'ወዘነግሠ በምድር /፪/ ለአሕዛብ/፪/' },
@@ -3612,7 +3610,7 @@ export const seedData = {
               cover_url: require('../assets/images/meskel.jpg'),
               audio_url: require('../assets/music/Meskel_Haylachin.opus'),
               duration: 340,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መስቀል መስቀል ኃይላችን ጠላትን ማጥፊያችን/፪/' },
                 { timestamp: 5, text: 'በመስቀል እንመካለን እንድንበታለን/፪/' },
@@ -3645,7 +3643,7 @@ export const seedData = {
               cover_url: require('../assets/images/meskel.jpg'),
               audio_url: require('../assets/music/Desyibelen_Elilbelu.opus'),
               duration: 300,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ደስ ይበለን እልል በሉ/፪/' },
                 { timestamp: 5, text: 'አልቀረም ተቀብሮ ተገኘ መስቀሉ /፪/' },
@@ -3675,7 +3673,7 @@ export const seedData = {
                 cover_url: require('../assets/images/meskel.jpg'),
                 audio_url: require('../assets/music/Ese_Meskel.opus'),
                 duration: 320,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ዕጸ መስቀል የክብር መውረሻ ሰይጣንን ድል መንሻ/፪/' },
                   { timestamp: 5, text: 'አዝ===' },
@@ -3706,7 +3704,7 @@ export const seedData = {
                 cover_url: require('../assets/images/meskel.jpg'),
                 audio_url: require('../assets/music/Letse_meskelu_ensged_edited.opus'),
                 duration: 180,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ለዕፀ መስቀሉ እንስገድ/፪/' },
                   { timestamp: 5, text: 'ጠላት እንዲጠፋ እንዲሆን አመድ' },
@@ -3727,7 +3725,7 @@ export const seedData = {
                 cover_url: require('../assets/images/meskel.jpg'),
                 audio_url: require('../assets/music/Meskel_Bezachin_New.opus'),
                 duration: 200,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'መስቀል ቤዛችን ነው ድል መንሻ ኀይላችን(2)' },
                   { timestamp: 5, text: 'ከኃጥያት በሽታ የሚፈውሰን(2)' },
@@ -3744,7 +3742,7 @@ export const seedData = {
                 cover_url: require('../assets/images/meskel.jpg'),
                 audio_url: require('../assets/music/Meskelke_Yikunene_Beza.opus'),
                 duration: 150,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'መስቀልከ ይኲነነ ቤዛ /፪/' },
                   { timestamp: 5, text: 'ይኲነነ ቤዛ /፬/ መስቀልከ ይኲነነ ቤዛ /፪/' },
@@ -3758,7 +3756,7 @@ export const seedData = {
                 cover_url: require('../assets/images/meskel.jpg'),
                 audio_url: require('../assets/music/Kemetbarekene.opus'),
                 duration: 165,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ከመ ትባርከነ በመስቀልከ ዘወርቅ /፪/' },
                   { timestamp: 5, text: 'ተዋነይ በጽድቅ /፬/እስጢፋኖስ ሐመልማለ ወርቅ /፪' },
@@ -3770,9 +3768,9 @@ export const seedData = {
                 title: 'ርእዩ እበዩ',
                 artist: 'Zefinote Selam Sunday School',
                 cover_url: require('../assets/images/meskel.jpg'),
-                audio_url: require('../assets/music/Riyu_Ebeyu.opus'),
+                audio_url: require('../assets/music/Riyu_Ebeyu_2.opus'),
                 duration: 175,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ርእዩ እበዩ ለዕፀ መስቀል /፪/' },
                   { timestamp: 5, text: 'ዘመጠነዝ /፪/ ትርሲተ ክብር ትሕትና ወፍቅር/፪/' },
@@ -3783,10 +3781,10 @@ export const seedData = {
                 id: 219,
                 title: 'ዮም መስቀል',
                 artist: 'Zefinote Selam Sunday School',
-                cover_url: require('../assets/images/meskel.jpg'),
-                // audio_url: 'TODO: add local file for song id 219',
+                cover_url: require('../assets/images/meskel.jpg'),    
+                audio_url: require('../assets/music/Yome_Meskel.opus'),
                 duration: 180,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ዮም መስቀል አስተርአየ እለማሰኑ ፍጥረተ አሠነየ /፪/' },
                   { timestamp: 5, text: 'ዮም መስቀል ተኬነወ ወዘተጼወወ ሕዝበ በደሙ ቤዘወ /፪/' }
@@ -3799,7 +3797,7 @@ export const seedData = {
                 cover_url: require('../assets/images/meskel.jpg'),
                 audio_url: require('../assets/music/Zintu_Meskel.opus'),
                 duration: 210,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ዝንቱ መስቀል ሕብስተ ሕይወት አፍረየ አውኃዘ ለነ ደመ ወማየ አውኃዘ ለነ /፪/' },
                   { timestamp: 10, text: 'ከመ ጌራወርቅ ጽሩይ ሥርግው በባሕርይ መስቀል ነቢሮ ያስተርኢ ላዕለ ርዕስየ /፪' },
@@ -3813,7 +3811,7 @@ export const seedData = {
                 cover_url: require('../assets/images/meskel.jpg'),
                 audio_url: require('../assets/music/Ente_tehantset_edited.opus'),
                 duration: 195,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'እንተ ተሐንጸት በስሙ ወተቀደሰት በደሙ ቤተ ክርስቲያን /፪/' },
                   { timestamp: 5, text: 'ወተአትበት /፪/ በዕጸ መስቀሉ እስመ ኃያለ እግዚአብሔር ላዕሌሃ /፪/' },
@@ -3827,7 +3825,7 @@ export const seedData = {
                 cover_url: require('../assets/images/meskel.jpg'),
                 audio_url: require('../assets/music/Meskeluse_Lekirstos.opus'),
                 duration: 175,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'መስቀሉሰ ለክርስቶስ ብርሃን ለእለነአምን ትብል ቤተክርስቲያን/፪/' },
                   { timestamp: 5, text: 'ዛህኑ ለባሕር ወመርሶ ለአሕማር ዝንቱ ውእቱ መስቀል/፪/' },
@@ -3841,7 +3839,7 @@ export const seedData = {
                 cover_url: require('../assets/images/meskel.jpg'),
                 audio_url: require('../assets/music/Meskel_Abrha.opus'),
                 duration: 160,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'መስቀል አብርሃ በከዋክብት አሠርገወ ኢትዮጵያ /፪/' },
                   { timestamp: 5, text: 'እምኲሉሰ ፀሐየ አርአየ እግዚአብሔር /፪' },
@@ -3855,7 +3853,7 @@ export const seedData = {
               cover_url: require('../assets/images/meskel.jpg'),
               audio_url: require('../assets/music/Ehe_Bemeskelke.opus'),
               duration: 190,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ኧኸ በመስቀልከ ኧኸ ጽልመተ አብራህከ /፪/' },
                 { timestamp: 10, text: 'ኧኸ በመስቀልከ ኧኸ ሙታነ አንሣዕከ  /፪/' },
@@ -4066,39 +4064,39 @@ export const seedData = {
                 { timestamp: 45, text: 'ድል ያደርጋል ሰይጣንን ይመታል/፪/' }
               ],
             },
-            {
-              id: 235,
-              title: 'ብርሃን ወጣ',
-              artist: 'Zefinote Selam Sunday School',
-              cover_url: require('../assets/images/meskel.jpg'),
-              // audio_url: 'TODO: add local file for song id 235',
-              duration: 380,
-              genre: 'ግእዝ 1',
-              lyrics: [
-                { timestamp: 0, text: 'ብርሃን ወጣ ከመስቀሉ የሚያንጸባርቅ' },
-                { timestamp: 5, text: 'የአምላክ እና የሰው ልጆች እውነተኛ እርቅ' },
-                { timestamp: 10, text: 'ደስ ይበለን በትንሣኤው ብርሃን' },
-                { timestamp: 15, text: 'እልል እንበል በአንድነት ሆነን' },
-                { timestamp: 20, text: 'ተነሣልን መድኃኒታችን' },
-                { timestamp: 25, text: 'አዝ======' },
-                { timestamp: 30, text: 'ከፊት ለፊት በመሣሉ የመስቀሉ ነገር' },
-                { timestamp: 35, text: 'የሚወደው ሐዋርያ የወንጌል መምህር' },
-                { timestamp: 40, text: 'ዮሐንስም ስቅለቱን በማየቱ' },
-                { timestamp: 45, text: 'ሲያዝን ኖረ በምድራዊ ሕይወቱ' },
-                { timestamp: 50, text: 'ቢያሠቅቀው ሞቱ ግርፋቱ' },
-                { timestamp: 55, text: 'አዝ=======' },
-                { timestamp: 60, text: 'ሞኝነት ነው ለሚጠፉት መሠናከያቸው' },
-                { timestamp: 65, text: 'በዓለም ጥበብ ለሚኖሩት እውነት ተሰውሮባቸው' },
-                { timestamp: 70, text: 'ለጠቢብ ሰው በመንፈስ ለሚኖረው' },
-                { timestamp: 75, text: 'እውነተኛ የመዳን ቀን አርማ ነው' },
-                { timestamp: 80, text: 'አዝ====' },
-                { timestamp: 85, text: 'እስከ ሞት ላልተለየው ቅዱስ ሐዋርያ' },
-                { timestamp: 90, text: 'ለዮሐንስ የወንጌል ሰው የጽድቅ ባለሞያ' },
-                { timestamp: 95, text: 'ምስጋናችን በምድር ይድረሰው' },
-                { timestamp: 100, text: 'እንላለን በሰጠው ምሳሌው' },
-                { timestamp: 105, text: 'ሰዎች ሁሉ እንከተለው' }
-              ],
-            },
+            // {
+            //   id: 235,
+            //   title: 'ብርሃን ወጣ',
+            //   artist: 'Zefinote Selam Sunday School',
+            //   cover_url: require('../assets/images/meskel.jpg'),
+            //   // audio_url: 'TODO: add local file for song id 235',
+            //   duration: 380,
+            //   genre: 'ግእዝ 1',
+            //   lyrics: [
+            //     { timestamp: 0, text: 'ብርሃን ወጣ ከመስቀሉ የሚያንጸባርቅ' },
+            //     { timestamp: 5, text: 'የአምላክ እና የሰው ልጆች እውነተኛ እርቅ' },
+            //     { timestamp: 10, text: 'ደስ ይበለን በትንሣኤው ብርሃን' },
+            //     { timestamp: 15, text: 'እልል እንበል በአንድነት ሆነን' },
+            //     { timestamp: 20, text: 'ተነሣልን መድኃኒታችን' },
+            //     { timestamp: 25, text: 'አዝ======' },
+            //     { timestamp: 30, text: 'ከፊት ለፊት በመሣሉ የመስቀሉ ነገር' },
+            //     { timestamp: 35, text: 'የሚወደው ሐዋርያ የወንጌል መምህር' },
+            //     { timestamp: 40, text: 'ዮሐንስም ስቅለቱን በማየቱ' },
+            //     { timestamp: 45, text: 'ሲያዝን ኖረ በምድራዊ ሕይወቱ' },
+            //     { timestamp: 50, text: 'ቢያሠቅቀው ሞቱ ግርፋቱ' },
+            //     { timestamp: 55, text: 'አዝ=======' },
+            //     { timestamp: 60, text: 'ሞኝነት ነው ለሚጠፉት መሠናከያቸው' },
+            //     { timestamp: 65, text: 'በዓለም ጥበብ ለሚኖሩት እውነት ተሰውሮባቸው' },
+            //     { timestamp: 70, text: 'ለጠቢብ ሰው በመንፈስ ለሚኖረው' },
+            //     { timestamp: 75, text: 'እውነተኛ የመዳን ቀን አርማ ነው' },
+            //     { timestamp: 80, text: 'አዝ====' },
+            //     { timestamp: 85, text: 'እስከ ሞት ላልተለየው ቅዱስ ሐዋርያ' },
+            //     { timestamp: 90, text: 'ለዮሐንስ የወንጌል ሰው የጽድቅ ባለሞያ' },
+            //     { timestamp: 95, text: 'ምስጋናችን በምድር ይድረሰው' },
+            //     { timestamp: 100, text: 'እንላለን በሰጠው ምሳሌው' },
+            //     { timestamp: 105, text: 'ሰዎች ሁሉ እንከተለው' }
+            //   ],
+            // },
             // ↓ keep adding songs here (id: 301, 302, 303...)
           ],
         },
@@ -4179,7 +4177,7 @@ export const seedData = {
       subcategories: [
         {
           id: 'yearsema_sub_1',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/arsema.jpg'), 
           songs: [
             {
@@ -4189,7 +4187,7 @@ export const seedData = {
               cover_url: require('../assets/images/arsema.jpg'),
               audio_url: require('../assets/music/Selam_Leki_Arsema.opus'),
               duration: 120,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ሰላም ለኪ(2)' },
                 { timestamp: 10, text: 'ሰማዕቷ ሰላም ለኪ(2)' }
@@ -4202,7 +4200,7 @@ export const seedData = {
               cover_url: require('../assets/images/arsema.jpg'),
               audio_url: require('../assets/music/Arsema_Kidist_Wesemat.opus'),
               duration: 140,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'አርሴማ ቅድስት (2)ወሰማዕት (2)' },
                 { timestamp: 10, text: 'ወሰማዕት (4)ሰማዕት አርሴማ ቅድስት(2)' },
@@ -4216,7 +4214,7 @@ export const seedData = {
               cover_url: require('../assets/images/arsema.jpg'),
               audio_url: require('../assets/music/Arsema_Kidist.opus'),
               duration: 135,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'አርሴማ ቅድስት (3)' },
                 { timestamp: 10, text: 'ሰማዕት (3) አርሴማ ቅድስት (2)' },
@@ -4230,7 +4228,7 @@ export const seedData = {
               cover_url: require('../assets/images/arsema.jpg'),
               audio_url: require('../assets/music/Gize_Erefta.opus'),
               duration: 150,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ጊዜ እረፍታ ለአርሴማ (2)' },
                 { timestamp: 10, text: 'እምልዕልና ወረደ እግዚአብሔር (2)' },
@@ -4244,7 +4242,7 @@ export const seedData = {
               cover_url: require('../assets/images/arsema.jpg'),
               audio_url: require('../assets/music/Riyu_Ebeya.opus'),
               duration: 180,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ርዕዩ ዕበያ ለቅድስት አርሴማ (2)' },
                 { timestamp: 10, text: 'ዕውራን ይሬእዩ ወጽሙማን ይሰምዑ እለ ለምጽ ይነጽሑ እለ መጽኡ ኅቤሃ (2)' },
@@ -4259,7 +4257,7 @@ export const seedData = {
               cover_url: require('../assets/images/arsema.jpg'),
               audio_url: require('../assets/music/Arsema_Amaljin.opus'),
               duration: 145,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'አርሴማ አማልጅን ከአምላካችን (2)' },
                 { timestamp: 10, text: 'እንዳንጠፋ እንዳንሞት በነፍሳችን አደራሽን ቁሚልን ከጎናችን(2)' }
@@ -4272,7 +4270,7 @@ export const seedData = {
               cover_url: require('../assets/images/arsema.jpg'),
               audio_url: require('../assets/music/Sinu_Semayt.opus'),
               duration: 350,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ጽኑ ሰማዕት የእምነት አርበኛ አርሴማ ነይ ነይ ወደ እኛ/፪/' },
                 { timestamp: 15, text: 'ነይ ነይ ቴዎድሮስ አትናስያ ነይ ነይ በስለት ያገኙሽ' },
@@ -4333,7 +4331,7 @@ export const seedData = {
       subcategories: [
         {
           id: 'yelidet_mezmurat_yearsema_sub_1',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/lidet.jpg'), 
           songs: [
             {
@@ -4343,7 +4341,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Tewelde_Eyesus.opus'),
                 duration: 140,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ተወልደ ኢየሱስ በቤተልሔም (2) ዘይሁዳ በቤተልሔም(2)' },
                   { timestamp: 10, text: 'አዋልደ ጢሮስ አሜሃ ይሰግዳ አሜሃ ይሰግዳ(2) በቤተልሔም(2)' },
@@ -4357,7 +4355,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Yom_Semayawi.opus'),
                 duration: 130,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ዮም ሰማያዊ በጎል ሰከበ ለዘተወልደ እምቅድስት ድንግል(2)' },
                   { timestamp: 10, text: 'ርእይዎ ኖሎት (2) አእኩትዎ መላእክት(2)' },
@@ -4371,7 +4369,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Bezakulu.opus'),
                 duration: 150,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ቤዛ ኩሉ ዓለም ዮም ተወልደ (2) ቤዛ ኩሉ ዓለም ዮም ተወልደ (2)' },
                   { timestamp: 10, text: 'የዓለም ሁሉ መድኃኒት ዛሬ ተወለደ(2)የዓለም ሁሉ መድኃኒት ዛሬ ተወለደ(2)' }
@@ -4384,7 +4382,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Mesa_Kemeyibezo_Alem.opus'),
                 duration: 120,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'መጽአ ከመ ይቤዙ ዓለም(2) የሀበነ ሰላም ጋዳ ያበውኡ ቁርባነ(2)' },
                   { timestamp: 15, text: 'ትርጉም ዓለምን ለማዳን መጣ አንድነት ይሰጠን ዘንድ እጅ መንሻም ቁርባንን ያቀርባሉ' }
@@ -4397,7 +4395,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Sibhat_Leegizaber.opus'),
                 duration: 160,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ስብሐት ለእግዚአብሔር በሰማያት(2) ወሰላም በምድር ስምረቱ ለሰብእ' },
                   { timestamp: 10, text: 'ሃሌሉያ (3) አሜን ሃሌሉያ(2)' },
@@ -4411,7 +4409,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Bebetelhem_Tewelde.opus'),
                 duration: 125,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'በቤተልሔም ተወልደ(2) አማኑኤል(2)' },
                   { timestamp: 10, text: 'እምዘርዐ ዳዊት(4) ተወልደ አማኑኤል(2)' },
@@ -4425,7 +4423,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Bekokeb_Mesu.opus'),
                 duration: 140,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'በኮከብ መጽኡ(2) ሰብአ ሰገል (2) ለአማኑኤል(4) ይስግዱ ሰብአ ሰገል(2)' },
                   { timestamp: 15, text: 'በኮከብ መጡ(2) ሰብአ ሰገል(2) ለአማኑኤል(4) ሊሰግዱ ሰብአ ሰገል(2)' },
@@ -4439,7 +4437,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Begol_Sekebe.opus'),
                 duration: 145,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'በጎል ሰከበ በአጽርቅት ተጠብለለ(2) ቤዛ ኩሉ ዓለም (2) ዮም ተወልደ(2)' },
                   { timestamp: 15, text: 'በበረት ተኛ በጨርቅም ተጠቀለለ(2) የዓለም መድኃኒት(2) ዛሬ ተወለደ(2)' }
@@ -4452,7 +4450,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Amhawomu.opus'),
                 duration: 110,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'አምኃሆሙ አምጽኡ መድምመ(2) አንፈርአፁ ሰብአ ሰገል(2)' },
                   { timestamp: 10, text: 'ትርጉም ሰብአ ሰገል በደስታ ዘለሉ የሚያስደንቅ እጅ መንሻ አመጡለት' }
@@ -4465,7 +4463,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Begole_Ensisa.opus'),
                 duration: 105,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'በጎለ እንስሳ(2) በጎለ እንስሳ ተወልደ አማኑኤል(2)' },
                   { timestamp: 10, text: 'ትርጉም በእንስሳት በረት አማኑኤል ተወለደ' }
@@ -4478,7 +4476,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Emsemayat_Werede.opus'),
                 duration: 180,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'እምሰማያት ወረደ ወእማርያም ተወልደ(2) ከመ ይኩን ቤዛ(2) ለኩሉ ዓለም ለብሰ ሥጋ ማርያም (2)' },
                   { timestamp: 15, text: 'ከሰማያት ወረደ ከድንግል ማርያም ተወለደ(2) እንዲሆነን ቤዛ(2) ለዓለም ሁሉ ለበሰ የማርያምን ሥጋ(2)' }
@@ -4491,7 +4489,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Kedamihu_Kal.opus'),
                 duration: 120,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ቀዳሚሁ ቃል ውእቱ ቃል(2) ይቤ ዮሐንስ ቃል ሥጋ ኮነ ይቤ ዮሐንስ(2)' }
                 ],
@@ -4503,7 +4501,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Zintu_Kulu.opus'),
                 duration: 115,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ዝንቱ ኩሉ ኮነ በሰማይ በምድር (2) በፈቃደ(4) እግዚአብሔር(2)' }
                 ],
@@ -4515,7 +4513,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Ende_Yoseph.opus'),
                 duration: 140,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'እንደ ዮሴፍ ወይ እንደ ሰሎሜ በሆን(2) ኢየሩሳሌም(3) በሆን አምላክ ሲወለድ ባየን(2)' }
                 ],
@@ -4527,7 +4525,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Yemsrach_Des_Yibelen.opus'),
                 duration: 260,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'የምሥራች ደስ ይበለን የዓለም መድኃኒት ተወለደልን(2)' },
                   { timestamp: 15, text: 'ጌታችን ተወልዶ አይተነው መጣን(2)' },
@@ -4543,7 +4541,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Esey_Esey_Tewelde.opus'),
                 duration: 280,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'እሰይ እሰይ ተወለደ (2) ከሰማየ ሰማያት ወረደ ከድንግል ማርያም ተወለደ(2)' },
                   { timestamp: 15, text: 'እሱ ባይወለድ እሰይ እሰይ ቸሩ አባታችን እሰይ እሰይ(2) መች ትገኝ ነበረ እሰይ እሰይ ገነት ርስታችን እሰይ እሰይ' },
@@ -4559,7 +4557,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Anchi_Anchi_Betelhem.opus'),
                 duration: 240,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'አንቺ አንቺ ቤተልሔም የይሁዳ መሬት በአንቺ ተወለደ የዓለም መድኃኒት(2)' },
                   { timestamp: 15, text: 'ለአዳም ክብር ሲሻ ቤተልሔም ለሁሉም ሰላም ቤተልሔም' },
@@ -4577,7 +4575,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/seba_segel_metu.opus'),
                 duration: 260,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ሰብአ ሰገል መጡ ይዘው እጅ መንሻ(3) ዕጣን ወርቅ ከርቤ ለጌታ እጅ መንሻ(3)' },
                   { timestamp: 20, text: 'ይኸው ተወለደ የዓለም መድኃኒት(3) ይኸው ተጠመቀ የዓለም መድኃኒት(3)' },
@@ -4593,7 +4591,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Begol_Begol.opus'),
                 duration: 480,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'በጎል በጎል ሰብአ ሰገል በጎል ሰብአ ሰገል(2) በጎል ሰብአ ሰገል ሰገዱ ሎቱ(4)' },
                   { timestamp: 20, text: 'አማን አማን አማን በአማን አማን አማን በአማን(2) በዓለም ተሰበከ የጌታችን ቃል (4)' },
@@ -4618,7 +4616,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Ahun_Tegelese.opus'),
                 duration: 220,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'አሁን ተገለጸ የማርያም ልዕልና በእርሷ ላይ አደረ ሰማያዊ መና (2)' },
                   { timestamp: 20, text: 'አሁን ስለታየ ያልታየ ምሥጢር እጅግ ደስ አላቸው ሰማይና ምድር(2)' },
@@ -4634,7 +4632,7 @@ export const seedData = {
                 cover_url: require('../assets/images/lidet.jpg'),
                 audio_url: require('../assets/music/Sobe_Semayne_Yelidet.opus'),
                 duration: 320,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ሶበ ሰማዕነ ዜናከ መጻእነ ኀቤከ (2) መጽአነ(4)' },
                   { timestamp: 20, text: 'አንቺ ቤተልሔም የዳዊት ከተማ የምሥራች ቃሉ በአንቺ ቤት ተሰማ' },
@@ -4647,23 +4645,23 @@ export const seedData = {
                   { timestamp: 160, text: 'ሰላምን የሚሰጥ አልፋና ኦሜጋ የእስራኤል ንጉሥ ተገልጾአል በሥጋ' }
                 ],
               },
-              {
-                id: 269,
-                title: 'የምሥራች ደስ ይበለን (ክፍል 2)',
-                artist: 'Zefinote Selam Sunday School',
-                cover_url: require('../assets/images/lidet.jpg'),
-                audio_url: require('../assets/music/Yemsrach_Des_Yibelen.opus'),
-                duration: 250,
-                genre: 'እዝል ዓራራይ ቅኝት',
-                lyrics: [
-                  { timestamp: 0, text: 'የምሥራች ደስ ይበለን(2) የዓለም መድኃኒት ተወለደልን ምሥራች ደስ ይበለን(2)' },
-                  { timestamp: 20, text: 'ኢየሱስ የዓለም ቤዛ ክርስቶስ የዓለም ቤዛ የዓለም ቤዛ(2) ለእኛ ሆኗል መዳኛ' },
-                  { timestamp: 40, text: 'ፍቅር ሳበው ወልድን ከመንበሩ(2) ወገኖቹን ሊያድን ጠራን ወደ ክብሩ(2)' },
-                  { timestamp: 60, text: 'አገኘነው በግርግም ተኝቶ(2) ለአዳም የገባውን ቃል ኪዳን አስቦ(2)' },
-                  { timestamp: 80, text: 'ከድንግል ማርያም ከእመቤታችን(2) ይኸው ተወለደ ጠፋ መርገማችን(2)' },
-                  { timestamp: 100, text: 'ነቢያትም ትንቢት ተናገሩ(2) አልቀረም አየነው እንደናፈቅነው (2)' }
-                ],
-              }
+              // {
+              //   id: 269,
+              //   title: 'የምሥራች ደስ ይበለን (ክፍል 2)',
+              //   artist: 'Zefinote Selam Sunday School',
+              //   cover_url: require('../assets/images/lidet.jpg'),
+              //   audio_url: require('../assets/music/Yemsrach_Des_Yibelen.opus'),
+              //   duration: 250,
+              //   genre: 'ዕዝል / አራራይ',
+              //   lyrics: [
+              //     { timestamp: 0, text: 'የምሥራች ደስ ይበለን(2) የዓለም መድኃኒት ተወለደልን ምሥራች ደስ ይበለን(2)' },
+              //     { timestamp: 20, text: 'ኢየሱስ የዓለም ቤዛ ክርስቶስ የዓለም ቤዛ የዓለም ቤዛ(2) ለእኛ ሆኗል መዳኛ' },
+              //     { timestamp: 40, text: 'ፍቅር ሳበው ወልድን ከመንበሩ(2) ወገኖቹን ሊያድን ጠራን ወደ ክብሩ(2)' },
+              //     { timestamp: 60, text: 'አገኘነው በግርግም ተኝቶ(2) ለአዳም የገባውን ቃል ኪዳን አስቦ(2)' },
+              //     { timestamp: 80, text: 'ከድንግል ማርያም ከእመቤታችን(2) ይኸው ተወለደ ጠፋ መርገማችን(2)' },
+              //     { timestamp: 100, text: 'ነቢያትም ትንቢት ተናገሩ(2) አልቀረም አየነው እንደናፈቅነው (2)' }
+              //   ],
+              // }
           
           ],
         },
@@ -4686,20 +4684,20 @@ export const seedData = {
                   { timestamp: 20, text: 'ትርጉም መድኃኒታችን ኢየሱስ ክርስቶስ እነሆ ተወለደ አሁንም ሰላምን እንከተላት' }
                 ],
               },
-              {
-                id: 271,
-                title: 'ኢየሱስ መጽአ',
-                artist: 'Zefinote Selam Sunday School',
-                cover_url: require('../assets/images/lidet.jpg'),
-                // audio_url: 'TODO: add local file for song id 271',
-                duration: 110,
-                genre: 'ግእዝ 1',
-                lyrics: [
-                  { timestamp: 0, text: 'ኢየሱስ መጽአ ውስተ ዓለም(2)' },
-                  { timestamp: 10, text: 'በብርሃኑ ንዑ ናንሶሱ(2)' },
-                  { timestamp: 20, text: 'ትርጉም ኢየሱስ ክርስቶስ ወደ ዓለም መጣ ኑ በብርሃኑ እንመላለስ' }
-                ],
-              },
+              // {
+              //   id: 271,
+              //   title: 'ኢየሱስ መጽአ',
+              //   artist: 'Zefinote Selam Sunday School',
+              //   cover_url: require('../assets/images/lidet.jpg'),
+              //   // audio_url: 'TODO: add local file for song id 271',
+              //   duration: 110,
+              //   genre: 'ግእዝ 1',
+              //   lyrics: [
+              //     { timestamp: 0, text: 'ኢየሱስ መጽአ ውስተ ዓለም(2)' },
+              //     { timestamp: 10, text: 'በብርሃኑ ንዑ ናንሶሱ(2)' },
+              //     { timestamp: 20, text: 'ትርጉም ኢየሱስ ክርስቶስ ወደ ዓለም መጣ ኑ በብርሃኑ እንመላለስ' }
+              //   ],
+              // },
               {
                 id: 272,
                 title: 'አማን በአማን',
@@ -4847,7 +4845,7 @@ export const seedData = {
       subcategories: [
         {
           id: 'yemikael_sub_1',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/mikael.jpg'), 
           songs: [
             {
@@ -4857,7 +4855,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Selam_Leke_1.opus'),
               duration: 120,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ሰላም ለከ (3) ሚካኤል ሐመልማለ ወርቅ(2)' }
               ],
@@ -4869,7 +4867,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Selam_Leke_2.opus'),
               duration: 115,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ሰላም ለከ(3) ሚካኤል ሰላም ለከ(2)' }
               ],
@@ -4881,7 +4879,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Melake_Selamne.opus'),
               duration: 180,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መልአከ ሰላምነ ሊቀ መላእክት ሚካኤል(2)' },
                 { timestamp: 10, text: 'ሰአል ወጸሊ በእንቲአነ አዕርግ ጸሎተነ ቅድመ መንበሩ ለመድኃኔዓለም(2)' },
@@ -4895,7 +4893,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Riyu_Ebeyu.opus'),
               duration: 160,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ርዕዩ ዕበዩ ለቅዱስ ሚካኤል(2)' },
                 { timestamp: 10, text: 'ዕውራን ይሬእዩ ወጽሙማን ይሰምዑ እለ ለምጽ ይነጽሑ እለ መጽኡ ኅቤሁ (2)' },
@@ -4909,7 +4907,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Mikael_Amalden.opus'),
               duration: 140,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ሚካኤል አማልደን ከአምላካችን (2)' },
                 { timestamp: 10, text: 'እንዳንጠፋ እንዳንሞት በነፍሳችን አደራህን ቁምልን ከጎናችን (2)' }
@@ -4922,7 +4920,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Mikael_Like.opus'),
               duration: 155,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ሚካኤል ሊቅ ልብሱ ዘመብረቅ(2) ዐይኑ ዘርግብ(2)' },
                 { timestamp: 10, text: 'ሚካኤል ሐመልማለ ወርቅ(2)' },
@@ -4936,7 +4934,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Beamsale_Regbwerede.opus'),
               duration: 145,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'በአምሳለ ርግብ ወረደ መልአክ ወረደ(2)' },
                 { timestamp: 10, text: 'ወረደ (4) ሚካኤል መልአክ ወረደ(2)' },
@@ -4950,7 +4948,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Seale_Wesely.opus'),
               duration: 130,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ሰአል ወጸሊ ወጸሊ በእንቲአነ (2) ሚካኤል ሊቀ መላእክት (2)' },
                 { timestamp: 10, text: 'ትርጉም የመላእክት ሚካኤል ስለእኛ ለምን ጸልይ' }
@@ -4963,7 +4961,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Keme_Tibarekene.opus'),
               duration: 160,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ከመ ትባርከነ በመስቀልከ ዘወርቅ(2)' },
                 { timestamp: 10, text: 'ተዋነይ በጽድቅ(4) ቅዱስ ሚካኤል ሐመልማለ ወርቅ(2)' },
@@ -4977,7 +4975,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Hamelmale_Werke.opus'),
               duration: 140,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ሐመልማለ ወርቅ(3) ሚካኤል(2)ሐመልማለ ወርቅ(2)' },
                 { timestamp: 10, text: 'ትርጉም ልብስ እንደ መብረቅ የሆነ ሚካኤል የወርቅ ሐመልማል ነው' }
@@ -4990,7 +4988,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Mislemikael_Wegebrel.opus'),
               duration: 175,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ምስለ ሚካኤል ወገብርኤል ንዒ ሠናይትየ ማርያም(2)' },
                 { timestamp: 10, text: 'ንዒ(8)እመ አምላክ ንዒ ማርያም(2)' },
@@ -5004,7 +5002,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Nigreni.opus'),
               duration: 140,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ንግረኒ እስመ አጽናዕከኒ ወይቤሌኒ(2)' },
                 { timestamp: 10, text: 'ሶበ ተአምር ዳዕሙ ሚካኤል መልአከክሙ(2)' }
@@ -5017,7 +5015,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Antenu_Mikael_1.opus'),
               duration: 135,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'አንተኑ ሚካኤል መና (2) ዘአውረድከ (2)' },
                 { timestamp: 10, text: 'ወአንተኑ ለእስራኤል መና ዘአውረድከ (2)' },
@@ -5031,7 +5029,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Antenu_Mikael_2.opus'),
               duration: 150,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'አንተኑ ሚካኤል ለእስራኤል ዘአውረድከ መና(2)' },
                 { timestamp: 10, text: 'ዘአውረድከ መና (4) ሚካኤል ሊቀ ደብረ ሲና(2)' },
@@ -5045,7 +5043,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Weetu_mikael_edited.opus'),
               duration: 170,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ውእቱ ሚካኤል መልአከ ኃይል ልዑል ውእቱ ልዑለ መንበር (2)' },
                 { timestamp: 10, text: 'ይስአል ለነ ረዳኤ ይኵነነ ይስአል ለነ አመ ምንዳቤነ (2)' },
@@ -5059,7 +5057,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Ame_Yiskelwo.opus'),
               duration: 165,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'አመ ይሰቅልዎ አይሁድ ለእግዚእነ ሚካኤል አርመመ ወገብርኤል ተደመ (2)' },
                 { timestamp: 10, text: 'ፀሐይ ጸልመ ወወርኅ ደመ ኮነ ወሪዶ እመስቀሉ ለኩሉ አበርሃ(2) ' },
@@ -5073,7 +5071,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Seli_Habeamlak.opus'),
               duration: 125,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ጸሊ ኀበ አምላክ ሚካኤል መልአክ(2)' },
                 { timestamp: 10, text: 'ዓውደ ዓመት ከመ ይትባረክ(2)' }
@@ -5086,7 +5084,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Zeybe_Wenebiye.opus'),
               duration: 210,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ዘይቤ በነቢይ ወርዘውኩሒ ወረሳይኩ ጻድቅሰ እንዘዘይትገደፍ ኢርዕይኩ ላዕለ ደብረ ብርሃን(2)' },
                 { timestamp: 10, text: 'አድኅነኒ እስመ ይፈቅደኒ ወለሞትስ ባሕቱ ኢመጠወኒ መልአከ ሰላም መድኃኒተ ኮነኒ ቅዱስ ሚካኤል(2)' }
@@ -5099,7 +5097,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Kewamyane.opus'),
               duration: 160,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ቀዋምያን ለነፍሳት እሙንቱ ሊቃናት ሚካኤል ወገብርኤል (2)' },
                 { timestamp: 10, text: 'ይትፌነው ለሣሕል (2) እም ኀበ እግዚእ እምልዑል(2)' },
@@ -5113,7 +5111,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Meaza_Senay.opus'),
               duration: 110,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መዓዛ ሠናይ ሠናይ(2) ሚካኤል መዓዛ ሠናይ (2)' }
               ],
@@ -5125,7 +5123,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Debruse_Lekidus_Mikael.opus'),
               duration: 180,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ደብሩሰ ለቅዱስ ሚካኤል ትመስል ደብረ ሲና ትመስል ደብረ ሲና(2)' },
                 { timestamp: 10, text: 'ዘኀደረ ላዕሌሃ እግዚአብሔር ሐፁር ይሐውዳ ወጽጌረዳ በትምህርተ መስቀል (2)' }
@@ -5138,7 +5136,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Bahranine_Yibe.opus'),
               duration: 320,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ባሕራንኒ ይቤ ባሕራንኒ(3) ኦኦ ዘነገደ ባሕር ርዒክዎ ለሚካኤል ወስእንኩ ጠይቆቱ ዘይብል(2)' },
                 { timestamp: 15, text: 'የሞቱን ደብዳቤ ቅዱስ ሚካኤል ሚካኤል አጥፍቶ ቅዱስ ሚካኤል' },
@@ -5162,7 +5160,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Hayal_Hayal.opus'),
               duration: 280,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ኃያል ኃያል (4) ሰዳዴ ሳጥናኤል (2) ኃያል ገባሬ ኃይል' },
                 { timestamp: 15, text: 'ባሕራንን የረዳው ተላፊኖስን ያዳነው(2) መልአኩ ሚካኤል ነው(2) የሞቱን ደብዳቤ የለወጠው' },
@@ -5179,7 +5177,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Yiberal_Bekinfu.opus'),
               duration: 360,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ይበራል በክንፉ ምልጃውም ፈጣን ነው የአምላክ ስም አለበት ስሙ ሚካኤል ነው' },
                 { timestamp: 10, text: 'ያሳደገኝ መልአክ ዛሬም ከኔ ጋር ነው(2)' },
@@ -5202,7 +5200,7 @@ export const seedData = {
               cover_url: require('../assets/images/mikael.jpg'),
               audio_url: require('../assets/music/Amlake_Israel.opus'),
               duration: 340,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'አምላከ እስራኤል ታማኝ ጌታችን ለእስራኤል ለሙሴ የሆንከው መድኅን' },
                 { timestamp: 10, text: 'ፈርዖን እንደገና በትዕቢት ቢገን ለእስራኤል አርበኛ መረጥከው ሙሴን' },
@@ -5219,33 +5217,33 @@ export const seedData = {
                 { timestamp: 120, text: 'አምላክ በፍርድ ቀን ጻድቃንን ሲጠራ ዋስ ጠበቃ ሁነን ሚካኤል አደራ' }
               ],
             },
-            {
-              id: 305,
-              title: 'የስሙ ትርጓሜ',
-              artist: 'Zefinote Selam Sunday School',
-              cover_url: require('../assets/images/mikael.jpg'),
-              // audio_url: 'TODO: add local file for song id 305',
-              duration: 300,
-              genre: 'እዝል ዓራራይ ቅኝት',
-              lyrics: [
-                { timestamp: 0, text: 'የስሙ ትርጓሜ ማን እንደ እግዚአብሔር ነው የሰውን ወደ አምላክ የአምላክን ወደ ሰው' },
-                { timestamp: 10, text: 'እኛን የሚረዳን ዘወትር በምልጃው የመላእክት አለቃ ቅዱስ ሚካኤል ነው(2)' },
-                { timestamp: 20, text: 'ከጉድጓድ ተጥሎ ፍጹም ከሚያስፈራው ከተራቡ አናብስት ዳንኤል ያዳንከው' },
-                { timestamp: 30, text: 'እኛንም ተራዳን ቸል አትበለን ሰይጣን በተንኮሉ ወጥመድ ሳይጥለን' },
-                { timestamp: 40, text: 'የክፉ ሰው ሥራው ክፉ ሀሳብ ነውና በቅንነት መንገድ ከቶ አይሄድምና' },
-                { timestamp: 50, text: 'የሞቱን ደብዳቤ ለባሕራን ሲሰጠው ሚካኤል አንስቶ በደስታ ለወጠው' },
-                { timestamp: 60, text: 'ገና ብላቴና ሳለሁ አንድ ፍሬ ሰው ሁሉ ሲንቀኝ ምስጋና ጀምሬ' },
-                { timestamp: 70, text: 'ፀጋዬን አብዝቶ ያበቃኝ ለዚህ ክብር የሚካኤል አምላክ ይመስገን እግዚአብሔር' }
-              ],
-            },
+            // {
+            //   id: 305,
+            //   title: 'የስሙ ትርጓሜ',
+            //   artist: 'Zefinote Selam Sunday School',
+            //   cover_url: require('../assets/images/mikael.jpg'),
+            //   // audio_url: 'TODO: add local file for song id 305',
+            //   duration: 300,
+            //   genre: 'ዕዝል / አራራይ',
+            //   lyrics: [
+            //     { timestamp: 0, text: 'የስሙ ትርጓሜ ማን እንደ እግዚአብሔር ነው የሰውን ወደ አምላክ የአምላክን ወደ ሰው' },
+            //     { timestamp: 10, text: 'እኛን የሚረዳን ዘወትር በምልጃው የመላእክት አለቃ ቅዱስ ሚካኤል ነው(2)' },
+            //     { timestamp: 20, text: 'ከጉድጓድ ተጥሎ ፍጹም ከሚያስፈራው ከተራቡ አናብስት ዳንኤል ያዳንከው' },
+            //     { timestamp: 30, text: 'እኛንም ተራዳን ቸል አትበለን ሰይጣን በተንኮሉ ወጥመድ ሳይጥለን' },
+            //     { timestamp: 40, text: 'የክፉ ሰው ሥራው ክፉ ሀሳብ ነውና በቅንነት መንገድ ከቶ አይሄድምና' },
+            //     { timestamp: 50, text: 'የሞቱን ደብዳቤ ለባሕራን ሲሰጠው ሚካኤል አንስቶ በደስታ ለወጠው' },
+            //     { timestamp: 60, text: 'ገና ብላቴና ሳለሁ አንድ ፍሬ ሰው ሁሉ ሲንቀኝ ምስጋና ጀምሬ' },
+            //     { timestamp: 70, text: 'ፀጋዬን አብዝቶ ያበቃኝ ለዚህ ክብር የሚካኤል አምላክ ይመስገን እግዚአብሔር' }
+            //   ],
+            // },
             {
               id: 306,
               title: 'ቅዱስ ሚካኤል ነፍሴ ሲጨነቅ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/mikael.jpg'),
-              // audio_url: 'TODO: add local file for song id 306',
+              audio_url: require('../assets/music/Kidus_Mikael.opus'),
               duration: 350,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ቅዱስ ሚካኤል(3) ነፍሴ ሲጨነቅ ሲዝል ሥጋዬ ፈጥነህ ተራዳኝ ዋስ ጠበቃዬ(2)' },
                 { timestamp: 15, text: 'አንተ ስለሆንክ ሚካኤል የአምላክ ባለሟል ሚካኤል ልመና ፈጥኖ ሚካኤል ከአምላክ ያቀርባል ሚካኤል' },
@@ -5512,7 +5510,7 @@ export const seedData = {
       subcategories: [
         {
           id: 'yemsgana_mezmurat_ezil_araray',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/misgana.jpg'), 
           songs: [
               {
@@ -5522,7 +5520,7 @@ export const seedData = {
                 cover_url: require('../assets/images/misgana.jpg'),
                 audio_url: require('../assets/music/Endeegzaber_Yale.opus'),
                 duration: 220,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'እንደ እግዚአብሔር ያለ ማንም የለምና/2/ እልል በሉ ቁሙ ለምስጋና(2)' },
                   { timestamp: 25, text: 'ባሕር ተከፈለ እስኪታይ መሬቱ ፈርኦን ወደቀ አልሰራም ትምክህቱ' },
@@ -5542,7 +5540,7 @@ export const seedData = {
                 cover_url: require('../assets/images/misgana.jpg'),
                 audio_url: require('../assets/music/Yewededegn_Geta.opus'),
                 duration: 240,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'የወደደኝ ጌታ ምን አድርጌለት ነው ብዘምርለትም ያንስበታል ይኸው' },
                   { timestamp: 30, text: 'ከውድቀቴ አንስቶ ድካሜን ያገዝከኝ ሰባራውን ድልድይ ገጥመ ያሻገርከኝ(2)' },
@@ -5561,7 +5559,7 @@ export const seedData = {
                 cover_url: require('../assets/images/misgana.jpg'),
                 audio_url: require('../assets/music/Nu_Beegzaber.opus'),
                 duration: 260,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ኑ በእግዚአብሔር ደስ ይበለን (2) ለታላቁ ክብር ለዚህ ላበቃን' },
                   { timestamp: 25, text: 'ከሞት ወደ ሕይወት ላሸጋገረን ኑ በእግዚአብሔር ኑ በድንግል ደስ ይበለን(2)' },
@@ -5579,7 +5577,7 @@ export const seedData = {
                 cover_url: require('../assets/images/misgana.jpg'),
                 audio_url: require('../assets/music/Elel_Belu.opus'),
                 duration: 210,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'እልል በሉ በአንድነት ዘምሩ አመስግኑ ለክብሩ ዘምሩለት' },
                   { timestamp: 25, text: 'እንደ እግዚአብሔር ያለ ማንም የለም በሉ(2)' },
@@ -5596,7 +5594,7 @@ export const seedData = {
                 cover_url: require('../assets/images/misgana.jpg'),
                 audio_url: require('../assets/music/Sewoch_Desyibelen.opus'),
                 duration: 200,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ሰዎች ደስ ይበለን በአምላካችን ከኃጢአት ባርነት ነጻ ላወጣን' },
                   { timestamp: 25, text: 'ተነሱ እናመስግን ውለታው ብዙ ነው ምን ይከፈለዋል ተመስገን ብቻ ነው(2)' },
@@ -5613,7 +5611,7 @@ export const seedData = {
                 cover_url: require('../assets/images/misgana.jpg'),
                 audio_url: require('../assets/music/Adergehlgnalna.opus'),
                 duration: 230,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'አድርገህልኛልና በቸርነት አመሰግንሃለሁ እልል እልል ለዓለመ ዓለም አማኑኤል እገዛልሃለሁ መድኃኔዓለም(2)' },
                   { timestamp: 30, text: 'ቀኑ ጨልሞብኝ ዙሪያው ገደል ሆኖ የችግር አረንቋ ፊቴ ተደቅኖ ረዳት ያጣሁኝ በመሰለኝ ጊዜ ጽፈሞ አራቅክልኝ የልቤን ትካዜ' },
@@ -5629,7 +5627,7 @@ export const seedData = {
                 cover_url: require('../assets/images/misgana.jpg'),
                 audio_url: require('../assets/music/Ewnetegnaw_Selam.opus'),
                 duration: 210,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'እውነተኛው ሰላም ያለው ከቤትህ ነው(2) እርዳኝ አልናወጽ እለምንሃለሁ(2)' },
                   { timestamp: 25, text: 'ኃጢአቴን ሳስበው ልቤ ይጨነቃል ካንተ መለየቴ ነፍሴን አድክሞታል ወዳንተ መልሰኝ እኔ እመለሳለው እውነተኛው ሰላም ያለው ከቤትህ ነው' },
@@ -5645,7 +5643,7 @@ export const seedData = {
                 cover_url: require('../assets/images/misgana.jpg'),
                 audio_url: require('../assets/music/Tamaldenalch.opus'),
                 duration: 250,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ታማልደናለች (2) ማርያም(2)ቤዛዊተ ዓለም (4)' },
                   { timestamp: 25, text: 'ሚካኤል መልአክ ሊቀ መላእክት(2) ዘአውረድከ(2) መና እም ደመና(2)' },
@@ -5665,7 +5663,7 @@ export const seedData = {
                 cover_url: require('../assets/images/misgana.jpg'),
                 audio_url: require('../assets/music/Egzaberhoy_Erdagn.opus'),
                 duration: 240,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'እግዚአብሔር ሆይ እርዳኝ ቸርነት አድርገህ ዕድሜ ለንስሐ እንደ ሕዝቅያስ ሰጥተህ ጠማማውን ልቤን በቃልህ አቃንተህ(2)' },
                   { timestamp: 30, text: 'አላውቀውም ብሎ ሲጠየቅ ያመጸው ዶሮ እስኪጮህ ድረስ ሦስት ጊዜ የካደው የጅረት ወንዝ ነው የሰጠኸው እንባ ጴጥሮስ ተፀጽቶ ንስሐ እንዲገባ' },
@@ -5675,25 +5673,25 @@ export const seedData = {
                   { timestamp: 150, text: 'በደላችንን ሁሉ ሳታስብ ትተህ በምጽህት ሰዓት ከጻድቃን ቆጥረህ ነጭ ልብስ ለብሰን ሆነን ካንተ ጋራ በሩ ሳይዘጋ አስገባን አደራ' }
                 ],
               },
-              {
-                id: 330,
-                title: 'አንቲ ዘአማን',
-                artist: 'Traditional',
-                cover_url: require('../assets/images/misgana.jpg'),
-                audio_url: require('../assets/music/Yiberal_Bekinfu.opus'),
-                duration: 280,
-                genre: 'እዝል ዓራራይ ቅኝት',
-                lyrics: [
-                  { timestamp: 0, text: 'አንቲ ዘአማን(2)ረከብኪ ጸጋ ክብረ ድንግል(2) የዐቢ ክብራ ለማርያም(2)' },
-                  { timestamp: 30, text: 'በይ እንግዲህ ድንግል ዘበአማን ከእኛ አትሽሺ ዘበአማን የክርስቲያኑን ልብ ዘበአማን ትህትናን አልብሺ ዘበአማን' },
-                  { timestamp: 60, text: 'የያሬድ ጸናጽል ዘበአማን የዘወትር ዝማሬ ዘበአማን የአባ ሕርያቆስ ዘበአማን የዘወትር ቅዳሴ ዘበአማን ርኅርይተ ኅሊና ዘበአማን' },
-                  { timestamp: 90, text: 'የሐዋርያት ሞገስ ዘበአማን የመላእክት እህት ዘበአማን ማኀደረ ሥሉስ ዘበአማን' },
-                  { timestamp: 120, text: 'ሥሉስ ቅዱስ ተብሎ የሚመሠገነው የፍጥረታት ገዥ ዘበአማን የአንቺ ልጅ እኮ ነው' },
-                  { timestamp: 150, text: 'የምታምሪ ርግብ ዘበአማን ሰላምን ያስገኘሽ ዘበአማን ንጽሕናሽን አይቶ ዘበአማን ወልድ መረጠሽ ዘበአማን አትርሺን ድንግል ሆይ ዘበአማን እኛ ልጆሽን ዘበአማን' },
-                  { timestamp: 180, text: 'ከአምላክ አስታሪቅን ዘበአማን እኛ ደካሞችን ዘበአማን ስለ በደላችን ዘበአማን ችላ ሳትይን ዘበአማን ምሕረት አሰጪን ዘበአማን ድንግል አትርሺን ዘበአማን' },
-                  { timestamp: 210, text: 'የመመኪያችን ዘውድ ዘበአማን እመብርሃን ዘበአማን ከልጅሽ አስታርቂን ዘበአማን እንዳንቀር ወድቀን ዘበአማን' }
-                ],
-              },
+              // {
+              //   id: 330,
+              //   title: 'አንቲ ዘአማን',
+              //   artist: 'Traditional',
+              //   cover_url: require('../assets/images/misgana.jpg'),
+              //   audio_url: require('../assets/music/Yiberal_Bekinfu.opus'),
+              //   duration: 280,
+              //   genre: 'ዕዝል / አራራይ',
+              //   lyrics: [
+              //     { timestamp: 0, text: 'አንቲ ዘአማን(2)ረከብኪ ጸጋ ክብረ ድንግል(2) የዐቢ ክብራ ለማርያም(2)' },
+              //     { timestamp: 30, text: 'በይ እንግዲህ ድንግል ዘበአማን ከእኛ አትሽሺ ዘበአማን የክርስቲያኑን ልብ ዘበአማን ትህትናን አልብሺ ዘበአማን' },
+              //     { timestamp: 60, text: 'የያሬድ ጸናጽል ዘበአማን የዘወትር ዝማሬ ዘበአማን የአባ ሕርያቆስ ዘበአማን የዘወትር ቅዳሴ ዘበአማን ርኅርይተ ኅሊና ዘበአማን' },
+              //     { timestamp: 90, text: 'የሐዋርያት ሞገስ ዘበአማን የመላእክት እህት ዘበአማን ማኀደረ ሥሉስ ዘበአማን' },
+              //     { timestamp: 120, text: 'ሥሉስ ቅዱስ ተብሎ የሚመሠገነው የፍጥረታት ገዥ ዘበአማን የአንቺ ልጅ እኮ ነው' },
+              //     { timestamp: 150, text: 'የምታምሪ ርግብ ዘበአማን ሰላምን ያስገኘሽ ዘበአማን ንጽሕናሽን አይቶ ዘበአማን ወልድ መረጠሽ ዘበአማን አትርሺን ድንግል ሆይ ዘበአማን እኛ ልጆሽን ዘበአማን' },
+              //     { timestamp: 180, text: 'ከአምላክ አስታሪቅን ዘበአማን እኛ ደካሞችን ዘበአማን ስለ በደላችን ዘበአማን ችላ ሳትይን ዘበአማን ምሕረት አሰጪን ዘበአማን ድንግል አትርሺን ዘበአማን' },
+              //     { timestamp: 210, text: 'የመመኪያችን ዘውድ ዘበአማን እመብርሃን ዘበአማን ከልጅሽ አስታርቂን ዘበአማን እንዳንቀር ወድቀን ዘበአማን' }
+              //   ],
+              // },
               {
                 id: 331,
                 title: 'ከድንግል ማርያም ተወልዶ',
@@ -5701,7 +5699,7 @@ export const seedData = {
                 cover_url: require('../assets/images/misgana.jpg'),
                 audio_url: require('../assets/music/Kedingel_Tewwldo.opus'),
                 duration: 150,
-                genre: 'እዝል ዓራራይ ቅኝት',
+                genre: 'ዕዝል / አራራይ',
                 lyrics: [
                   { timestamp: 0, text: 'ከድንግል ማርያም ተወልዶ ሥጋን የለበሰው (2) እኛን ሊያድነን ነው' },
                   { timestamp: 30, text: 'በቀራንዮ ተሰቅሎ ደሙን ያፈሰሰው (2) እኛን ሊያድነን ነው' },
@@ -5818,25 +5816,25 @@ export const seedData = {
                 { timestamp: 230, text: 'ና ወደኛ ተክለሃይማኖት(2) ይጠብቀን ያንተ ጸሎት ጸንተን እንድንቆም በሃይማኖት(2)' }
               ],
             },
-            {
-              id: 338,
-              title: 'የጠሩሽ አንቺን ተማጽነው',
-              artist: 'Traditional',
-              cover_url: require('../assets/images/misgana.jpg'),
-              audio_url: require('../assets/music/Desalate.opus'),
-              duration: 240,
-              genre: 'ግእዝ 1',
-              lyrics: [
-                { timestamp: 0, text: 'የጠሩሽ አንቺን ተማጽነው የዳኑብሽ የበላኤ ሰብእ እመቤት የአምላክ እናት' },
-                { timestamp: 30, text: 'ድንግል አዛኝት ማርያም ቅድስት' },
-                { timestamp: 60, text: 'በቃል ኪዳንሽ ብዙዎች ድነዋል በምልጃሽ ጽድቅን አግኝተዋል የአምላክ ቸርነቱን አይተዋል(2)' },
-                { timestamp: 90, text: 'የእሳት ባሕር በአንቺ ተሻግረዋል የሰይጣንን ጦር በአንቺ ድል ነስተዋል ለሰማያዊ ክብር በቅተዋል(2)' },
-                { timestamp: 120, text: 'ነፍሳቸውም ጽድቅን አግኝታለች ሕይወታቸውም በአንቺ ትድናለች ድንግል ሆይ አትጣይን ስላለች(2)' },
-                { timestamp: 150, text: 'እኔም በአንቺ እታመናለሁ የአምላክ እናት አትርሺኝ እላለሁ በአማላጅነትሽ እድናለሁ(2)' },
-                { timestamp: 180, text: 'እኛም በአንቺ እንታመናለን የአምላክ እናት አሳስቢ እንላለን በአማላጅነትሽ እንድናለን(2)' },
-                { timestamp: 210, text: 'ምእመናንም በአንቺ ያምናሉ የአምላክ እናት አሳስቢ ይላሉ በአማላጅነትሽ ይድናሉ(2)' }
-              ],
-            },
+            // {
+            //   id: 338,
+            //   title: 'የጠሩሽ አንቺን ተማጽነው',
+            //   artist: 'Traditional',
+            //   cover_url: require('../assets/images/misgana.jpg'),
+            //   audio_url: require('../assets/music/Desalate.opus'),
+            //   duration: 240,
+            //   genre: 'ግእዝ 1',
+            //   lyrics: [
+            //     { timestamp: 0, text: 'የጠሩሽ አንቺን ተማጽነው የዳኑብሽ የበላኤ ሰብእ እመቤት የአምላክ እናት' },
+            //     { timestamp: 30, text: 'ድንግል አዛኝት ማርያም ቅድስት' },
+            //     { timestamp: 60, text: 'በቃል ኪዳንሽ ብዙዎች ድነዋል በምልጃሽ ጽድቅን አግኝተዋል የአምላክ ቸርነቱን አይተዋል(2)' },
+            //     { timestamp: 90, text: 'የእሳት ባሕር በአንቺ ተሻግረዋል የሰይጣንን ጦር በአንቺ ድል ነስተዋል ለሰማያዊ ክብር በቅተዋል(2)' },
+            //     { timestamp: 120, text: 'ነፍሳቸውም ጽድቅን አግኝታለች ሕይወታቸውም በአንቺ ትድናለች ድንግል ሆይ አትጣይን ስላለች(2)' },
+            //     { timestamp: 150, text: 'እኔም በአንቺ እታመናለሁ የአምላክ እናት አትርሺኝ እላለሁ በአማላጅነትሽ እድናለሁ(2)' },
+            //     { timestamp: 180, text: 'እኛም በአንቺ እንታመናለን የአምላክ እናት አሳስቢ እንላለን በአማላጅነትሽ እንድናለን(2)' },
+            //     { timestamp: 210, text: 'ምእመናንም በአንቺ ያምናሉ የአምላክ እናት አሳስቢ ይላሉ በአማላጅነትሽ ይድናሉ(2)' }
+            //   ],
+            // },
             {
               id: 339,
               title: 'ደስ ይበለን',
@@ -5854,23 +5852,23 @@ export const seedData = {
                 { timestamp: 170, text: 'ድንግል ማርያም ትጸልያለች ኃጥኡን ሰው ማረው እያለች በድንግል ክብር እንኖራለን በጽኑ ፍቅር አንዴ እንዲያድነን' }
               ],
             },
-            {
-              id: 340,
-              title: 'እልል እልል ደስ ይበለን',
-              artist: 'Traditional',
-              cover_url: require('../assets/images/misgana.jpg'),
-              // audio_url: require('../assets/music/Bemidrawi_Hiwot_Yeserg.opus'),
-              duration: 180,
-              genre: 'ግእዝ 1',
-              lyrics: [
-                { timestamp: 0, text: 'እልል(3)ደስ ይበለን ሁላችን አምላካችን መልካም አደረገልን ደስም አለን(2)' },
-                { timestamp: 30, text: 'የሠራዊት ጌታ ክበር ተመስገን ልመናን ይሰማል እልል እግዚአብሔር ይራዳል' },
-                { timestamp: 60, text: 'በመንገድም አንወድቅም እልል እርሱ ያነሳናል እግዚአብሔር ኃያል ነው እልል እርሱ ያሸንፋል' },
-                { timestamp: 90, text: 'ጌታ ከእኛ ጋር ነው እልል በገና ደርድሩ እልል እግዘአብሔር ይመስገን እልል' },
-                { timestamp: 120, text: 'ድንቅ ነው ተግባሩ እልል ኃጢአታችን ሁሉ እልል ተደመሰሰልን እልል' },
-                { timestamp: 150, text: 'ሕይወታችን ውስጥ እልል አምላክ ነገሠልን እልል' }
-              ],
-            }
+            // {
+            //   id: 340,
+            //   title: 'እልል እልል ደስ ይበለን',
+            //   artist: 'Traditional',
+            //   cover_url: require('../assets/images/misgana.jpg'),
+            //   // audio_url: require('../assets/music/Bemidrawi_Hiwot_Yeserg.opus'),
+            //   duration: 180,
+            //   genre: 'ግእዝ 1',
+            //   lyrics: [
+            //     { timestamp: 0, text: 'እልል(3)ደስ ይበለን ሁላችን አምላካችን መልካም አደረገልን ደስም አለን(2)' },
+            //     { timestamp: 30, text: 'የሠራዊት ጌታ ክበር ተመስገን ልመናን ይሰማል እልል እግዚአብሔር ይራዳል' },
+            //     { timestamp: 60, text: 'በመንገድም አንወድቅም እልል እርሱ ያነሳናል እግዚአብሔር ኃያል ነው እልል እርሱ ያሸንፋል' },
+            //     { timestamp: 90, text: 'ጌታ ከእኛ ጋር ነው እልል በገና ደርድሩ እልል እግዘአብሔር ይመስገን እልል' },
+            //     { timestamp: 120, text: 'ድንቅ ነው ተግባሩ እልል ኃጢአታችን ሁሉ እልል ተደመሰሰልን እልል' },
+            //     { timestamp: 150, text: 'ሕይወታችን ውስጥ እልል አምላክ ነገሠልን እልል' }
+            //   ],
+            // }
           ]
         },
         {
@@ -5883,7 +5881,7 @@ export const seedData = {
                 title: 'ከክርስቶስ ፍቅር',
                 artist: 'Traditional',
                 cover_url: require('../assets/images/misgana.jpg'),
-                // audio_url: 'TODO: add local file for song id 341',
+                audio_url: require('../assets/music/Kekirstos_Fikir.opus'),
                 duration: 190,
                 genre: 'ግእዝ 2',
                 lyrics: [
@@ -5895,26 +5893,26 @@ export const seedData = {
                   { timestamp: 150, text: 'የውኃ ግድግዳ የደም መሠረት(2) ይኸው እዚህ አለ የአማኑኤል ቤት (2)' }
                 ],
               },
-              {
-                id: 342,
-                title: 'አማልደን ስንልህ',
-                artist: 'Traditional',
-                cover_url: require('../assets/images/misgana.jpg'),
-                // audio_url: 'TODO: add local file for song id 342',
-                duration: 230,
-                genre: 'ግእዝ 2',
-                lyrics: [
-                  { timestamp: 0, text: 'አማልደን ስንልህ ስማን እዘንልን(2) አጽናን አረጋጋህን(2) ገብርኤል የእኛ መመኪያ አባታችን' },
-                  { timestamp: 35, text: 'እግዚአብሔር ራሱ ክብርን አቀዳጅቶህ ለተልዕኮ እንድትፈጥን አድርጎ የሾመህ' },
-                  { timestamp: 60, text: 'እንደ ሦስቱ ሕጻናት አንተን እንደ ጠሩት ዛሬም አውጣን ገብርኤል ሆይ ከነፍሳችን ጠላት' },
-                  { timestamp: 85, text: 'እምነት አለን እያልን የቀና ምግባር እባክህን ሊቀ መላእክት እንዳንስት ርዳን' },
-                  { timestamp: 110, text: 'መላእክትን ሁሉ ያረጋጋሃቸው አንተ እኮ ነህ ኃያል መልአክ ጽኑ ቁሙ ያልካቸው' },
-                  { timestamp: 135, text: 'እኛስ እናምናለን በአማላጅነትህ በተሰጠህ ጸጋ ኃይላችን አንተ ነህ' },
-                  { timestamp: 160, text: 'የምሥራች መልአክ ተብለሃልና ደስ አሰኘን ሰላም ስጠን ተጨንቀናልና' },
-                  { timestamp: 185, text: 'ኢትዮጵያንም ታደግ ተዋሕዶንም ጠብቅ ሊቀ መላእክት በል ቁምልን ሰይፍን ታጠቅ' },
-                  { timestamp: 210, text: 'ሠራዊትህ ከበው እነርሱ ያጽናኑን ዘወትር ሳትርቀን ሰላምን ለግሠን' }
-                ],
-              }
+              // {
+              //   id: 342,
+              //   title: 'አማልደን ስንልህ',
+              //   artist: 'Traditional',
+              //   cover_url: require('../assets/images/misgana.jpg'),
+              //   // audio_url: 'TODO: add local file for song id 342',
+              //   duration: 230,
+              //   genre: 'ግእዝ 2',
+              //   lyrics: [
+              //     { timestamp: 0, text: 'አማልደን ስንልህ ስማን እዘንልን(2) አጽናን አረጋጋህን(2) ገብርኤል የእኛ መመኪያ አባታችን' },
+              //     { timestamp: 35, text: 'እግዚአብሔር ራሱ ክብርን አቀዳጅቶህ ለተልዕኮ እንድትፈጥን አድርጎ የሾመህ' },
+              //     { timestamp: 60, text: 'እንደ ሦስቱ ሕጻናት አንተን እንደ ጠሩት ዛሬም አውጣን ገብርኤል ሆይ ከነፍሳችን ጠላት' },
+              //     { timestamp: 85, text: 'እምነት አለን እያልን የቀና ምግባር እባክህን ሊቀ መላእክት እንዳንስት ርዳን' },
+              //     { timestamp: 110, text: 'መላእክትን ሁሉ ያረጋጋሃቸው አንተ እኮ ነህ ኃያል መልአክ ጽኑ ቁሙ ያልካቸው' },
+              //     { timestamp: 135, text: 'እኛስ እናምናለን በአማላጅነትህ በተሰጠህ ጸጋ ኃይላችን አንተ ነህ' },
+              //     { timestamp: 160, text: 'የምሥራች መልአክ ተብለሃልና ደስ አሰኘን ሰላም ስጠን ተጨንቀናልና' },
+              //     { timestamp: 185, text: 'ኢትዮጵያንም ታደግ ተዋሕዶንም ጠብቅ ሊቀ መላእክት በል ቁምልን ሰይፍን ታጠቅ' },
+              //     { timestamp: 210, text: 'ሠራዊትህ ከበው እነርሱ ያጽናኑን ዘወትር ሳትርቀን ሰላምን ለግሠን' }
+              //   ],
+              // }
           ]
         },
       ]
@@ -5932,7 +5930,7 @@ export const seedData = {
       subcategories: [
         {
           id: 'yekuskuam_sub_1',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/kuskuam.jpg'), 
           songs: [
             {
@@ -5942,7 +5940,7 @@ export const seedData = {
               cover_url: require('../assets/images/kuskuam.jpg'),
               audio_url: require('../assets/music/Emne_Emne_Ni.opus'),
               duration: 140,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'እምነ እምነ ንኢ (2)' },
                 { timestamp: 5, text: 'በሰላም (2) ንኢ ማርያም' },
@@ -5957,7 +5955,7 @@ export const seedData = {
               cover_url: require('../assets/images/kuskuam.jpg'),
               audio_url: require('../assets/music/Rihabe_Wesima.opus'),
               duration: 150,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ርሀበ ውጽምአ አዘክሪ ድንግል ርሀበ ውጽምአ(2)' },
                 { timestamp: 5, text: 'ምንዳቤ ወሐዘነ አዘክሪ ድንግል(2)' },
@@ -5969,9 +5967,9 @@ export const seedData = {
               title: 'ተፈጸመ ማሕሌተ ጽጌ ቁ 1',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/kuskuam.jpg'),
-              audio_url: require('../assets/music/Tefeseme_Mahlete_Tsege.opus'),
+              audio_url: require('../assets/music/Tefeseme_Mahlete_Tsege_2.opus'),
               duration: 130,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ተፈጸመ ማሕሌተ ጽጌ(2)' },
                 { timestamp: 5, text: 'ማሕሌተ ጽጌ (2) ተፈጸመ ማሕሌተ ጽጌ' },
@@ -5985,7 +5983,7 @@ export const seedData = {
               cover_url: require('../assets/images/kuskuam.jpg'),
               audio_url: require('../assets/music/Des_Yibelsh.opus'),
               duration: 320,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ደስ ይበልሽ (2) ማርያም ቅድስት ድንግል(2)' },
                 { timestamp: 5, text: 'ደስ ይበልሽ ከሴቶቹ ሁሉ የተባረክሽ ነሽ(2)' },
@@ -6014,7 +6012,7 @@ export const seedData = {
               cover_url: require('../assets/images/kuskuam.jpg'),
               audio_url: require('../assets/music/Maryamsine_Teklesige.opus'),
               duration: 180,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ማርያም ሥነ ተክለ ጽጌ ኸኸ ሥነ ተክለ ጽጌ (2)' },
                 { timestamp: 5, text: 'ከመ ጽጌረዳ (3) ድንግል ዘሰሎሞን ሀርጌ' },
@@ -6027,9 +6025,9 @@ export const seedData = {
               title: 'መዓዛሆሙ ለቅዱሳን',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/kuskuam.jpg'),
-              audio_url: require('../assets/music/Dengil_Amaljin.opus'),
+              audio_url: require('../assets/music/Meazahomu_Lekidusan.opus'),
               duration: 170,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መዓዛሆሙ ለቅዱሳን ከመጽጌ ደንጎላት ዘውስተ ቆላት(2)' },
                 { timestamp: 5, text: 'ጸገዩ ቀንሞስ ምስለ ናርዶስ (2)' },
@@ -6043,7 +6041,7 @@ export const seedData = {
               cover_url: require('../assets/images/kuskuam.jpg'),
               audio_url: require('../assets/music/Meaza_Afewat.opus'),
               duration: 160,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መዓዛ አፈዋት ማርያም (2) ጽጌ መንግሥት ቡርክት(2)' },
                 { timestamp: 5, text: 'ጽጌ (2) ዘሰሎሞን ወዳዊት አብርሃ ወአጽብሃ(2)' },
@@ -6057,7 +6055,7 @@ export const seedData = {
               cover_url: require('../assets/images/kuskuam.jpg'),
               audio_url: require('../assets/music/Eskemazenu.opus'),
               duration: 160,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'እስከ ማእዜኑ እግዝእትየ ውስተ ምድረ ነኪር ትሄልዊ(2)' },
                 { timestamp: 5, text: 'ገሊላ እትዊ (4) ሀገርኪ ገሊላ እትዊ(2)' },
@@ -6065,28 +6063,28 @@ export const seedData = {
                 { timestamp: 15, text: 'ገሊላ ግቢ (4) ሀገርሽ ገሊላ ግቢ(2)' }
               ],
             },
-            {
-              id: 351,
-              title: 'በከመ ይቤ ሰሎሞን',
-              artist: 'Zefinote Selam Sunday School',
-              cover_url: require('../assets/images/kuskuam.jpg'),
-              audio_url: require('../assets/music/Bekeme_Yibe.opus'),
-              duration: 145,
-              genre: 'እዝል ዓራራይ ቅኝት',
-              lyrics: [
-                { timestamp: 0, text: 'በከመ ይቤ ሰሎሞን (2) በእንተ ማርያም(2)' },
-                { timestamp: 5, text: 'ንዑ ንትፈጋዕ ወኢይልትፈ ጽጌ ደመና አብርሃ በሥነ ማርያም' },
-                { timestamp: 10, text: 'ትርጉም ፦' }
-              ],
-            },
+            // {
+            //   id: 351,
+            //   title: 'በከመ ይቤ ሰሎሞን',
+            //   artist: 'Zefinote Selam Sunday School',
+            //   cover_url: require('../assets/images/kuskuam.jpg'),
+            //   audio_url: require('../assets/music/Bekeme_Yibe.opus'),
+            //   duration: 145,
+            //   genre: 'ዕዝል / አራራይ',
+            //   lyrics: [
+            //     { timestamp: 0, text: 'በከመ ይቤ ሰሎሞን (2) በእንተ ማርያም(2)' },
+            //     { timestamp: 5, text: 'ንዑ ንትፈጋዕ ወኢይልትፈ ጽጌ ደመና አብርሃ በሥነ ማርያም' },
+            //     { timestamp: 10, text: 'ትርጉም ፦' }
+            //   ],
+            // },
             {
               id: 352,
               title: 'ብኪ ይትፌስሑ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/kuskuam.jpg'),
-              audio_url: require('../assets/music/Maryam_Niset.opus'),
+              audio_url: require('../assets/music/Beki_Yitfeshu.opus'),
               duration: 155,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ብኪ ይትፌስሑ ዘገነተ ጽጌ ፃድቃን(2)' },
                 { timestamp: 5, text: 'እለተ ብርሃን (4) ማርያም እለተ ብርሃን' },
@@ -6100,7 +6098,7 @@ export const seedData = {
               cover_url: require('../assets/images/kuskuam.jpg'),
               audio_url: require('../assets/music/Solomon_Yibela.opus'),
               duration: 130,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ሰሎሞን ይቤላ(2) ለማርያም(2)' },
                 { timestamp: 5, text: 'አዕይንትኪ ዘርግብ አዕይንትኪ (2) ሰሎሞን ይቤላ(2)' },
@@ -6114,7 +6112,7 @@ export const seedData = {
               cover_url: require('../assets/images/kuskuam.jpg'),
               audio_url: require('../assets/music/Nigste_Semayatwemider.opus'),
               duration: 140,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ንግሥት ሰማያት ወምድር ማርያም ድንግል(2)' },
                 { timestamp: 5, text: 'ተፈጸመ (5) ማሕሌት ጽጌ(2)' },
@@ -6128,7 +6126,7 @@ export const seedData = {
               cover_url: require('../assets/images/kuskuam.jpg'),
               audio_url: require('../assets/music/Kibebegera_Werke_1.opus'),
               duration: 125,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ክበበ (2) ጌራ ወርቅ(2)' },
                 { timestamp: 5, text: 'አክሊለ ጽጌ ማርያም(4)' },
@@ -6142,7 +6140,7 @@ export const seedData = {
               cover_url: require('../assets/images/kuskuam.jpg'),
               audio_url: require('../assets/music/Kibebe_Gera_Werke_2.opus'),
               duration: 135,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ክበበ ጌራ ወርቅ ጽሩይ እም እንቆባሕርይ(2)' },
                 { timestamp: 5, text: 'ዘየሐቱ (5) እንቆባሕርይ(2)' },
@@ -6156,7 +6154,7 @@ export const seedData = {
               cover_url: require('../assets/images/kuskuam.jpg'),
               audio_url: require('../assets/music/Enzetakfiyo_1.opus'),
               duration: 150,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'እንዘ ተኃቅፊዩ ለህፃንኪ ንኢ ማርያም' },
                 { timestamp: 5, text: 'ንኢ (2) ማርያም' },
@@ -6172,7 +6170,7 @@ export const seedData = {
               cover_url: require('../assets/images/kuskuam.jpg'),
               audio_url: require('../assets/music/Enzetakfiyo_2.opus'),
               duration: 120,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'እንዘ ተኃቅፊዩ ለህፃንኪ ድንግል(2)ክበበ ጌራ ወርቅ አክሊለ ጽጌ(2)' },
                 { timestamp: 5, text: 'ትርጉም ፦' }
@@ -6268,7 +6266,7 @@ export const seedData = {
               title: 'ተፈጸመ ማሕሌተ ጽጌ ቁ 2',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/kuskuam.jpg'),
-              audio_url: require('../assets/music/Tefeseme_Mahlete_Tsege_2.opus'),
+              audio_url: require('../assets/music/Tefeseme_Mahlete_Tsege.opus'),
               duration: 130,
               genre: 'ግእዝ 2',
               lyrics: [
@@ -6293,7 +6291,7 @@ export const seedData = {
       subcategories: [
         {
           id: 'yebata_mezmur_sub1',
-          name: 'እዝል ዓራራይ ቅኝት',
+          name: 'ዕዝል / አራራይ',
           image: require('../assets/images/beata.png'), 
           songs: [
             {
@@ -6303,7 +6301,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Eyakem_Wehana.opus'),
               duration: 180,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ኢያቄም ወሐና እናት አባትሽ ቤተ እግዚአብሔር ወስደው ስዕለት የሰጡሽ' },
                 { timestamp: 5, text: 'መና ከሰማያት የወረደልሽ ፍጽምት ድንግል የሆንሽ ማርያም አንቺ ነሽ (2)' },
@@ -6317,7 +6315,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Yiwedswa.opus'),
               duration: 165,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ይዌድስዋ መላእክት ለማርያም (2)' },
                 { timestamp: 5, text: 'በውስተ ውሳጤ መንጦላዕት ወይብልዋ በሐኪ' },
@@ -6333,7 +6331,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Gebrel_Mesa.opus'),
               duration: 155,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ገብርኤል መልአክ መጽአ ወዜነዋ(2)ዜነዋ' },
                 { timestamp: 5, text: '(2)ለማርያም(2)' },
@@ -6350,7 +6348,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Kinfu_Selela.opus'),
               duration: 120,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ክንፉ ጸለላ(3)' },
                 { timestamp: 5, text: 'ተፈስሒ ለድንግል(ለማርያም) ይቤላ(2)' },
@@ -6365,7 +6363,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/O_Dengile.opus'),
               duration: 210,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ኦ ድንግል አኮ በተላህዮ ዘልህቂ ከመ አዋልደ' },
                 { timestamp: 5, text: 'ዕብራዊያን እለ ያገዝፋ ክሳዶን(2)' },
@@ -6384,7 +6382,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Mahdere_Melekot.opus'),
               duration: 130,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ማኀደረ መለኮት(2)' },
                 { timestamp: 5, text: 'ማርያም እመ ብዙሐን(2)' },
@@ -6399,7 +6397,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Yekidan_Silat.opus'),
               duration: 145,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'የኪዳን ጽላት የተሰወረ መና ያለብሽ ደብተራ' },
                 { timestamp: 5, text: 'ድንኳን አንቺ ነሽ(2)' },
@@ -6414,7 +6412,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Besa_Senay.opus'),
               duration: 220,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'በጽሐ ሠናይ ወአልጸቀ ዘመን(2)ወበዓላ ለቅድስት ማርያም (2)' },
                 { timestamp: 5, text: 'እንተ በላዕሌሃ ተመርዓ ወቃል አንጺሖ ሥጋሃ ላዕሌሃ ኀደረ (2)' },
@@ -6429,7 +6427,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Maryam_Teabi.opus'),
               duration: 140,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ማርያም ተዓቢ እምኩሉ ፍጥረት(2)' },
                 { timestamp: 5, text: 'ኢያውእያ እሳተ መለኮት(2)' },
@@ -6444,7 +6442,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Maryam_Fidel.opus'),
               duration: 125,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ማርያም ፊደል የሁሉ መማርያ(2)' },
                 { timestamp: 5, text: 'በንጽሕና(2)ተጽፋለችና(2)' }
@@ -6457,7 +6455,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Dengil_Amaljin.opus'),
               duration: 140,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ድንግል አማልጂን ከአምላካችን (2)' },
                 { timestamp: 5, text: 'እንዳንጠፋ በነፍስም በሥጋችን አደራ ድንግል' },
@@ -6471,7 +6469,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Liben_Anesasto.opus'),
               duration: 135,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ልቤን አነሳስቶ ያመለክተኛል የአምላክን እናት' },
                 { timestamp: 5, text: 'እመናት ይለኛል(2)' },
@@ -6485,7 +6483,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Mesenkohu_Ledawite.opus'),
               duration: 150,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መሰንቆሁ ለዳዊት ወአክሊሎ ለሰሎሞን(2)' },
                 { timestamp: 5, text: 'ሕትምት ገነት እጹት አዘቅት ሕትምት(2)' },
@@ -6500,7 +6498,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Maryam_Niset.opus'),
               duration: 200,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ማርያም ንጽሕይት ድንግል ማእመንት ወላዲተ' },
                 { timestamp: 5, text: 'አምላክ ሰአሊተ ምሕረት ለውሉደ ሰብእ(2)' },
@@ -6519,7 +6517,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Emebetach_Maryame.opus'),
               duration: 160,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'እመቤታችን ማርያም ሀገራችንን ጠብቂልን በምልጃሽ(2)' },
                 { timestamp: 5, text: 'ከመናፍቃን ከከሃድያን ከጠላት ሰይጣን ሰውረሽ' },
@@ -6533,7 +6531,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Kedemena_Betach.opus'),
               duration: 130,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ከደመና በታች እንዳይቀር ጸሎቴ(2)' },
                 { timestamp: 5, text: 'አሳርጊው(3)ድንግል እመቤቴ(2)' }
@@ -6546,7 +6544,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/O_Rerite_Hilina.opus'),
               duration: 200,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ኦ ርኅርኅተ ሕሊና ወአፍቅሮተ ሰብእ ልማዳ(2)' },
                 { timestamp: 5, text: 'ለእለ ጌሠሙ(4)ትመስል(3)እንግዳ(2)' },
@@ -6561,7 +6559,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Misrake_Misrakat.opus'),
               duration: 140,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ምሥራቀ ምሥራቃት ሙጽሐ ፀሐይ እግዝእትነ ዘመና ሙዳይ(2)' },
                 { timestamp: 5, text: 'ዘመና ሙዳይ ማርያም ዘመና ሙዳይ (2)' },
@@ -6576,7 +6574,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Mehareni_Dingel.opus'),
               duration: 240,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መሐርኒ ድንግል ወተሰሃልኒ በበዘመኑ' },
                 { timestamp: 5, text: 'ለእመ መሐርክኒ አንቲ ዘይኮንነኒ መኑ(2)' },
@@ -6586,19 +6584,19 @@ export const seedData = {
                 { timestamp: 25, text: 'የሥጋ የነፍስ ፈራጅ(3)ልጅሽ አይደለም ሆይ(2)' }
               ],
             },
-            {
-              id: 382,
-              title: 'ታማልደናለች',
-              artist: 'Zefinote Selam Sunday School',
-              cover_url: require('../assets/images/beata.png'),
-              audio_url: require('../assets/music/Tamaldenalch.opus'),
-              duration: 120,
-              genre: 'እዝል ዓራራይ ቅኝት',
-              lyrics: [
-                { timestamp: 0, text: 'ታማልደናለች (2)' },
-                { timestamp: 5, text: 'ማርያም(2)ቤዛዊት ዓለም(2)' }
-              ],
-            },
+            // {
+            //   id: 382,
+            //   title: 'ታማልደናለች',
+            //   artist: 'Zefinote Selam Sunday School',
+            //   cover_url: require('../assets/images/beata.png'),
+            //   audio_url: require('../assets/music/Tamaldenalch.opus'),
+            //   duration: 120,
+            //   genre: 'ዕዝል / አራራይ',
+            //   lyrics: [
+            //     { timestamp: 0, text: 'ታማልደናለች (2)' },
+            //     { timestamp: 5, text: 'ማርያም(2)ቤዛዊት ዓለም(2)' }
+            //   ],
+            // },
             {
               id: 383,
               title: 'ምስለ ሚካኤል ወገብርኤል',
@@ -6606,7 +6604,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Mislemikael_Wegebrel.opus'),
               duration: 160,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ምስለ ሚካኤል ወገብርኤል ንዒ ሠናይትየ ማርያም(2)' },
                 { timestamp: 5, text: 'ንዒ(8)እመ አምላክ ንዒ ማርያም(2)' },
@@ -6619,9 +6617,9 @@ export const seedData = {
               title: 'ጽላት ዘሙሴ ጽላት',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/beata.png'),
-              audio_url: require('../assets/music/Tsilat_Zemuse.opus'),
+              audio_url: require('../assets/music/Tsilate_Zemuse_Silat_group.opus'),
               duration: 155,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ጽላት ዘሙሴ ጽላት(2)' },
                 { timestamp: 5, text: 'ጽላት ዘሙሴ ጽላት(2) ዘሙሴ ጽላት(2)' },
@@ -6639,7 +6637,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Seali_Lene_2.opus'),
               duration: 140,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ሰአሊ ለነ ማርያም ሰአሊ ለነ (2)' },
                 { timestamp: 5, text: 'አክሊለ ንጹሐን(2)ሰአሊ ለነ (2)' },
@@ -6654,7 +6652,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Meserete_Hiwot.opus'),
               duration: 170,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መሠረተ ሕይወት ማርያም ወጥንተ መድኃኒት ዘእምቀዲሙ(2)' },
                 { timestamp: 5, text: 'ለወልድኪ(2)አምሳለ ደሙ(2)' },
@@ -6669,7 +6667,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Anchiw_Nesh_Tesfaw.opus'),
               duration: 135,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'አንቺ ነሽ ተስፋው ለአዳም ኪዳነ ምሕረት(2)' },
                 { timestamp: 5, text: 'በተሰደደ ጊዜ ከገነት በተሰደደ ጊዜ(2)' }
@@ -6682,7 +6680,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Emne_Emne_Ni.opus'),
               duration: 125,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'እምነ እምነ ንኢ (2)' },
                 { timestamp: 5, text: 'በሰላም(2)ንኢ ማርያም(2)' },
@@ -6697,7 +6695,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Kinfe_Regbe.opus'),
               duration: 190,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ክነፈ ርግብ በብሩር ዘግቡር ወገበዋቲሃኒ ሐመልማለ ወርቅ(2)' },
                 { timestamp: 5, text: 'አንቲ ምሥራቅ ወወልድኪ ፀሐየ ጽድቅ' },
@@ -6714,7 +6712,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Wemetewa.opus'),
               duration: 140,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ወመጠዋ ጽዋዐ ምሉአ በእደዊሆሙ ለመላእክት(2)' },
                 { timestamp: 5, text: 'ማርያምሰ(2)እንተ በምድር ታንሶሱ ማርያምሰ(2)' }
@@ -6727,7 +6725,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Wetekewm_Nigist.opus'),
               duration: 150,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ወትቀውም ንግሥት(2)በየማንከ(2)' },
                 { timestamp: 5, text: 'በአልባሰ ወርቅ(4) ዑጽፍት በአልባሰ ወርቅ(2)' },
@@ -6741,7 +6739,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Tsilat_Zemuse.opus'),
               duration: 145,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ጽላት ዘሙሴ ዕፀ ጳጦስ ዘሲና(2)' },
                 { timestamp: 5, text: 'ጸናጽል(5)ለአሮን ካህን(2)' },
@@ -6755,7 +6753,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Barkin_Barkin.opus'),
               duration: 130,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ባርኪን ባርኪን ልጆችሽን ባርኪን (2)' },
                 { timestamp: 5, text: 'ድንግል ሆይ በምልጃሽ አንድ ሀሳብ አድርጊን(2)' }
@@ -6768,7 +6766,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Egztne.opus'),
               duration: 180,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'እግዝእትነ (2)ነጽሪ ኀቤነ (2)' },
                 { timestamp: 5, text: 'ሰላመ ወልድኪ የሀሉ ምስሌነ(4)' },
@@ -6784,7 +6782,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Maryame_Maryame.opus'),
               duration: 140,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ማርያም ማርያም ድንግል ማርያም(2)' },
                 { timestamp: 5, text: 'ርኅርኅተ ኀሊና(4)ማርያም(2)' },
@@ -6798,7 +6796,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Solomon_Yibela.opus'),
               duration: 130,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ሰሎሞን ይቤላ ለማርያም(2)' },
                 { timestamp: 5, text: 'ዐዕይንትኪ ዘርግብ ዐዕይንትኪ(2) ሰሎሞን ይቤላ(2)' },
@@ -6812,7 +6810,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Maryame_Simiki_Tume.opus'),
               duration: 155,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ማርያም ስምኪ ጥዑም (2)' },
                 { timestamp: 5, text: 'ስምኪ ጥዑም(2)ማርያም ስምኪ ጥዑም' },
@@ -6828,7 +6826,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Yeamlak_chernetu_edited.opus'),
               duration: 280,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'የአምላክ ቸርነቱ ፈቃዱ ሲሆን ጨለማው ተገፎ ሲወጣ ብርሃን' },
                 { timestamp: 10, text: 'ማርያም(3)ደስ ይበልሽ በገብርኤል ሰላምታ' },
@@ -6847,7 +6845,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Kibrekidusan_Yiti.opus'),
               duration: 320,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ክብረ ቅዱሳን ይእቲ(2)ክብረ ቅዱሳን (2)' },
                 { timestamp: 5, text: 'ሙዳየ መና ግሩም ሙዳየ መና (2)(2)' },
@@ -6868,7 +6866,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Bemin_Bemin.opus'),
               duration: 360,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'በምን በምን እንመስላት ድንግል ማርያምን(2)' },
                 { timestamp: 5, text: 'ምሳሌ የላትም (2)ክብሯን የሚመጥን(2)' },
@@ -6889,7 +6887,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Sealilene_Kidist.opus'),
               duration: 300,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ሰአሊ ለነ ቅድስት እንልሻለን(2) እንደ ኤፍሬም እንደ አባታችን ለምኝልን እመቤታችን(2)' },
                 { timestamp: 10, text: 'ተስፋቸው ነሽና ለፍጥረት ዓለም እየተመኩብሽ እስከ ዘለዓለም' },
@@ -6909,7 +6907,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Des_Yibelsh.opus'),
               duration: 310,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ደስ ይበልሽ (2)ማርያም ንጽሕት ድንግል(2) ደስ ይበልሽ ከሴቶቹ ሁሉ የተባረክሽ ነሽ(2)' },
                 { timestamp: 10, text: 'ሰላም እልሻለሁ ማርያም ድንግል እንደ ብሥራታዊው እንደ ገብርኤል' },
@@ -6927,9 +6925,9 @@ export const seedData = {
               title: 'ኪዳነ ምሕረት እመቤት',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/beata.png'),
-              // audio_url: require('../assets/music/Fitha_Gifuan.opus'),
+              audio_url: require('../assets/music/Kidane_Mihret.opus'),
               duration: 340,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ኪዳነ ምሕረት እመቤት (2) ነይልን(2) ካለንበት(2)' },
                 { timestamp: 10, text: 'በሰማያት በላይ ካለው ከማደሪያሽ (2) ዝማሬ ከሞላው ከዘለዓለም ቤትሽ' },
@@ -6951,7 +6949,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Des_Yibelen_Betam.opus'),
               duration: 320,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ደስ ይበለን በጣም ደስ ይበለን (2) በረከቱን ለእኛ ስላደለን' },
                 { timestamp: 10, text: 'በጨለማ ስንሮር ደስ ይበለን በኃጢአት ተከበን ደስ ይበለን' },
@@ -6980,7 +6978,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Tenagera_Ezzra.opus'),
               duration: 350,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'ተናገራ እዝራ ተናገራ ዳዊት ዘመራ(2)' },
                 { timestamp: 10, text: 'እዝራ በመሰንቆ እያጫወታት ዳዊት ዘመራ ሳታውቀው አለፈ ያ መልአከ ሞት ዳዊት ዘመራ' },
@@ -7003,7 +7001,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Beselam_Ni.opus'),
               duration: 180,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'በሰላም ንዒ ንዒ ማርያም(2) ትናዝዝኒ (2)ሐዘነ ልብየ(2)' },
                 { timestamp: 10, text: 'ምስለ ሚካኤል(2) ወገብርኤል(2) ምስለ ሱራፌል(2) ወኪሩቤል(2)' },
@@ -7018,7 +7016,7 @@ export const seedData = {
               cover_url: require('../assets/images/beata.png'),
               audio_url: require('../assets/music/Melakt_Yiblwa.opus'),
               duration: 240,
-              genre: 'እዝል ዓራራይ ቅኝት',
+              genre: 'ዕዝል / አራራይ',
               lyrics: [
                 { timestamp: 0, text: 'መላእክት ይብልዋ (2) ለማርያም' },
                 { timestamp: 5, text: 'ሰላም ለኪ(4) ይብልዋ ሰላም ለኪ' },
@@ -7038,79 +7036,79 @@ export const seedData = {
             },
           ]
         },
-        {
-          id: 'yebata_mezmur_sub2_b',
-          name: 'ግእዝ 1',
-          image: require('../assets/images/beata.png'), 
-          songs: [
-            {
-              id: 408,
-              title: 'አእላፍ መላእክት',
-              artist: 'Zefinote Selam Sunday School',
-              cover_url: require('../assets/images/beata.png'),
-              audio_url: require('../assets/music/Aelafe_Melakt.opus'),
-              duration: 140,
-              genre: 'ግእዝ 1',
-              lyrics: [
-                { timestamp: 0, text: 'አእላፍ መላእክት(2)' },
-                { timestamp: 5, text: 'ይትለአኩኪ መላእክት(2)' },
-                { timestamp: 10, text: 'ትርጉም የብዙ ብዙ መላእክት ይላኩሻል ያገለግሉሻል' }
-              ],
-            },
-            {
-              id: 409,
-              title: 'ፀቃውዕ ይውኀዝ',
-              artist: 'Zefinote Selam Sunday School',
-              cover_url: require('../assets/images/beata.png'),
-              audio_url: require('../assets/music/Tsekawe_Yiwyz.opus'),
-              duration: 130,
-              genre: 'ግእዝ 1',
-              lyrics: [
-                { timestamp: 0, text: 'ፀቃውዕ ይውኀዝ(2)' },
-                { timestamp: 5, text: 'ይውኀዝ እምከናፍሪሃ(2)' },
-                { timestamp: 10, text: 'ትርጉም የማር ወለላ (ጣፋጭ ነገር)ከከናፍሮቿ ይፈስሳል(ከእመቤታችን)' }
-              ],
-            },
-            {
-              id: 410,
-              title: 'ከመ ጽጌ ሮማን',
-              artist: 'Zefinote Selam Sunday School',
-              cover_url: require('../assets/images/beata.png'),
-              audio_url: require('../assets/music/Keme_Tsige_Roman.opus'),
-              duration: 150,
-              genre: 'ግእዝ 1',
-              lyrics: [
-                { timestamp: 0, text: 'ከመ ጽጌ ሮማን ከመ ጽጌ(2)' },
-                { timestamp: 5, text: 'አበባዬ(2)ወላዲተ አምላክ ሲሳይ(2)' },
-                { timestamp: 10, text: 'ትርጉም እንደ ሮማን አበባ ያማረች የአምላክ እናት ማርያም ሲሳይ ናት' }
-              ],
-            },
-            {
-              id: 411,
-              title: 'ትህትናሽ ግሩም',
-              artist: 'Zefinote Selam Sunday School',
-              cover_url: require('../assets/images/beata.png'),
-              audio_url: require('../assets/music/Tihtnash_Girum.opus'),
-              duration: 320,
-              genre: 'ግእዝ 1',
-              lyrics: [
-                { timestamp: 0, text: 'ትህትናሽ ግሩም ነው ደግነትሽም እናቱ ሆነሻል ለመድኃኔዓለም(2)' },
-                { timestamp: 10, text: 'ንጽሕት ስለሆንሽ እመቤቴ እመቤቴ እንከን የሌለብሽ እመቤቴ እመቤቴ' },
-                { timestamp: 20, text: 'የፍጥረታት ጌታ እመቤቴ እመቤቴ በአንቺ ያደረብሽ እመቤቴ እመቤቴ' },
-                { timestamp: 30, text: 'የድንግል መመረጥ እመቤቴ እመቤቴ ዜናው አስገረመኝ እመቤቴ እመቤቴ' },
-                { timestamp: 40, text: 'እሳቱን ታቀፈች እመቤቴ እመቤቴ የማይቻለውን እመቤቴ እመቤቴ' },
-                { timestamp: 50, text: 'ምርኩዜ ልበልሽ እመቤቴ እመቤቴ ጥላ ከለላዬ እመቤቴ እመቤቴ' },
-                { timestamp: 60, text: 'ጋሻዬ ነሽ አንቺ እመቤቴ እመቤቴ ለኔስ መመኪያዬ እመቤቴ እመቤቴ' },
-                { timestamp: 70, text: 'በዓለም እንዳልጠፋ እመቤቴ እመቤቴ ሕይወቴ መሮብኝ እመቤቴ እመቤቴ' },
-                { timestamp: 80, text: 'እንደ ወይን አጣፍጪው እመቤቴ እመቤቴ ድንግል ድረሺልኝ እመቤቴ እመቤቴ' },
-                { timestamp: 90, text: 'የምሥራቅ ደጃፍ ነሽ እመቤቴ እመቤቴ የሁላችን ተስፋ እመቤቴ እመቤቴ' },
-                { timestamp: 100, text: 'እሙ ለፀሐየ ጽድቅ እመቤቴ እመቤቴ የሁሉ ጠበቃ እመቤቴ እመቤቴ' },
-                { timestamp: 110, text: 'ድንግል የድል አክሊል እመቤቴ እመቤቴ ድንግል የጽድቅ ሥራ እመቤቴ እመቤቴ' },
-                { timestamp: 120, text: 'ድንግል መሰላል ነሽ እመቤቴ እመቤቴ የተዋሕዶ ተስፋ እመቤቴ እመቤቴ' }
-              ],
-            }
-          ]
-        },
+        // {
+        //   id: 'yebata_mezmur_sub2_b',
+        //   name: 'ግእዝ 1',
+        //   image: require('../assets/images/beata.png'), 
+        //   songs: [
+        //     {
+        //       id: 408,
+        //       title: 'አእላፍ መላእክት',
+        //       artist: 'Zefinote Selam Sunday School',
+        //       cover_url: require('../assets/images/beata.png'),
+        //       audio_url: require('../assets/music/Aelafe_Melakt.opus'),
+        //       duration: 140,
+        //       genre: 'ግእዝ 1',
+        //       lyrics: [
+        //         { timestamp: 0, text: 'አእላፍ መላእክት(2)' },
+        //         { timestamp: 5, text: 'ይትለአኩኪ መላእክት(2)' },
+        //         { timestamp: 10, text: 'ትርጉም የብዙ ብዙ መላእክት ይላኩሻል ያገለግሉሻል' }
+        //       ],
+        //     },
+        //     {
+        //       id: 409,
+        //       title: 'ፀቃውዕ ይውኀዝ',
+        //       artist: 'Zefinote Selam Sunday School',
+        //       cover_url: require('../assets/images/beata.png'),
+        //       audio_url: require('../assets/music/Tsekawe_Yiwyz.opus'),
+        //       duration: 130,
+        //       genre: 'ግእዝ 1',
+        //       lyrics: [
+        //         { timestamp: 0, text: 'ፀቃውዕ ይውኀዝ(2)' },
+        //         { timestamp: 5, text: 'ይውኀዝ እምከናፍሪሃ(2)' },
+        //         { timestamp: 10, text: 'ትርጉም የማር ወለላ (ጣፋጭ ነገር)ከከናፍሮቿ ይፈስሳል(ከእመቤታችን)' }
+        //       ],
+        //     },
+        //     {
+        //       id: 410,
+        //       title: 'ከመ ጽጌ ሮማን',
+        //       artist: 'Zefinote Selam Sunday School',
+        //       cover_url: require('../assets/images/beata.png'),
+        //       audio_url: require('../assets/music/Keme_Tsige_Roman.opus'),
+        //       duration: 150,
+        //       genre: 'ግእዝ 1',
+        //       lyrics: [
+        //         { timestamp: 0, text: 'ከመ ጽጌ ሮማን ከመ ጽጌ(2)' },
+        //         { timestamp: 5, text: 'አበባዬ(2)ወላዲተ አምላክ ሲሳይ(2)' },
+        //         { timestamp: 10, text: 'ትርጉም እንደ ሮማን አበባ ያማረች የአምላክ እናት ማርያም ሲሳይ ናት' }
+        //       ],
+        //     },
+        //     {
+        //       id: 411,
+        //       title: 'ትህትናሽ ግሩም',
+        //       artist: 'Zefinote Selam Sunday School',
+        //       cover_url: require('../assets/images/beata.png'),
+        //       audio_url: require('../assets/music/Tihtnash_Girum.opus'),
+        //       duration: 320,
+        //       genre: 'ግእዝ 1',
+        //       lyrics: [
+        //         { timestamp: 0, text: 'ትህትናሽ ግሩም ነው ደግነትሽም እናቱ ሆነሻል ለመድኃኔዓለም(2)' },
+        //         { timestamp: 10, text: 'ንጽሕት ስለሆንሽ እመቤቴ እመቤቴ እንከን የሌለብሽ እመቤቴ እመቤቴ' },
+        //         { timestamp: 20, text: 'የፍጥረታት ጌታ እመቤቴ እመቤቴ በአንቺ ያደረብሽ እመቤቴ እመቤቴ' },
+        //         { timestamp: 30, text: 'የድንግል መመረጥ እመቤቴ እመቤቴ ዜናው አስገረመኝ እመቤቴ እመቤቴ' },
+        //         { timestamp: 40, text: 'እሳቱን ታቀፈች እመቤቴ እመቤቴ የማይቻለውን እመቤቴ እመቤቴ' },
+        //         { timestamp: 50, text: 'ምርኩዜ ልበልሽ እመቤቴ እመቤቴ ጥላ ከለላዬ እመቤቴ እመቤቴ' },
+        //         { timestamp: 60, text: 'ጋሻዬ ነሽ አንቺ እመቤቴ እመቤቴ ለኔስ መመኪያዬ እመቤቴ እመቤቴ' },
+        //         { timestamp: 70, text: 'በዓለም እንዳልጠፋ እመቤቴ እመቤቴ ሕይወቴ መሮብኝ እመቤቴ እመቤቴ' },
+        //         { timestamp: 80, text: 'እንደ ወይን አጣፍጪው እመቤቴ እመቤቴ ድንግል ድረሺልኝ እመቤቴ እመቤቴ' },
+        //         { timestamp: 90, text: 'የምሥራቅ ደጃፍ ነሽ እመቤቴ እመቤቴ የሁላችን ተስፋ እመቤቴ እመቤቴ' },
+        //         { timestamp: 100, text: 'እሙ ለፀሐየ ጽድቅ እመቤቴ እመቤቴ የሁሉ ጠበቃ እመቤቴ እመቤቴ' },
+        //         { timestamp: 110, text: 'ድንግል የድል አክሊል እመቤቴ እመቤቴ ድንግል የጽድቅ ሥራ እመቤቴ እመቤቴ' },
+        //         { timestamp: 120, text: 'ድንግል መሰላል ነሽ እመቤቴ እመቤቴ የተዋሕዶ ተስፋ እመቤቴ እመቤቴ' }
+        //       ],
+        //     }
+        //   ]
+        // },
         {
           id: 'yebata_mezmur_sub2',
           name: 'ግእዝ 1',
@@ -7338,7 +7336,7 @@ export const seedData = {
               title: 'እሴብሕ ጸጋኪ',
               artist: 'Zefinote Selam Sunday School',
               cover_url: require('../assets/images/beata.png'),
-              // audio_url: require('../assets/music/Sealilene_Kidist.opus'),
+              audio_url: require('../assets/music/Esebeh_TSegaki.opus'),
               duration: 400,
               genre: 'ግእዝ 2',
               lyrics: [

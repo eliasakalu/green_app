@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, Modal, TouchableOpacity, FlatList, TextInput, A
 import { useThemeStore } from '../store/useThemeStore';
 import { usePlayerStore } from '../store/usePlayerStore';
 import { Plus, X } from 'lucide-react-native';
+import { useTransition } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function PlaylistModal({ visible, onClose, song, onSuccess }) {
   const { playlists, createPlaylist, addSongToPlaylist } = usePlayerStore();
@@ -11,6 +13,7 @@ export default function PlaylistModal({ visible, onClose, song, onSuccess }) {
   const [addingTo, setAddingTo] = useState(null);
   const { isDark, colors } = useThemeStore();
   const theme = isDark ? colors.dark : colors.light;
+  const { t, i18n} = useTranslation();
 
   const handleCreatePlaylist = async () => {
     if (!newPlaylistName.trim()) {
@@ -75,7 +78,7 @@ export default function PlaylistModal({ visible, onClose, song, onSuccess }) {
         <View style={[styles.modalContent, { backgroundColor: theme.background }]}>
           <View style={styles.modalHeader}>
             <Text style={[styles.modalTitle, { color: theme.text }]}>
-              {song ? 'Add to Playlist' : 'My Playlists'}
+              {song ? 'Add to Playlist' : t('my_playlist')}
             </Text>
             <TouchableOpacity onPress={() => { setShowCreate(false); onClose(); }}>
               <X color={theme.text} size={24} />
@@ -89,7 +92,7 @@ export default function PlaylistModal({ visible, onClose, song, onSuccess }) {
                 onPress={() => setShowCreate(true)}
               >
                 <Plus color={colors.primary} size={20} />
-                <Text style={[styles.createButtonText, { color: colors.primary }]}>Create New Playlist</Text>
+                <Text style={[styles.createButtonText, { color: colors.primary }]}>{t('create_new_playlist')}</Text>
               </TouchableOpacity>
 
               {playlists && playlists.length > 0 ? (
@@ -101,7 +104,7 @@ export default function PlaylistModal({ visible, onClose, song, onSuccess }) {
                 />
               ) : (
                 <View style={styles.emptyContainer}>
-                  <Text style={[styles.emptyText, { color: theme.subText }]}>No playlists yet. Create your first!</Text>
+                  <Text style={[styles.emptyText, { color: theme.subText }]}>{t('no_playlist_till')}</Text>
                 </View>
               )}
             </>
