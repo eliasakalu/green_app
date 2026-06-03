@@ -17,7 +17,7 @@ import { useTranslation } from 'react-i18next';
 import { getImageSource } from '../utils/mediaSource';
 
 import silaseImage from '../assets/images/silase.jpg';
-import schoolLogo  from '../../assets/icon.png';
+import schoolLogo  from '../../assets/icon22.png';
 
 const DEFAULT_CATEGORY_IMAGE = silaseImage;
 

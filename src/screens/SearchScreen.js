@@ -19,7 +19,7 @@ const GENRES = [
   { label: 'ግእዝ',           query: 'ግእዝ 1' },
   { label: 'ግእዝ 2',          query: 'ግእዝ 2' },
   { label: 'ግእዝ 3',          query: 'ግእዝ 3' },
-  { label: 'እዝል/ዓራራይ ቅኝት',  query: 'እዝል ዓራራይ ቅኝት' },
+  { label: 'ዕዝል / አራራይ',  query: 'ዕዝል / አራራይ' },
 ];
 
 export default function SearchScreen({ navigation }) {

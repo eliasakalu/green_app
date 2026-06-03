@@ -7,7 +7,7 @@ import { useThemeStore } from '../store/useThemeStore';
 import { getTotalSongCount, getAllCategories } from '../data/database';
 import { useTranslation } from 'react-i18next';
 
-const defaultLogo = require('../../assets/icon.png');
+const defaultLogo = require('../../assets/icon22.png');
 
 export default function ProfileScreen() {
   const { isDark, toggleTheme, colors } = useThemeStore();
